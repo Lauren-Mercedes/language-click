@@ -9,27 +9,22 @@ header {
     height: 4rem;
 }
 
-/* instruction button style and position */
-#instructions {
+/* top buttons (instructions and return) style*/
+.top-button {
     /* size */
     height: 3rem;
     width: 3rem;
-    /* position to right-hand side */
-    float: right;
     /* remove border & background */
     border-style: none;
     background: none;
 }
-/* return button style and position */
-#return {
-    /* size */
-    height: 3rem;
-    width: 3rem;
-    /* position to right-hand side */
+/* instruction button position (to the right) */
+#instructions{
+    float: right;
+}
+/* return button position (to the left */
+#return{
     float: left;
-    /* remove border & background */
-    border-style: none;
-    background: none;
 }
 
 /* main */
