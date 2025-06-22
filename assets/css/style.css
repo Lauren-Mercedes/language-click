@@ -1,26 +1,27 @@
-
 /* Universal styling across page */
-body{
-     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+/* header */
 /* header size */
 header {
     height: 4rem;
 }
 
 /* instruction button style and position */
-#instructions{
+#instructions {
     /* size */
     height: 3rem;
     width: 3rem;
     /* position to right-hand side */
-   float: right;
+    float: right;
     /* remove border & background */
     border-style: none;
     background: none;
 }
 
+/* main */
 /* general positioning and style of main content */
 main {
     text-align: center;
@@ -38,14 +39,29 @@ h1 {
 
 /* general button style */
 button {
-    background-color:#00aaff;
+    background-color: #00aaff;
     color: white;
-   border-radius: 12px;
-   border-style: none;
-   cursor: pointer;
-   width: 100px;
+    border-radius: 12px;
+    border-style: none;
+    cursor: pointer;
+    width: 100px;
 }
+
 /* change button backround colour when mouse hovers */
-button:hover{
+button:hover {
     background-color: #00d5ff;
+}
+
+/* footer */
+/*social media icons */
+.icon-size {
+    height: 2rem;
+    width: 2rem;
+    float: right;
+}
+
+/* text */
+footer {
+    font-size: 12px;
+    padding-top: 10%;
 }
