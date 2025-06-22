@@ -1,0 +1,11 @@
+/* instruction button style and position */
+#instructions{
+    /* size */
+    height: 3rem;
+    width: 3rem;
+    /* position to right-hand side */
+   float: right;
+    /* remove border & background */
+    border-style: none;
+    background: none;
+}
