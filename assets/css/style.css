@@ -20,6 +20,17 @@ header {
     border-style: none;
     background: none;
 }
+/* return button style and position */
+#return {
+    /* size */
+    height: 3rem;
+    width: 3rem;
+    /* position to right-hand side */
+    float: left;
+    /* remove border & background */
+    border-style: none;
+    background: none;
+}
 
 /* main */
 /* general positioning and style of main content */
