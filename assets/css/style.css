@@ -58,16 +58,26 @@ button:hover {
     background-color: #00d5ff;
 }
 
+/* Select Language Page: position of select language option buttons  */
+.language-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10% 0%;
+}
+
 /* footer */
+footer {
+    font-size: 12px;
+    padding-top: 10%;
+    position: absolute;
+    bottom: 1%;
+    width: 100%;
+}
 /*social media icons */
 .icon-size {
     height: 2rem;
     width: 2rem;
     float: right;
-}
-
-/* text */
-footer {
-    font-size: 12px;
-    padding-top: 10%;
+    margin-right: 1%;
 }
