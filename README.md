@@ -1,11 +1,15 @@
 ### Bugs and Fixes
 
 The main bugs experienced during the development of the website were:
-An error in the html caused an issue with the behaviour of a popup instructions button:
 
-<video width="500px" height="300px" controls>
-  <source src="assets/readme-media/popup-bug.mp4" type="video/mp4">
-</video>
+The popup was visible without executing the instructions button:
+<video controls src="assets/readme-media/popup-bug.mp4" title="Title"></video>
+
+This was caused by an additonal div close tag, there was 3 close tags and only 2 open tags within the html popup code section. I established this was the issue by confirming the fault was with the paragraph section only as seen in the clip, checking the devtools for javascript errors, confirming there was no syntax differences in the id reference and then commenting out code within the html to isolate the error.
+
+When closing the instructions pop up on the language selection page the return button is executed:
+<video controls src="assets/readme-media/popup-close-bug.mp4" title="Title"></video>
+This was caused by the popup div being inserted inside the return button link anchor tags. I determined this was the case by moving the position of the popup close button, increasing the z-index and moving the entire pop up box. Isolating the link between the close button and the return button to html .
 
 ## Credits
 

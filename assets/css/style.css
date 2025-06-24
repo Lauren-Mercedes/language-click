@@ -46,6 +46,8 @@ header {
 
 #close-popup{
     width: 10%;
+    float: right;
+    margin: 2%;
 }
 
 /* main */
@@ -109,5 +111,7 @@ footer {
     /* popup box styling */
     #popup {
         width: 50%;
+        height: 50%;
+         text-size-adjust:80% ;
     }
 }
