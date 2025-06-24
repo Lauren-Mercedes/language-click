@@ -26,6 +26,11 @@ header {
 #return{
     float: left;
 }
+/* popup box styling */
+#popup{
+    /* set to keep hidden from display until instruction button clicked */
+    display: none;
+}
 
 /* main */
 /* general positioning and style of main content */
