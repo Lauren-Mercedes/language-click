@@ -70,6 +70,7 @@ button:hover {
 footer {
     font-size: 12px;
     padding-top: 10%;
+    /* push footer to the bottom and fill the screen width */
     position: absolute;
     bottom: 1%;
     width: 100%;
