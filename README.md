@@ -1,3 +1,11 @@
+### Bugs and Fixes
+
+The main bugs experienced during the development of the website were:
+An error in the html caused an issue with the behaviour of a popup instructions button:
+<video width="320" height="240" controls>
+  <source src="assets/readme-media/popup-bug.mp4" type="video/mp4">
+</video>
+
 ## Credits
 
 All content and code was written by the developer.
