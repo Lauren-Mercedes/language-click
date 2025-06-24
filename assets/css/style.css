@@ -44,6 +44,10 @@ header {
     padding-left: 2%;
 }
 
+#close-popup{
+    width: 10%;
+}
+
 /* main */
 /* general positioning and style of main content */
 main {
