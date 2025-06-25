@@ -74,6 +74,7 @@ button {
     border-style: none;
     cursor: pointer;
     width: 100px;
+    min-width: fit-content;
 }
 
 /* change button backround colour when mouse hovers */
@@ -81,8 +82,8 @@ button:hover {
     background-color: #00d5ff;
 }
 
-/* Select Language Page: position of select language option buttons  */
-.language-buttons{
+/* Select Language Page and select level page: position of trio of option buttons  */
+.trio-buttons{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
