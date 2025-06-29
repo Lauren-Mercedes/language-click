@@ -23,7 +23,7 @@
     <!-- Is consistent throughout the game and contains game instructions -->
     <header>
         <!-- Instructions button -->
-        <button id="instructions" class="top-button" aria-label="open instruction pop up">
+        <button id="instructions" class="top-button" aria-label="open instruction pop up" onclick="showInstructions()">
             <img src="assets/images/icons/instrutctions-icon.png" alt="image of instruction manual" id="instructions"
                 class="top-button">
         </button>
@@ -34,10 +34,10 @@
             </button>
              </a>
         <!-- Popup box for instructions -->
-        <div id="popup">
+        <div id ="popup">
             <!-- close button for popup -->
             <div>
-                <button id="close-popup" aria-label="close instruction pop up">X</button>
+                <button id="close-popup" aria-label="close instruction pop up" onclick = "hideInstructions()">X</button>
             </div>
             <!-- Popup box content -->
             <h2>Instructions</h2>
@@ -66,18 +66,19 @@
         <!-- Answer buttons -->
         <div class="trio-buttons">
             
-                <button class="answer-button" aria-label="click here to select this answer">
+                <button id="answer-button1" class="answer-button" aria-label="click here to select this answer">
                     <h2>Answer Option 1 Placeholder</h2>
                 </button>
             
-                <button class="answer-button"  aria-label="click here to select this answer">
+                <button  id="answer-button2" class="answer-button" aria-label="click here to select this answer">
                     <h2>Answer Option 2 Placeholder</h2>
                 </button>
            
-                <button class="answer-button" aria-label="click here to select this answer">
+                <button  id="answer-button3" class="answer-button" aria-label="click here to select this answer">
                     <h2>Answer Option 3 Placeholder</h2>
                 </button>
         </div>
+        <button id="next" aria label = "click here for next question">next</button>
     </main>
     <!-- Footer Component-->
     <!-- Is consistent throughout the game -->
