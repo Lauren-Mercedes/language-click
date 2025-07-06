@@ -77,6 +77,13 @@ The answers generated for the buttons duplicate:
 
 This could cause issues if the correct answer doesn't get displayed, the code needed to be adjusted to ensure that each answer was used once. In order to do this without affecting the original answers array a slice method was added to the part of the function that defines the answers. This allowed the question to be displayed more than once throughout the game. The answers were then spliced to remove each option that was used in the loop. The splice method ensures that each answer that is used is removed and therefore not used again in the same question. 
 
+The next question button would not generate a new question when clicked:
+
+
+https://github.com/user-attachments/assets/10f6a184-0892-446d-acfa-bf6d2f727565
+
+This was caused by missing an onclick attribute to the next button element and by having the question function outside of the choose question function which prevented a new question from being displayed as the question function controlled the content within the buttons. 
+
 ## Credits
 
 All content and code was written by the developer.
