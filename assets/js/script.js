@@ -60,3 +60,22 @@ function hideInstructions(){
    popUp.style.display = "none";
 }
 
+/**
+ * Declaration of the identifier assigned to the question set to be used.
+ * chosenQuestionSet will take on the identity of the language and level the user has selected.
+ * Declared globally for use in multiple functions.
+ */
+let chosenQuestionSet = new questionSet("");
+/**
+ * Function for choosing the question set.
+ * Selects which questions to display based on the buttons the user clicks
+ */
+function chooseQuestionSet () {
+// spanish questions
+      let spanish = new questionSet("Italian");
+  spanish.addQuestion("Adios","Good-Bye",["Sorry", "Good-Bye", "Tomorrow"]);
+  spanish.addQuestion("Gracias","Thank You",["You're Welcome", "Good", "Thank You"]);
+  spanish.addQuestion("Hola","Hello",["Hello", "Cheers", "Health"]);
+// unconditional selection for functional testing of the game
+  chosenQuestionSet = spanish;
+}
