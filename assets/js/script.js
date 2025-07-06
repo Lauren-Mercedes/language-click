@@ -48,7 +48,13 @@ class questionSet{
       this.questions.push(new questionStructure(question,correct, answers));}
 }
 
-// Instructions Pop Up
+
+
+/**
+ *  Instructions Pop Up
+ *  Includes pop up and close down functions
+ * Is linked via an onclick in the instructions button and the close button
+ */
 // When instructions button is clicked show instructions
 function showInstructions(){
   let popUp = document.getElementById("popup");
@@ -96,8 +102,9 @@ function chooseQuestion(){
   let questionIndex = Math.floor(Math.random() * chosenQuestionSet.getQuestions().length);
 // turn the random index into the corresponding question from the chosen question set.
   chosenQuestion = chosenQuestionSet.getQuestions()[questionIndex];
-  // log to test function works
-console.log (chosenQuestion);
+// hide next button when a new question is displayed
+  next.style.display = "none";
+
 }
 chooseQuestion();
 
@@ -129,3 +136,20 @@ function question(){
 };
 }
 question();
+/**
+ * Function to check if the answer is correct or incorrect
+ * Includes response if answer is correct
+ * Includes response if answer is incorrect
+ * Is linked via an onclick in the answer button elements within questions.html
+ */
+function check(answerButton){
+  // if correct turn selected answer green and reveal next question button
+  if (answerButton.innerText == chosenQuestion.correct) {
+      answerButton.style.backgroundColor = "green";
+      next.style.display = "block";
+    }
+  // if incorrect turn selected answer red
+    else {
+      answerButton.style.backgroundColor = "red";
+    }
+}
