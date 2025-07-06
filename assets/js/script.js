@@ -79,3 +79,24 @@ function chooseQuestionSet () {
 // unconditional selection for functional testing of the game
   chosenQuestionSet = spanish;
 }
+// Function called.
+chooseQuestionSet()
+
+/**
+ * Declaration of the identifier assigned to the randomly selected question.
+ * chosenQuestion will take on the identity of the randomly generated question.
+ * Declared globally for use in multiple functions.
+ */
+let chosenQuestion = " "
+/**
+ * Function for generation of a random question from the selected question set.
+ */
+function chooseQuestion(){
+// random index from the length of the questions in the chosen question set.
+  let questionIndex = Math.floor(Math.random() * chosenQuestionSet.getQuestions().length);
+// turn the random index into the corresponding question from the chosen question set.
+  chosenQuestion = chosenQuestionSet.getQuestions()[questionIndex];
+  // log to test function works
+console.log (chosenQuestion);
+}
+chooseQuestion();
