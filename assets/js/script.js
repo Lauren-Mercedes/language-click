@@ -21,6 +21,33 @@ class questionStructure{
     return this.answerSet;}
 }
 
+/**
+ * Class that provides the blueprint of the question set.
+ * For use in grouping questions by language and level.
+ * Includes functions that allow the selected language and level to be called for use in other functions.
+ * Includes a function to add questions to the question set using the question structure class.
+ */
+class questionSet{
+// question set structure
+  constructor (language, level){
+    this.language = language;
+    this.level = level;
+    this.questions = [];
+  }
+// functions
+    getLanguage = () =>{
+    return this.language;}
+
+    getLevel = () =>{
+    return this.level;}
+
+    getQuestions = () =>{
+    return this.questions;}
+
+    addQuestion = (question, correct,answers) =>{
+      this.questions.push(new questionStructure(question,correct, answers));}
+}
+
 // Instructions Pop Up
 // When instructions button is clicked show instructions
 function showInstructions(){
