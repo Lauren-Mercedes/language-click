@@ -100,3 +100,27 @@ function chooseQuestion(){
 console.log (chosenQuestion);
 }
 chooseQuestion();
+
+/**
+ * Function fills question button with chosen question
+ * Function gets the correct answer and answer options associated with the chosen question
+ * Function fills the answer buttons
+ */
+function question(){
+// Get question button
+  let questionButton = document.getElementById("question-button");
+// Replace the text on the button with the chosen question
+  questionButton.innerHTML = chosenQuestion.getQuestion();
+// Get answer buttons
+  let answerBoxes = document.getElementsByClassName("answer-button");
+// Get answer content
+  let answers = chosenQuestion.getAnswers();
+// for loop to fill the answer buttons with the answer content
+  for(let i = 0; i < 3; i++){
+// random index from the length of the answer options from the question set
+   let answerIndex = Math.floor(Math.random() * answers.length);
+// Replace the text on the button with an answer option
+   answerBoxes[i].innerHTML = answers[answerIndex];
+};
+}
+question();
