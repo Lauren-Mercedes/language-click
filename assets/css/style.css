@@ -18,14 +18,17 @@ header {
     border-style: none;
     background: none;
 }
+
 /* instruction button position (to the right) */
 #instructions{
     float: right;
 }
+
 /* return button position (to the left */
 #return{
     float: left;
 }
+
 /* popup box styling */
 #popup{
     /* set to keep hidden from display until instruction button clicked */
@@ -40,6 +43,7 @@ header {
     position: absolute;
     z-index: 1;
 }
+
 #popup, h2 p{
     padding-left: 2%;
 }

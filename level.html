@@ -23,7 +23,7 @@
     <!-- Is consistent throughout the game and contains game instructions -->
     <header>
         <!-- Instructions button -->
-        <button id="instructions" class="top-button" aria-label="open instruction pop up">
+        <button id="instructions" class="top-button" aria-label="open instruction pop up"onclick="showInstructions()" title="Instructions">
             <img src="assets/images/icons/instrutctions-icon.png" alt="image of instruction manual" id="instructions"
                 class="top-button">
         </button>
@@ -37,7 +37,7 @@
         <div id="popup">
             <!-- close button for popup -->
             <div>
-                <button id="close-popup" aria-label="close instruction pop up">X</button>
+                <button id="close-popup" aria-label="close instruction pop up"onclick = "hideInstructions()">X</button>
             </div>
             <!-- Popup box content -->
             <h2>Instructions</h2>

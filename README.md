@@ -1,3 +1,45 @@
+### Features Testing
+
+How the features outlined in the scope work. Each feature developed was generated with html, tested in [ Chrome DevTools](https://developer.chrome.com/docs/devtools/), styled with css, tested again in dev tools and adjusted until visual and functional criteria was met across mobile, tablet and laptop. Functionality was added to features using JavaScript and tested in dev tools for functionality. These features were then tested again on push in the deployed environment.
+
+- Responsive Design
+
+Website appearance and function was tested on the following devices using a mixture of dev tools and actual devices. On each device, all screens were brought up and all buttons were pressed to confirm functionality and readbility throughout the game.
+
+Phones
+
+- iPhone SE**
+- iPhone XR*
+- iPhone 12 Pro*
+- iPhone 14 Pro Max*
+- Pixel 7*
+- Samsung Galaxy S8+*
+- Samsung Galaxy S20 ultra*
+- Galaxy Z Fold 5*
+- Samsung A51/71*
+
+Tablets
+
+- iPad Mini*
+- iPad Pro*
+- iPad*
+
+Laptops and Desktops
+
+- Nest Hub*
+- Nest Hub Max*
+- HP Laptop*
+
+- Instructions Pop-up
+    - located in the header across all screens for intuitive design.
+Icon displays in the same location across all pages.
+Hovering over the icon shows the text "Instructions"
+Clicking on the icon displays the instructions on the screen.
+The instructions are readable.
+Clicking on the cross in the instructions pop-up closes the instructions down.
+The cross is in the same location each time the instructions pop-up opens.
+
+
 ### Bugs and Fixes
 
 The main bugs experienced during the development of the website were:
