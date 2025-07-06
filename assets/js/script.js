@@ -3,22 +3,25 @@
  * Includes the question, the correct answer, and answer options.
  * Includes functions that allow the question, correct answer, and answer options to be called for use in other functions.
  */
-class questionStructure{
-// question structure
-  constructor (question, correct, answers){
+class questionStructure {
+  // question structure
+  constructor(question, correct, answers) {
     this.question = question;
     this.correct = correct;
     this.answerSet = answers;
   }
-// functions 
-  getQuestion = () =>{
-    return this.question;}
+  // functions 
+  getQuestion = () => {
+    return this.question;
+  }
 
-    getCorrect = () =>{
-    return this.correct;}
+  getCorrect = () => {
+    return this.correct;
+  }
 
-    getAnswers = () =>{
-    return this.answerSet;}
+  getAnswers = () => {
+    return this.answerSet;
+  }
 }
 
 /**
@@ -27,28 +30,30 @@ class questionStructure{
  * Includes functions that allow the selected language and level to be called for use in other functions.
  * Includes a function to add questions to the question set using the question structure class.
  */
-class questionSet{
-// question set structure
-  constructor (language, level){
+class questionSet {
+  // question set structure
+  constructor(language, level) {
     this.language = language;
     this.level = level;
     this.questions = [];
   }
-// functions
-    getLanguage = () =>{
-    return this.language;}
+  // functions
+  getLanguage = () => {
+    return this.language;
+  }
 
-    getLevel = () =>{
-    return this.level;}
+  getLevel = () => {
+    return this.level;
+  }
 
-    getQuestions = () =>{
-    return this.questions;}
+  getQuestions = () => {
+    return this.questions;
+  }
 
-    addQuestion = (question, correct,answers) =>{
-      this.questions.push(new questionStructure(question,correct, answers));}
+  addQuestion = (question, correct, answers) => {
+    this.questions.push(new questionStructure(question, correct, answers));
+  }
 }
-
-
 
 /**
  *  Instructions Pop Up
@@ -56,14 +61,14 @@ class questionSet{
  * Is linked via an onclick in the instructions button and the close button
  */
 // When instructions button is clicked show instructions
-function showInstructions(){
+function showInstructions() {
   let popUp = document.getElementById("popup");
   popUp.style.display = "block";
 }
 //When close button is clicked hide instructions
-function hideInstructions(){
-   let popUp = document.getElementById("popup");
-   popUp.style.display = "none";
+function hideInstructions() {
+  let popUp = document.getElementById("popup");
+  popUp.style.display = "none";
 }
 
 /**
@@ -76,13 +81,13 @@ let chosenQuestionSet = new questionSet("");
  * Function for choosing the question set.
  * Selects which questions to display based on the buttons the user clicks
  */
-function chooseQuestionSet () {
-// spanish questions
-      let spanish = new questionSet("Italian");
-  spanish.addQuestion("Adios","Good-Bye",["Sorry", "Good-Bye", "Tomorrow"]);
-  spanish.addQuestion("Gracias","Thank You",["You're Welcome", "Good", "Thank You"]);
-  spanish.addQuestion("Hola","Hello",["Hello", "Cheers", "Health"]);
-// unconditional selection for functional testing of the game
+function chooseQuestionSet() {
+  // spanish questions
+  let spanish = new questionSet("Italian");
+  spanish.addQuestion("Adios", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
+  spanish.addQuestion("Gracias", "Thank You", ["You're Welcome", "Good", "Thank You"]);
+  spanish.addQuestion("Hola", "Hello", ["Hello", "Cheers", "Health"]);
+  // unconditional selection for functional testing of the game
   chosenQuestionSet = spanish;
 }
 // Function called.
@@ -97,59 +102,59 @@ let chosenQuestion = " "
 /**
  * Function for generation of a random question from the selected question set.
  */
-function chooseQuestion(){
-// random index from the length of the questions in the chosen question set.
+function chooseQuestion() {
+  // random index from the length of the questions in the chosen question set.
   let questionIndex = Math.floor(Math.random() * chosenQuestionSet.getQuestions().length);
-// turn the random index into the corresponding question from the chosen question set.
+  // turn the random index into the corresponding question from the chosen question set.
   chosenQuestion = chosenQuestionSet.getQuestions()[questionIndex];
-// hide next button when a new question is displayed
+  // hide next button when a new question is displayed
   next.style.display = "none";
-
+  // Run the question function
+  question();
 }
-chooseQuestion();
-
 /**
  * Function fills question button with chosen question
  * Function gets the correct answer and answer options associated with the chosen question
  * Function fills the answer buttons
  */
-function question(){
-// Get question button
+function question() {
+  // Get question button
   let questionButton = document.getElementById("question-button");
-// Replace the text on the button with the chosen question
+  // Replace the text on the button with the chosen question
   questionButton.innerHTML = chosenQuestion.getQuestion();
-// Get answer buttons
+  // Get answer buttons
   let answerBoxes = document.getElementsByClassName("answer-button");
-/**
- * Get answer content
- * Copy answer content to prevent removal of answer options from original array when splice method is used at the end of the loop.
- */
+  /**
+   * Get answer content
+   * Copy answer content to prevent removal of answer options from original array when splice method is used at the end of the loop.
+   */
   let answers = chosenQuestion.getAnswers().slice();
-// for loop to fill the answer buttons with the answer content
-  for(let i = 0; i < 3; i++){
-// random index from the length of the answer options from the question set
-   let answerIndex = Math.floor(Math.random() * answers.length);
-// Replace the text on the button with an answer option
-   answerBoxes[i].innerHTML = answers[answerIndex];
-// remove the answer option used to prevent duplication
-   answers.splice(answerIndex,1);
-};
+  // for loop to fill the answer buttons with the answer content
+  for (let i = 0; i < 3; i++) {
+    // random index from the length of the answer options from the question set
+    let answerIndex = Math.floor(Math.random() * answers.length);
+    // Replace the text on the button with an answer option
+    answerBoxes[i].innerHTML = answers[answerIndex];
+    // remove the answer option used to prevent duplication
+    answers.splice(answerIndex, 1);
+  };
 }
-question();
+// run the choose question function
+chooseQuestion();
 /**
  * Function to check if the answer is correct or incorrect
  * Includes response if answer is correct
  * Includes response if answer is incorrect
  * Is linked via an onclick in the answer button elements within questions.html
  */
-function check(answerButton){
+function check(answerButton) {
   // if correct turn selected answer green and reveal next question button
   if (answerButton.innerText == chosenQuestion.correct) {
-      answerButton.style.backgroundColor = "green";
-      next.style.display = "block";
-    }
+    answerButton.style.backgroundColor = "green";
+    next.style.display = "block";
+  }
   // if incorrect turn selected answer red
-    else {
-      answerButton.style.backgroundColor = "red";
-    }
+  else {
+    answerButton.style.backgroundColor = "red";
+  }
 }
