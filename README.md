@@ -48,9 +48,27 @@ Ensures that questions are displayed to the player in a random order.
 
 ![image of initial testing](assets/readme-media/random-question-test.png)
 
+### Generation of Answers in a Random Order
 
+Ensures the answer isn't in the same button every time.
+- Tested using preview and deployed site by refreshing the page to ensure the correct answer was in a different button each time. 
+- Confirmed the answer was in a different button from when the first time a question appeared to when the same question looped around.
 
-### Bugs and Fixes
+### Check Answer Function
+
+Gives the user feedback as to whether their answer was correct or incorrect.
+- Tested using preview and deployed site by playing the game and selecting all the buttons.
+- Checked incorrect answers returned red.
+- Checked correct answers returned green and revealed the next button.
+
+### Next Button
+
+Allows the user to move to the next question once the correct answer is selected.
+- tested using preview and deployed site by playing the game and selecting all the buttons.
+- Checked next did not appear if an incorrect answer was selected.
+- CHecked next did appear if a correct answer was selected.
+
+## Bugs and Fixes
 
 The main bugs experienced during the development of the website were:
 
@@ -73,7 +91,7 @@ This was caused by the popup div being inserted inside the return button link an
 
 The answers generated for the buttons duplicate:
 
-![image of initial testing](assets/readme-media/duplicate-answers.png)
+![image of initial answer buttons testing](assets/readme-media/duplicate-answers.png)
 
 This could cause issues if the correct answer doesn't get displayed, the code needed to be adjusted to ensure that each answer was used once. In order to do this without affecting the original answers array a slice method was added to the part of the function that defines the answers. This allowed the question to be displayed more than once throughout the game. The answers were then spliced to remove each option that was used in the loop. The splice method ensures that each answer that is used is removed and therefore not used again in the same question. 
 
@@ -83,6 +101,10 @@ The next question button would not generate a new question when clicked:
 https://github.com/user-attachments/assets/10f6a184-0892-446d-acfa-bf6d2f727565
 
 This was caused by missing an onclick attribute to the next button element and by having the question function outside of the choose question function which prevented a new question from being displayed as the question function controlled the content within the buttons. 
+
+The button colours did not revert on the next question:
+![image of button colours bug](assets/readme-media/button-colours.png)
+This was reset by adding a for loop to change the colour back to the original button colour defined in the css file as soon as the answer boxes have been fetched. Another potential solution tried was using a toggle instead of a style change in the check function but this complicated the code and made it longer in the css sheet.
 
 ## Credits
 

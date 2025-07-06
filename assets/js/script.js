@@ -124,6 +124,10 @@ function question() {
   questionButton.innerHTML = chosenQuestion.getQuestion();
   // Get answer buttons
   let answerBoxes = document.getElementsByClassName("answer-button");
+  // change the answer buttons back to the original colour when next question is generated.
+    for (const a of answerBoxes) {
+    a.style.backgroundColor = "#00aaff";
+  }
   /**
    * Get answer content
    * Copy answer content to prevent removal of answer options from original array when splice method is used at the end of the loop.
