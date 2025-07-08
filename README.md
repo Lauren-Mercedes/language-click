@@ -68,6 +68,14 @@ Allows the user to move to the next question once the correct answer is selected
 - Checked next did not appear if an incorrect answer was selected.
 - CHecked next did appear if a correct answer was selected.
 
+### URL Query Parameters
+
+Allows for the selection of the corresponding question set to the language that has been chosen by the player.
+
+![image of URL parameters](assets/readme-media/url-parameters.png)
+
+- tested each option appears in the URL.
+
 ## Bugs and Fixes
 
 The main bugs experienced during the development of the website were:
