@@ -83,10 +83,21 @@ let chosenQuestionSet = new questionSet("");
  */
 function chooseQuestionSet() {
   // spanish questions
-  let spanish = new questionSet("Italian");
+  let spanish = new questionSet("spanish");
   spanish.addQuestion("Adios", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
   spanish.addQuestion("Gracias", "Thank You", ["You're Welcome", "Good", "Thank You"]);
   spanish.addQuestion("Hola", "Hello", ["Hello", "Cheers", "Health"]);
+  // italian questions
+  let italian = new questionSet("italian");
+  italian.addQuestion("Ciao","Good-Bye",["Sorry", "Good-Bye", "Tomorrow"]);
+  italian.addQuestion("Grazie","Thank You",["You're Welcome", "Good", "Thank You"]);
+  italian.addQuestion("Salve","Hello",["Hello", "Cheers", "Health"]);
+  // french questions
+  let french = new questionSet("french");
+  french.addQuestion("Au Revoir","Good-Bye",["Sorry", "Good-Bye", "Tomorrow"]);
+  french.addQuestion("Merci","Thank You",["You're Welcome", "Good", "Thank You"]);
+  french.addQuestion("Bonjour","Hello",["Hello", "Cheers", "Health"]);
+  
   // unconditional selection for functional testing of the game
   chosenQuestionSet = spanish;
 }
