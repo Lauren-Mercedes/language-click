@@ -89,18 +89,37 @@ function chooseQuestionSet() {
   spanish.addQuestion("Hola", "Hello", ["Hello", "Cheers", "Health"]);
   // italian questions
   let italian = new questionSet("italian");
-  italian.addQuestion("Ciao","Good-Bye",["Sorry", "Good-Bye", "Tomorrow"]);
-  italian.addQuestion("Grazie","Thank You",["You're Welcome", "Good", "Thank You"]);
-  italian.addQuestion("Salve","Hello",["Hello", "Cheers", "Health"]);
+  italian.addQuestion("Ciao", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
+  italian.addQuestion("Grazie", "Thank You", ["You're Welcome", "Good", "Thank You"]);
+  italian.addQuestion("Salve", "Hello", ["Hello", "Cheers", "Health"]);
   // french questions
   let french = new questionSet("french");
-  french.addQuestion("Au Revoir","Good-Bye",["Sorry", "Good-Bye", "Tomorrow"]);
-  french.addQuestion("Merci","Thank You",["You're Welcome", "Good", "Thank You"]);
-  french.addQuestion("Bonjour","Hello",["Hello", "Cheers", "Health"]);
-  
-  // unconditional selection for functional testing of the game
-  chosenQuestionSet = spanish;
+  french.addQuestion("Au Revoir", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
+  french.addQuestion("Merci", "Thank You", ["You're Welcome", "Good", "Thank You"]);
+  french.addQuestion("Bonjour", "Hello", ["Hello", "Cheers", "Health"]);
+  /**
+   * Selection of question set from the language picked by the player
+   * Pulled from the url query parameter
+   * Selected language is added as a parameter to the questions url
+   * url is searched for the language text which defines which question set is used in the switch case
+   */
+  const language = new URLSearchParams(window.location.search).get("language");
+  switch (language) {
+    // select spanish
+    case "spanish":
+      chosenQuestionSet = spanish;
+      break;
+    // select italian
+    case "italian":
+      chosenQuestionSet = italian;
+      break;
+    // select franch
+    case "french":
+      chosenQuestionSet = french;
+      break;
+  }
 }
+
 // Function called.
 chooseQuestionSet()
 
@@ -136,7 +155,7 @@ function question() {
   // Get answer buttons
   let answerBoxes = document.getElementsByClassName("answer-button");
   // change the answer buttons back to the original colour when next question is generated.
-    for (const a of answerBoxes) {
+  for (const a of answerBoxes) {
     a.style.backgroundColor = "#00aaff";
   }
   /**

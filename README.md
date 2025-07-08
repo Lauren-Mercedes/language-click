@@ -66,7 +66,7 @@ Gives the user feedback as to whether their answer was correct or incorrect.
 Allows the user to move to the next question once the correct answer is selected.
 - tested using preview and deployed site by playing the game and selecting all the buttons.
 - Checked next did not appear if an incorrect answer was selected.
-- CHecked next did appear if a correct answer was selected.
+- Checked next did appear if a correct answer was selected.
 
 ### URL Query Parameters
 
@@ -74,7 +74,14 @@ Allows for the selection of the corresponding question set to the language that 
 
 ![image of URL parameters](assets/readme-media/url-parameters.png)
 
-- tested each option appears in the URL.
+- Tested each option appears in the URL on the preview and the deployed site.
+
+### Language Selection Buttons
+
+Allows the user to select a language to learn.
+- tested using preview and deployed site by playing the game in each language.
+- Selected return between each game and confirmed the language changed when moving from one to another.
+- Confirmed the correct language displayed for the button pressed.
 
 ## Bugs and Fixes
 
