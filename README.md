@@ -83,6 +83,13 @@ Allows the user to select a language to learn.
 - Selected return between each game and confirmed the language changed when moving from one to another.
 - Confirmed the correct language displayed for the button pressed.
 
+### Correct Answer Counter
+
+Counts the amount of questions answered correctly.
+- tested using preview and deployed site.
+- selected correct answer and counter increased.
+- selected incorrect answer and counter remained unchanged.
+
 ## Bugs and Fixes
 
 The main bugs experienced during the development of the website were:

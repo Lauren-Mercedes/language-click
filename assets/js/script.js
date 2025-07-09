@@ -186,6 +186,7 @@ function check(answerButton) {
   if (answerButton.innerText == chosenQuestion.correct) {
     answerButton.style.backgroundColor = "green";
     next.style.display = "block";
+    correctCounter();
   }
   // if incorrect turn selected answer red
   else {
@@ -193,4 +194,11 @@ function check(answerButton) {
   }
 }
 
-
+/**
+ * Function to increment counters
+ * Correct answer counter called under check function in if statement as part of the actions if a question is answered correctly
+ */
+function correctCounter(){
+  let startCount = parseInt(document.getElementById("correct-count").innerText);
+  document.getElementById("correct-count").innerText = ++startCount;
+}
