@@ -90,6 +90,13 @@ Counts the amount of questions answered correctly.
 - selected correct answer and counter increased.
 - selected incorrect answer and counter remained unchanged.
 
+### Questions Attempted Counter
+
+counts the amount of questions attempted.
+- tested using preview and deployed site.
+- selected correct answer and counter increased.
+- selected incorrect answer and counter increased.
+
 ## Bugs and Fixes
 
 The main bugs experienced during the development of the website were:

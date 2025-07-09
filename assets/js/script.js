@@ -206,13 +206,23 @@ function check(answerButton) {
     answerButton.style.backgroundColor = "red";
     retry.style.display ="block";
   }
+  // increase when answer is selected either correct or incorrect
+  questionCounter();
 }
 
 /**
- * Function to increment counters
+ * Functions to increment counters
  * Correct answer counter called under check function in if statement as part of the actions if a question is answered correctly
+ * Question counter called whenever a question is answered correct or incorrect.
  */
+// Correct answer counter
 function correctCounter(){
   let startCount = parseInt(document.getElementById("correct-count").innerText);
   document.getElementById("correct-count").innerText = ++startCount;
 }
+// questions attempted counter
+function questionCounter(){
+  let startCount = parseInt(document.getElementById("question-count").innerText);
+  document.getElementById("question-count").innerText = ++startCount;
+}
+
