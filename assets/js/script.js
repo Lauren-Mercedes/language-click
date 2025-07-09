@@ -184,13 +184,24 @@ chooseQuestion();
  * Is linked via an onclick in the answer button elements within questions.html
  */
 function check(answerButton) {
-  // if correct turn selected answer green and reveal next question button
+  /**
+   * if correct answer given:
+   * hide retry button (applies if question has been reset after incorrect answer)
+   * turn button green
+   * display next button
+   * increase correct counter
+   */
   if (answerButton.innerText == chosenQuestion.correct) {
+    retry.style.display ="none";
     answerButton.style.backgroundColor = "green";
     next.style.display = "block";
     correctCounter();
   }
-  // if incorrect turn selected answer red
+  /**
+   * if incorrect answer given:
+   * turn button red
+   * display retry button
+   */
   else {
     answerButton.style.backgroundColor = "red";
     retry.style.display ="block";
