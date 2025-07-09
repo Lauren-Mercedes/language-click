@@ -87,16 +87,37 @@ function chooseQuestionSet() {
   spanish.addQuestion("Adios", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
   spanish.addQuestion("Gracias", "Thank You", ["You're Welcome", "Good", "Thank You"]);
   spanish.addQuestion("Hola", "Hello", ["Hello", "Cheers", "Health"]);
+  spanish.addQuestion("Como Estas?", "How Are You?",["How Are You?", "Where Is It?", "Are You Coming?"]);
+  spanish.addQuestion("Discuple", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
+  spanish.addQuestion("Por Favor", "Please", ["Please", "Thank You", "You're Welcome"]);
+  spanish.addQuestion("De Nada", "You're Welcome",["You're Welcome", "It's Not Here", "I Don't Know"]);
+  spanish.addQuestion("No Entiendo", "I Don't Understand",["I Don't Understand","No Thank You","Not A Problem"]);
+  spanish.addQuestion("Donde esta...?", "Where is...", ["Where is...", "What is...", "How is..."]);
+  spanish.addQuestion("Lo Siento", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
   // italian questions
   let italian = new questionSet("italian");
   italian.addQuestion("Ciao", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
   italian.addQuestion("Grazie", "Thank You", ["You're Welcome", "Good", "Thank You"]);
   italian.addQuestion("Salve", "Hello", ["Hello", "Cheers", "Health"]);
+  italian.addQuestion("Come va?", "How Are You?",["How Are You?", "Where Is It?", "Are You Coming?"])
+  italian.addQuestion("Mi Scusi", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
+  italian.addQuestion("Per Favore", "Please", ["Please", "Thank You", "You're Welcome"]);
+  italian.addQuestion("Prego", "You're Welcome",["You're Welcome", "It's Not Here", "I Don't Know"]);
+  italian.addQuestion("No Capisco", "I Don't Understand",["I Don't Understand","No Thank You","Not A Problem"]);
+  italian.addQuestion("Dov'e...?", "Where is...", ["Where is...", "What is...", "How is..."]);
+  italian.addQuestion("Mi Dispiace", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
   // french questions
   let french = new questionSet("french");
   french.addQuestion("Au Revoir", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
   french.addQuestion("Merci", "Thank You", ["You're Welcome", "Good", "Thank You"]);
   french.addQuestion("Bonjour", "Hello", ["Hello", "Cheers", "Health"]);
+  french.addQuestion("Comment vas-tu?", "How Are You?",["How Are You?", "Where Is It?", "Are You Coming?"])
+  french.addQuestion("Excusez-Moi", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
+  french.addQuestion("S'il Vous Plait", "Please", ["Please", "Thank You", "You're Welcome"]);
+  french.addQuestion("De Rien", "You're Welcome",["You're Welcome", "It's Not Here", "I Don't Know"]);
+  french.addQuestion("Je Ne Comprends Pas", "I Don't Understand",["I Don't Understand","No Thank You","Not A Problem"]);
+  french.addQuestion("Ou Est...?", "Where is...", ["Where is...", "What is...", "How is..."]);
+  french.addQuestion("Je Suis Desole", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
   /**
    * Selection of question set from the language picked by the player
    * Pulled from the url query parameter
@@ -148,6 +169,7 @@ function chooseQuestion() {
  * Function fills question button with chosen question
  * Function gets the correct answer and answer options associated with the chosen question
  * Function fills the answer buttons
+ * Also called when retry clicked if incorrect answer is given for player to try again.
  */
 function question() {
   // Get question button
