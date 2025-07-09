@@ -23,7 +23,8 @@
     <!-- Is consistent throughout the game and contains game instructions -->
     <header>
         <!-- Instructions button -->
-        <button id="instructions" class="top-button" aria-label="open instruction pop up" onclick="showInstructions()" title="Instructions">
+        <button id="instructions" class="top-button" aria-label="open instruction pop up" onclick="showInstructions()"
+            title="Instructions">
             <img src="assets/images/icons/instrutctions-icon.png" alt="image of instruction manual" id="instructions"
                 class="top-button">
         </button>
@@ -32,12 +33,12 @@
             <button id="return" class="top-button" aria-label="return to the start">
                 <img src="assets/images/icons/return.png" alt="image of return arrow" id="return" class="top-button">
             </button>
-             </a>
+        </a>
         <!-- Popup box for instructions -->
-        <div id ="popup">
+        <div id="popup">
             <!-- close button for popup -->
             <div>
-                <button id="close-popup" aria-label="close instruction pop up" onclick = "hideInstructions()">X</button>
+                <button id="close-popup" aria-label="close instruction pop up" onclick="hideInstructions()">X</button>
             </div>
             <!-- Popup box content -->
             <h2>Instructions</h2>
@@ -60,27 +61,36 @@
     <!-- Question screen -->
     <main>
         <!-- Question button -->
-                      <button id="question-button" aria-label="click here to listen to the question">
-                    <h2>Question placeholder</h2>
-                </button>
+        <button id="question-button" aria-label="click here to listen to the question">
+            <h2>Question placeholder</h2>
+        </button>
         <!-- Answer buttons -->
-         <!-- when clicked trigger the check function to confirm if answer selected is correct or incorrect -->
+        <!-- when clicked trigger the check function to confirm if answer selected is correct or incorrect -->
         <div class="trio-buttons">
-            
-                <button class="answer-button" aria-label="click here to select this answer" onclick = "check(this)">
-                    <h2>Answer Option 1 Placeholder</h2>
-                </button>
-            
-                <button class="answer-button" aria-label="click here to select this answer" onclick = "check(this)">
-                    <h2>Answer Option 2 Placeholder</h2>
-                </button>
-           
-                <button class="answer-button" aria-label="click here to select this answer" onclick = "check(this)">
-                    <h2>Answer Option 3 Placeholder</h2>
-                </button>
+
+            <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
+                <h2>Answer Option 1 Placeholder</h2>
+            </button>
+
+            <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
+                <h2>Answer Option 2 Placeholder</h2>
+            </button>
+
+            <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
+                <h2>Answer Option 3 Placeholder</h2>
+            </button>
         </div>
         <!-- When clicked triggers the choose question function to generate the next question -->
-        <button id="next" aria label = "click here for next question" onclick="chooseQuestion()">next</button>
+        <button id="next" aria label="click here for next question" onclick="chooseQuestion()">next</button>
+
+        <!-- Area for counters -->
+        <div class="counters">
+            <!-- Counter for amount of questions answered correctly -->
+            <p class="correct-counter"> Correct Answers: <span id="correct-count">0</span></p>
+            <!-- Counter for amount of questions attempted -->
+            <p class="question-counter"> Questions Attempted: <span id="question-count">0</span></p>
+        </div>
+
     </main>
     <!-- Footer Component-->
     <!-- Is consistent throughout the game -->
