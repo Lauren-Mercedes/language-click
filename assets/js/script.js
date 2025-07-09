@@ -131,14 +131,16 @@ chooseQuestionSet()
 let chosenQuestion = " "
 /**
  * Function for generation of a random question from the selected question set.
+ * Activated at the start of a game and when user clicks next button between questions
  */
 function chooseQuestion() {
   // random index from the length of the questions in the chosen question set.
   let questionIndex = Math.floor(Math.random() * chosenQuestionSet.getQuestions().length);
   // turn the random index into the corresponding question from the chosen question set.
   chosenQuestion = chosenQuestionSet.getQuestions()[questionIndex];
-  // hide next button when a new question is displayed
+  // hide next and retry button when a new question is displayed
   next.style.display = "none";
+  retry.style.display= "none";
   // Run the question function
   question();
 }
@@ -191,6 +193,7 @@ function check(answerButton) {
   // if incorrect turn selected answer red
   else {
     answerButton.style.backgroundColor = "red";
+    retry.style.display ="block";
   }
 }
 
