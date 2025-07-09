@@ -87,11 +87,11 @@ function chooseQuestionSet() {
   spanish.addQuestion("Adios", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
   spanish.addQuestion("Gracias", "Thank You", ["You're Welcome", "Good", "Thank You"]);
   spanish.addQuestion("Hola", "Hello", ["Hello", "Cheers", "Health"]);
-  spanish.addQuestion("Como Estas?", "How Are You?",["How Are You?", "Where Is It?", "Are You Coming?"]);
+  spanish.addQuestion("Como Estas?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"]);
   spanish.addQuestion("Discuple", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
   spanish.addQuestion("Por Favor", "Please", ["Please", "Thank You", "You're Welcome"]);
-  spanish.addQuestion("De Nada", "You're Welcome",["You're Welcome", "It's Not Here", "I Don't Know"]);
-  spanish.addQuestion("No Entiendo", "I Don't Understand",["I Don't Understand","No Thank You","Not A Problem"]);
+  spanish.addQuestion("De Nada", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
+  spanish.addQuestion("No Entiendo", "I Don't Understand", ["I Don't Understand", "No Thank You", "Not A Problem"]);
   spanish.addQuestion("Donde esta...?", "Where is...", ["Where is...", "What is...", "How is..."]);
   spanish.addQuestion("Lo Siento", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
   // italian questions
@@ -99,11 +99,11 @@ function chooseQuestionSet() {
   italian.addQuestion("Ciao", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
   italian.addQuestion("Grazie", "Thank You", ["You're Welcome", "Good", "Thank You"]);
   italian.addQuestion("Salve", "Hello", ["Hello", "Cheers", "Health"]);
-  italian.addQuestion("Come va?", "How Are You?",["How Are You?", "Where Is It?", "Are You Coming?"])
+  italian.addQuestion("Come va?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"])
   italian.addQuestion("Mi Scusi", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
   italian.addQuestion("Per Favore", "Please", ["Please", "Thank You", "You're Welcome"]);
-  italian.addQuestion("Prego", "You're Welcome",["You're Welcome", "It's Not Here", "I Don't Know"]);
-  italian.addQuestion("No Capisco", "I Don't Understand",["I Don't Understand","No Thank You","Not A Problem"]);
+  italian.addQuestion("Prego", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
+  italian.addQuestion("No Capisco", "I Don't Understand", ["I Don't Understand", "No Thank You", "Not A Problem"]);
   italian.addQuestion("Dov'e...?", "Where is...", ["Where is...", "What is...", "How is..."]);
   italian.addQuestion("Mi Dispiace", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
   // french questions
@@ -111,11 +111,11 @@ function chooseQuestionSet() {
   french.addQuestion("Au Revoir", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
   french.addQuestion("Merci", "Thank You", ["You're Welcome", "Good", "Thank You"]);
   french.addQuestion("Bonjour", "Hello", ["Hello", "Cheers", "Health"]);
-  french.addQuestion("Comment vas-tu?", "How Are You?",["How Are You?", "Where Is It?", "Are You Coming?"])
+  french.addQuestion("Comment vas-tu?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"])
   french.addQuestion("Excusez-Moi", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
   french.addQuestion("S'il Vous Plait", "Please", ["Please", "Thank You", "You're Welcome"]);
-  french.addQuestion("De Rien", "You're Welcome",["You're Welcome", "It's Not Here", "I Don't Know"]);
-  french.addQuestion("Je Ne Comprends Pas", "I Don't Understand",["I Don't Understand","No Thank You","Not A Problem"]);
+  french.addQuestion("De Rien", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
+  french.addQuestion("Je Ne Comprends Pas", "I Don't Understand", ["I Don't Understand", "No Thank You", "Not A Problem"]);
   french.addQuestion("Ou Est...?", "Where is...", ["Where is...", "What is...", "How is..."]);
   french.addQuestion("Je Suis Desole", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
   /**
@@ -161,7 +161,7 @@ function chooseQuestion() {
   chosenQuestion = chosenQuestionSet.getQuestions()[questionIndex];
   // hide next and retry button when a new question is displayed
   next.style.display = "none";
-  retry.style.display= "none";
+  retry.style.display = "none";
   // Run the question function
   question();
 }
@@ -178,9 +178,12 @@ function question() {
   questionButton.innerHTML = chosenQuestion.getQuestion();
   // Get answer buttons
   let answerBoxes = document.getElementsByClassName("answer-button");
-  // change the answer buttons back to the original colour when next question is generated.
+  // loop through each button and apply settings
   for (const a of answerBoxes) {
+    // change the answer buttons back to the original colour when next question is generated.
     a.style.backgroundColor = "#00aaff";
+    // enable button presses
+    a.disabled = false;
   }
   /**
    * Get answer content
@@ -214,7 +217,7 @@ function check(answerButton) {
    * increase correct counter
    */
   if (answerButton.innerText == chosenQuestion.correct) {
-    retry.style.display ="none";
+    retry.style.display = "none";
     answerButton.style.backgroundColor = "green";
     next.style.display = "block";
     correctCounter();
@@ -226,8 +229,21 @@ function check(answerButton) {
    */
   else {
     answerButton.style.backgroundColor = "red";
-    retry.style.display ="block";
+    retry.style.display = "block";
   }
+  /**
+   * disable answer buttons after first guess is selected
+   * prevents multiple buttons being pressed before next or retry
+   * disable removed on retry or next selection
+   */
+  // get answer buttons
+  let answerBoxes = document.getElementsByClassName("answer-button");
+  // loop through each button and apply settings
+  for (const a of answerBoxes) {
+    // disable the buttons
+    a.disabled = true;
+  };
+
   // increase when answer is selected either correct or incorrect
   questionCounter();
 }
@@ -238,12 +254,12 @@ function check(answerButton) {
  * Question counter called whenever a question is answered correct or incorrect.
  */
 // Correct answer counter
-function correctCounter(){
+function correctCounter() {
   let startCount = parseInt(document.getElementById("correct-count").innerText);
   document.getElementById("correct-count").innerText = ++startCount;
 }
 // questions attempted counter
-function questionCounter(){
+function questionCounter() {
   let startCount = parseInt(document.getElementById("question-count").innerText);
   document.getElementById("question-count").innerText = ++startCount;
 }

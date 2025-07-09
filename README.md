@@ -78,10 +78,18 @@ Allows for the selection of the corresponding question set to the language that 
 
 ### Language Selection Buttons
 
-Allows the user to select a language to learn.
+Allows the player to select a language to learn.
 - tested using preview and deployed site by playing the game in each language.
 - Selected return between each game and confirmed the language changed when moving from one to another.
 - Confirmed the correct language displayed for the button pressed.
+
+### Answer Selection Buttons
+
+Allows the player to select an answer to the question.
+- tested using preview and deployed site by playing the game and having others play the game.
+- once an answer is selected all answer buttons disable preventing multiple answers.
+- the player receives immediate feedback as to whether the answer is correct or incorrect.
+- the order the answer options are displayed changes each time next or retry is pressed moving the correct answer position at random.
 
 ### Correct Answer Counter
 
@@ -96,6 +104,7 @@ counts the amount of questions attempted.
 - tested using preview and deployed site.
 - selected correct answer and counter increased.
 - selected incorrect answer and counter increased.
+
 
 ## Bugs and Fixes
 
@@ -132,8 +141,19 @@ https://github.com/user-attachments/assets/10f6a184-0892-446d-acfa-bf6d2f727565
 This was caused by missing an onclick attribute to the next button element and by having the question function outside of the choose question function which prevented a new question from being displayed as the question function controlled the content within the buttons. 
 
 The button colours did not revert on the next question:
+
 ![image of button colours bug](assets/readme-media/button-colours.png)
+
 This was reset by adding a for loop to change the colour back to the original button colour defined in the css file as soon as the answer boxes have been fetched. Another potential solution tried was using a toggle instead of a style change in the check function but this complicated the code and made it longer in the css sheet.
+
+The player could continue to select answers after the first guess
+
+![image of answer selection bug](assets/readme-media/answers-bug.png)
+
+If the player selected the correct answer they could continue to press answers revealing both the next and retry buttons.
+If the player selected the incorrect answer they could click through all the answers until they found the correct one.
+Each press increased the question counter even if the correct one was selected first.
+This was corrected by adding a disabled property to each answer button as part of the check answer function disabling all the answer buttons after the first guess was selected. The disabled property was removed in the question function that sets up the next question so they work again when retry or next is selected. 
 
 ## Credits
 
