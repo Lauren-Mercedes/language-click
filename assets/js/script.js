@@ -56,16 +56,18 @@ class questionSet {
 }
 
 /**
- *  Instructions Pop Up
- *  Includes pop up and close down functions
- * Is linked via an onclick in the instructions button and the close button
+ *  Instructions Pop Up function
+ * Is linked via an onclick in the instructions button 
  */
-// When instructions button is clicked show instructions
+
 function showInstructions() {
   let popUp = document.getElementById("popup");
   popUp.style.display = "block";
 }
-//When close button is clicked hide instructions
+/**
+ * Instructions close down function
+ * Is linked via an onclick in the close button
+ */
 function hideInstructions() {
   let popUp = document.getElementById("popup");
   popUp.style.display = "none";
@@ -141,7 +143,7 @@ function chooseQuestionSet() {
   }
 }
 
-// Function called.
+// Choose question set function called.
 chooseQuestionSet()
 
 /**
@@ -249,16 +251,17 @@ function check(answerButton) {
 }
 
 /**
- * Functions to increment counters
+ * Functions to increment correct counter
  * Correct answer counter called under check function in if statement as part of the actions if a question is answered correctly
- * Question counter called whenever a question is answered correct or incorrect.
  */
-// Correct answer counter
 function correctCounter() {
   let startCount = parseInt(document.getElementById("correct-count").innerText);
   document.getElementById("correct-count").innerText = ++startCount;
 }
-// questions attempted counter
+/**
+ * Functions to increment question counter
+ * Question counter called whenever a question is answered correct or incorrect.
+ */
 function questionCounter() {
   let startCount = parseInt(document.getElementById("question-count").innerText);
   document.getElementById("question-count").innerText = ++startCount;

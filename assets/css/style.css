@@ -79,6 +79,7 @@ button {
     cursor: pointer;
     width: 100px;
     min-width: fit-content;
+    min-height: 3rem;
 }
 
 /* change button backround colour when mouse hovers */
