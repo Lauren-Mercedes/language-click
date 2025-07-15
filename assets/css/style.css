@@ -1,9 +1,9 @@
 /* Universal styling across pages */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0.5%;
     overflow-x: hidden;
-    background: linear-gradient(20deg, #fe3a9e, #ff6377, #ff975a, #ffca53, #f9f871); 
+    background: linear-gradient(20deg, #fe3a9e, #ff6377, #ff975a, #ffca53, #f9f871);
     background-attachment: fixed;
     color: #ffffff;
     /* Push footer to the bottom of the page */
@@ -26,61 +26,70 @@ header {
     /* remove border & background */
     border-style: none;
     background: none;
+    margin: 0;
 }
 
 /* instruction button position (to the right) */
-#instructions{
+#instructions {
     float: right;
 }
 
 /* return button position (to the left */
-#return{
+#return {
     float: left;
 }
 
 /* popup box styling */
-#popup{
+#popup {
     /* set to keep hidden from display until instruction button clicked */
     display: none;
     background-color: white;
     color: #fe3a9e;
     width: 90%;
-    height: 40%;
+    height: fit-content;
     border: 2px solid #fe3a9e;
     border-radius: 12px;
-     text-size-adjust:80% ;
+    text-size-adjust: 80%;
     /* set to display over the top of the page content when popped up */
     position: absolute;
     z-index: 1;
 }
 
-#popup, h2 p{
+/* Gap between text and end of screen */
+#popup,
+h2 p {
     padding-left: 2%;
 }
 
-#close-popup{
+/* Position and style of close button on pop up box */
+#close-popup {
     width: 10%;
     float: right;
     margin: 2%;
     font-size: 150%;
+    min-width: 10px;
+    min-height: 10px;
 }
 
 /* main */
 /* general positioning and style of main content */
 main {
     text-align: center;
-     /*Push footer to the bottom of the page  */
+    /*Push footer to the bottom of the page  */
     flex: 1;
 }
 
 /* title style */
-h1, #question-button{
+h1,
+#question-button {
     font-size: 75px;
+    margin: 0;
     /* gradient colouring of text */
     background: -webkit-linear-gradient(90deg, #fe3a9e 0%, #f9f871 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 /* Speech bubble container */
 .bubble {
     background: #ffffff;
@@ -96,10 +105,11 @@ h1, #question-button{
     padding: 0 2% 0 2%;
     margin: 5%;
 }
+
 /* Sppech bubble tail */
 .bubble:after {
     content: '';
-    position: absolute; 
+    position: absolute;
     display: block;
     width: 0;
     z-index: 1;
@@ -111,6 +121,9 @@ h1, #question-button{
     margin-left: -10px;
 }
 
+p {
+    margin: 10% 0;
+}
 
 /* general button style */
 button {
@@ -123,6 +136,7 @@ button {
     min-height: 5rem;
     font-weight: bold;
     font-size: 25px;
+    margin: 10%;
 }
 
 /* change button backround colour when mouse hovers */
@@ -131,18 +145,17 @@ button:hover {
 }
 
 /* Select Language Page and select level page: position of trio of option buttons  */
-.trio-buttons{
+.trio-buttons {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 10% 0%;
+    flex-direction: column;
 }
 
 /* footer */
-footer{
+footer {
     width: 100%;
     font-size: 12px;
 }
+
 /*social media icons */
 .icon-size {
     height: 2rem;
@@ -153,10 +166,29 @@ footer{
 
 /* larger screens, tablets and laptops*/
 @media screen and (min-width:768px) {
-    /* popup box styling */
+
+    /* popup box styling larger screens */
     #popup {
         width: 50%;
         height: fit-content;
-         text-size-adjust:80% ;
+        text-size-adjust: 80%;
+    }
+
+    /* welcome paragraph larger screens */
+    p {
+        margin-top: 0;
+    }
+
+    /* Button position larger screens */
+    button {
+        margin: 0;
+    }
+
+    /* Select Language Page and select level page: position of trio of option buttons larger screens */
+    .trio-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 5% 0;
     }
 }
