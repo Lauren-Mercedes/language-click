@@ -1,3 +1,27 @@
+# User Experience - Surface
+
+## Design Elements
+
+Being able to speak the language of a country you are visiting or the native language of those closest to you brings a new colouring to these experiences. The colours used in the game are full and virbant to reflect this. 
+
+## Colour Scheme
+
+The main background and titles throughout the game are a gradient across the colours in the image below.  These were chosen for their brightness to invoke a positive and fun learning experience.
+
+![image of main colour scheme](assets/readme-media/colour-scheme-main.png)
+
+The buttons for interactivity are made up of #67AEFF and for the hover  #A5E5FF, these colours contrast with the background and main elements well but stand out for user experience and readability.
+
+![image of button colour scheme](assets/readme-media/colour-scheme-button.png)
+
+The text within the buttons is white and bold for readability. 
+
+For the instructions pop up the text is #FE3A9E from the main colour scheme on a white background. This maintained the consistency and readbility but signified the separation from the main theme so that the pop up didn't blend in.
+
+## Font
+
+Segoe UI with a back up of sans-serif was used throughout the game. This font was selected due to its readbility for the player to easily determine the options for the game answers.
+
 ## Features Testing
 
 How the features outlined in the scope work. Each feature developed was generated with html, tested in [ Chrome DevTools](https://developer.chrome.com/docs/devtools/), styled with css, tested again in dev tools and adjusted until visual and functional criteria was met across mobile, tablet and laptop. Functionality was added to features using JavaScript and tested in dev tools for functionality. These features were then tested again on push in the deployed environment.
@@ -171,9 +195,13 @@ All content and code was written by the developer.
 
 - Icon images.
 
-[CSS Gradient](https://cssgradient.io/swatches/)
+[Speech Bubble Generator](https://www.html-code-generator.com/css/speech-bubble-generator)
 
-- Gradient application to Language Click title
+- Basis for speech bubble containers 
+
+[Colour Swatches and Gradient](https://mycolor.space/?hex=%23D53369&sub=1)
+
+- Colour palettes and background gradients.
 
 [Balsamiq](https://balsamiq.com/)
 

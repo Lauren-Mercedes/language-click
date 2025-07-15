@@ -183,7 +183,7 @@ function question() {
   // loop through each button and apply settings
   for (const a of answerBoxes) {
     // change the answer buttons back to the original colour when next question is generated.
-    a.style.backgroundColor = "#00aaff";
+    a.style.backgroundColor = "#67aeff";
     // enable button presses
     a.disabled = false;
   }
