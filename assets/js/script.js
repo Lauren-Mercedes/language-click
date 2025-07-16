@@ -53,6 +53,7 @@ class questionSet {
   addQuestion = (question, correct, answers) => {
     this.questions.push(new questionStructure(question, correct, answers));
   }
+
 }
 
 /**
@@ -217,12 +218,17 @@ function check(answerButton) {
    * turn button green
    * display next button
    * increase correct counter
+   * remove the question from the question set to prevent repeat questions.
    */
   if (answerButton.innerText == chosenQuestion.correct) {
     retry.style.display = "none";
     answerButton.style.backgroundColor = "green";
     next.style.display = "block";
     correctCounter();
+    // list of questions
+   let questions= chosenQuestionSet.getQuestions();
+  // splice the current question from the list.
+  questions.splice(questions.indexOf(chosenQuestion), 1);
   }
   /**
    * if incorrect answer given:

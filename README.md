@@ -72,6 +72,12 @@ Ensures that questions are displayed to the player in a random order.
 
 ![image of initial testing](assets/readme-media/random-question-test.png)
 
+### Questions Displayed Without Duplication
+
+Ensures that questions aren't duplicated so that the player isn't repeatedly asked the same question.
+- Tested using console log and playing the game to make sure all the questions are cycled through without repeats.
+- Ensured the questions weren't repeated even if the wrong answers were selected at first.
+
 ### Generation of Answers in a Random Order
 
 Ensures the answer isn't in the same button every time.
@@ -134,7 +140,7 @@ counts the amount of questions attempted.
 
 The main bugs experienced during the development of the website were:
 
-The popup was visible without executing the instructions button:
+- The popup was visible without executing the instructions button:
 
 
 https://github.com/user-attachments/assets/b6653412-e9d8-4bee-9ea8-626cad167a3e
@@ -143,7 +149,7 @@ https://github.com/user-attachments/assets/b6653412-e9d8-4bee-9ea8-626cad167a3e
 
 This was caused by an additonal div close tag, there was 3 close tags and only 2 open tags within the html popup code section. I established this was the issue by confirming the fault was with the paragraph section only as seen in the clip, checking the devtools for javascript errors, confirming there was no syntax differences in the id reference and then commenting out code within the html to isolate the error.
 
-When closing the instructions pop up on the language selection page the return button is executed:
+- When closing the instructions pop up on the language selection page the return button is executed:
 
 
 https://github.com/user-attachments/assets/c322f468-4a85-4171-b37f-fa695355cf4b
@@ -151,26 +157,26 @@ https://github.com/user-attachments/assets/c322f468-4a85-4171-b37f-fa695355cf4b
 
 This was caused by the popup div being inserted inside the return button link anchor tags. I determined this was the case by moving the position of the popup close button, increasing the z-index and moving the entire pop up box. Isolating the link between the close button and the return button to html .
 
-The answers generated for the buttons duplicate:
+- The answers generated for the buttons duplicate:
 
 ![image of initial answer buttons testing](assets/readme-media/duplicate-answers.png)
 
 This could cause issues if the correct answer doesn't get displayed, the code needed to be adjusted to ensure that each answer was used once. In order to do this without affecting the original answers array a slice method was added to the part of the function that defines the answers. This allowed the question to be displayed more than once throughout the game. The answers were then spliced to remove each option that was used in the loop. The splice method ensures that each answer that is used is removed and therefore not used again in the same question. 
 
-The next question button would not generate a new question when clicked:
+- The next question button would not generate a new question when clicked:
 
 
 https://github.com/user-attachments/assets/10f6a184-0892-446d-acfa-bf6d2f727565
 
 This was caused by missing an onclick attribute to the next button element and by having the question function outside of the choose question function which prevented a new question from being displayed as the question function controlled the content within the buttons. 
 
-The button colours did not revert on the next question:
+- The button colours did not revert on the next question:
 
 ![image of button colours bug](assets/readme-media/button-colours.png)
 
 This was reset by adding a for loop to change the colour back to the original button colour defined in the css file as soon as the answer boxes have been fetched. Another potential solution tried was using a toggle instead of a style change in the check function but this complicated the code and made it longer in the css sheet.
 
-The player could continue to select answers after the first guess
+- The player could continue to select answers after the first guess
 
 ![image of answer selection bug](assets/readme-media/answers-bug.png)
 
@@ -179,13 +185,22 @@ If the player selected the incorrect answer they could click through all the ans
 Each press increased the question counter even if the correct one was selected first.
 This was corrected by adding a disabled property to each answer button as part of the check answer function disabling all the answer buttons after the first guess was selected. The disabled property was removed in the question function that sets up the next question so they work again when retry or next is selected. 
 
-On mobile devices the player's view cut out the next and retry buttons as they popped up so they would have to scroll down to see it.
+- On mobile devices the player's view cut out the next and retry buttons as they popped up so they would have to scroll down to see it.
 
 https://github.com/user-attachments/assets/b8818271-1d2f-4099-ab32-4a78c16baf69
 
 This could cause bad user experience as it is not clear what to do once a question has been answered.
 This was resolved by adjusting the font, bubble, and button size for smaller screens so that readability was maintained while bringing the full game onto the screen. 
 An alternative solution considered was a pop up with the next or retry button on but this could disrupt the user experience by making the game slower with added code, and from a design perspective made the game screen too busy.
+
+- The questions repeat, the player may get the same question numerous times in a row.
+
+![image of console showing testing of fix](assets/readme-media/question-repeat-fix.png)
+This was fixed in a similiar way to the answer button duplication by removing the question from the array once answered correctly. The image shows the testing carried out to ensure the splice was removing the correct question. The first console log was the question being played and the second console log was the question the splice removed.
+
+This caused the game to stop abruptly once every question had been answered without notifying the user.The next and retry buttons don't show anymore, and there was an error in the console as all the questions had been removed from the question set by the above splice method.
+![image of the game ending](assets/readme-media/game-end.png)
+To resolve the error and ensure good user experience an end of game screen was added
 
 ## Credits
 
