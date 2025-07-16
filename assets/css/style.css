@@ -149,11 +149,24 @@ button:hover {
     display: flex;
     flex-direction: column;
 }
+/* styling of question and correct counter area */
+.counters {
+    background-color: #157ACC;
+    border: 5px solid #67aeff;
+    border-radius: 12px;
+    font-weight: bold;
+    width: fit-content;
+    padding: 2%;
+    /* center align */
+    margin: auto;
+}
 
 /* footer */
 footer {
     width: 100%;
     font-size: 12px;
+    margin-top: 1%;
+
 }
 
 /*social media icons */
