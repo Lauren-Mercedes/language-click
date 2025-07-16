@@ -179,6 +179,14 @@ If the player selected the incorrect answer they could click through all the ans
 Each press increased the question counter even if the correct one was selected first.
 This was corrected by adding a disabled property to each answer button as part of the check answer function disabling all the answer buttons after the first guess was selected. The disabled property was removed in the question function that sets up the next question so they work again when retry or next is selected. 
 
+On mobile devices the player's view cut out the next and retry buttons as they popped up so they would have to scroll down to see it.
+
+https://github.com/user-attachments/assets/b8818271-1d2f-4099-ab32-4a78c16baf69
+
+This could cause bad user experience as it is not clear what to do once a question has been answered.
+This was resolved by adjusting the font, bubble, and button size for smaller screens so that readability was maintained while bringing the full game onto the screen. 
+An alternative solution considered was a pop up with the next or retry button on but this could disrupt the user experience by making the game slower with added code, and from a design perspective made the game screen too busy.
+
 ## Credits
 
 All content and code was written by the developer.
