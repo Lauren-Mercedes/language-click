@@ -163,6 +163,8 @@ function chooseQuestion() {
   // turn the random index into the corresponding question from the chosen question set.
   chosenQuestion = chosenQuestionSet.getQuestions()[questionIndex];
   // hide next and retry button when a new question is displayed
+  let next = document.getElementById("next");
+  let retry = document.getElementById("retry");
   next.style.display = "none";
   retry.style.display = "none";
   // Run the question function
@@ -220,6 +222,8 @@ chooseQuestion();
  * Is linked via an onclick in the answer button elements within questions.html
  */
 function check(answerButton) {
+   let next = document.getElementById("next");
+  let retry = document.getElementById("retry");
   /**
    * if correct answer given:
    * hide retry button (applies if question has been reset after incorrect answer)
