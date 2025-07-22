@@ -60,40 +60,41 @@
     <!-- Question screen -->
     
     <main>
-        <!-- Question button -->
-        <div class="bubble">
-            <button id="question-button" aria-label="click here to listen to the question">
-                <h1>Question placeholder</h1>
-            </button>
-        </div>
-        <!-- Answer buttons -->
-        <!-- when clicked trigger the check function to confirm if answer selected is correct or incorrect -->
-        <div class="trio-buttons">
+        <div id="overlay"></div>
+            <!-- Question button -->
+            <div class="bubble">
+                <button id="question-button" aria-label="click here to listen to the question">
+                    <h1>Question placeholder</h1>
+                </button>
+            </div>
+            <!-- Answer buttons -->
+            <!-- when clicked trigger the check function to confirm if answer selected is correct or incorrect -->
+            <div class="trio-buttons">
 
-            <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
-                <h2>Answer Option 1 Placeholder</h2>
-            </button>
+                <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
+                    <h2>Answer Option 1 Placeholder</h2>
+                </button>
 
-            <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
-                <h2>Answer Option 2 Placeholder</h2>
-            </button>
+                <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
+                    <h2>Answer Option 2 Placeholder</h2>
+                </button>
 
-            <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
-                <h2>Answer Option 3 Placeholder</h2>
-            </button>
-        </div>
-        <!-- When clicked triggers the choose question function to generate the next question -->
-        <button id="next" aria label="click here for next question" onclick="chooseQuestion()">Next</button>
-        <!-- When clicked resets the question for the user to try again -->
-        <button id="retry" aria label="click here to try again" onclick="question()">Retry</button>
+                <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
+                    <h2>Answer Option 3 Placeholder</h2>
+                </button>
+            </div>
+            <!-- When clicked triggers the choose question function to generate the next question -->
+            <button id="next" aria label="click here for next question" onclick="chooseQuestion()">Next</button>
+            <!-- When clicked resets the question for the user to try again -->
+            <button id="retry" aria label="click here to try again" onclick="question()">Retry</button>
 
-        <!-- Area for counters -->
-        <div class="counters">
-            <!-- Counter for amount of questions answered correctly -->
-            <p class="correct-counter"> Correct Answers: <br> <span id="correct-count">0</span></p>
-            <!-- Counter for amount of questions attempted -->
-            <p class="question-counter"> Questions Attempted: <br> <span id="question-count">0</span></p>
-        </div>
+            <!-- Area for counters -->
+            <div class="counters">
+                <!-- Counter for amount of questions answered correctly -->
+                <p class="correct-counter"> Correct Answers: <br> <span id="correct-count">0</span></p>
+                <!-- Counter for amount of questions attempted -->
+                <p class="question-counter"> Questions Attempted: <br> <span id="question-count">0</span></p>
+            </div>
   <!-- End of game popup -->
          <div id="end" class="bubble">
             <h1> Congratulations </h1>

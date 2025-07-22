@@ -64,6 +64,9 @@ class questionSet {
 function showInstructions() {
   let popUp = document.getElementById("popup");
   popUp.style.display = "block";
+    // overlay is displayed for pop up contrast
+    let overlay = document.getElementById("overlay");
+    overlay.style.display = "block";
 }
 /**
  * Instructions close down function
@@ -72,6 +75,9 @@ function showInstructions() {
 function hideInstructions() {
   let popUp = document.getElementById("popup");
   popUp.style.display = "none";
+  // overlay is hidden for main screen interaction
+     let overlay = document.getElementById("overlay");
+    overlay.style.display = "none";
 }
 
 /**
@@ -182,6 +188,10 @@ function chooseQuestion() {
 function question() {
   let questions = chosenQuestionSet.getQuestions();
   if (questions.length == parseInt(0)) {
+    // overlay is displayed for pop up contrast
+    let overlay = document.getElementById("overlay");
+    overlay.style.display = "block";
+    // end pop up is displayed
     let endPopUp = document.getElementById("end");
     endPopUp.style.display = "block";
     endPercent();

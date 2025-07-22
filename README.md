@@ -18,6 +18,15 @@ The text within the buttons is white and bold for readability.
 
 For the instructions pop up the text is #FE3A9E from the main colour scheme on a white background. This maintained the consistency and readbility but signified the separation from the main theme so that the pop up didn't blend in.
 
+## Contrast
+
+When pop-ups are displayed this takes the player outside of the interactive screens to view the instructions or signify the end of the game.
+To improve readbility and show the player they are outside of the interactive game and will need to close the pop up or return to the start if they are at the end of the game a contrasting overlay in a black tint is layered over the interactive screens.
+
+![image of instructions contrast before](assets/readme-media/instructions-contrast.png)  ![image of instructions contrast after](assets/readme-media/instructions-contrast-after.png) 
+
+![image of end popup contrast before](assets/readme-media/popup-contrast.png)      ![image of end popup  contrast after](assets/readme-media/popup-contrast-after.png) 
+
 ## Font
 
 Segoe UI with a back up of sans-serif was used throughout the game. This font was selected due to its readbility for the player to easily determine the options for the game answers.
