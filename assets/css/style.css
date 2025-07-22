@@ -160,6 +160,27 @@ button:hover {
     /* center align */
     margin: auto;
 }
+/* styling for end of game pop-up */
+#end.bubble {
+    max-width: 80%;
+    padding: 30px;
+    color: #fe3a9e;
+    font-size: 18px;
+    position: absolute;
+    bottom:40%;
+    margin:auto;
+    text-align: center;
+    z-index: 1;
+}
+/* Styling for end of game pop-up heading */
+#end h1{
+    font-size: 30px;
+}
+/* Position for return button in end of game pop-up */
+#end #return{
+float: none;
+    margin: auto;
+}
 
 /* footer */
 footer {
