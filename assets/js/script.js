@@ -169,12 +169,19 @@ function chooseQuestion() {
   question();
 }
 /**
+ * If there are no questions left in the list the end of game pop up displays else:
  * Function fills question button with chosen question
  * Function gets the correct answer and answer options associated with the chosen question
  * Function fills the answer buttons
  * Also called when retry clicked if incorrect answer is given for player to try again.
  */
 function question() {
+  let questions= chosenQuestionSet.getQuestions();
+     if (questions.length == parseInt(0)){
+let endPopUp = document.getElementById("end");
+endPopUp.style.display = "block";
+  }
+  else{
   // Get question button
   let questionButton = document.getElementById("question-button");
   // Replace the text on the button with the chosen question
@@ -202,6 +209,7 @@ function question() {
     // remove the answer option used to prevent duplication
     answers.splice(answerIndex, 1);
   };
+}
 }
 // run the choose question function
 chooseQuestion();
@@ -251,9 +259,9 @@ function check(answerButton) {
     // disable the buttons
     a.disabled = true;
   };
-
   // increase when answer is selected either correct or incorrect
   questionCounter();
+
 }
 
 /**

@@ -171,6 +171,7 @@ button:hover {
     margin:auto;
     text-align: center;
     z-index: 1;
+    display: none;
 }
 /* Styling for end of game pop-up heading */
 #end h1{

@@ -135,6 +135,14 @@ counts the amount of questions attempted.
 - selected correct answer and counter increased.
 - selected incorrect answer and counter increased.
 
+### End of Game Pop Up
+
+Displays when the player has answered all the questions correctly.
+- tested using preview and deployed site with dev tools console at first logging "end".
+- Commented out questions and added questions to play the game at various lengths to ensure the pop up displayed no matter the length of questions for scalability.
+- Once all questions completed the pop up displayed.
+- return button in pop up takes the player back to the start screen
+
 
 ## Bugs and Fixes
 
@@ -200,7 +208,9 @@ This was fixed in a similiar way to the answer button duplication by removing th
 
 This caused the game to stop abruptly once every question had been answered without notifying the user.The next and retry buttons don't show anymore, and there was an error in the console as all the questions had been removed from the question set by the above splice method.
 ![image of the game ending](assets/readme-media/game-end.png)
-To resolve the error and ensure good user experience an end of game screen was added
+To resolve the error and ensure good user experience an end of game screen was added. 
+![image of the end error](assets/readme-media/end-error.png)
+Adding an if statement to the function that fills the question and answer buttons removes this error, the if statement is looking for the question list length to equal 0 so it can display the end of game pop up. This is because each question is removed from the list once played and when the length of the list = 0 it causes an error as this function cannot get the values to fill the buttons the new if statement gives the function something to do when the list equals 0 and so cancels the error.
 
 ## Credits
 
