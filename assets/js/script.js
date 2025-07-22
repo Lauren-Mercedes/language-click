@@ -171,47 +171,50 @@ function chooseQuestion() {
   question();
 }
 /**
- * If there are no questions left in the list the end of game pop up displays else:
+ * If there are no questions left in the list the end of game pop up displays
+ * end percentage function is called to calculate the percentage of correct answers
+ * else:
  * Function fills question button with chosen question
  * Function gets the correct answer and answer options associated with the chosen question
  * Function fills the answer buttons
  * Also called when retry clicked if incorrect answer is given for player to try again.
  */
 function question() {
-  let questions= chosenQuestionSet.getQuestions();
-     if (questions.length == parseInt(0)){
-let endPopUp = document.getElementById("end");
-endPopUp.style.display = "block";
+  let questions = chosenQuestionSet.getQuestions();
+  if (questions.length == parseInt(0)) {
+    let endPopUp = document.getElementById("end");
+    endPopUp.style.display = "block";
+    endPercent();
   }
-  else{
-  // Get question button
-  let questionButton = document.getElementById("question-button");
-  // Replace the text on the button with the chosen question
-  questionButton.innerHTML = chosenQuestion.getQuestion();
-  // Get answer buttons
-  let answerBoxes = document.getElementsByClassName("answer-button");
-  // loop through each button and apply settings
-  for (const a of answerBoxes) {
-    // change the answer buttons back to the original colour when next question is generated.
-    a.style.backgroundColor = "#67aeff";
-    // enable button presses
-    a.disabled = false;
+  else {
+    // Get question button
+    let questionButton = document.getElementById("question-button");
+    // Replace the text on the button with the chosen question
+    questionButton.innerHTML = chosenQuestion.getQuestion();
+    // Get answer buttons
+    let answerBoxes = document.getElementsByClassName("answer-button");
+    // loop through each button and apply settings
+    for (const a of answerBoxes) {
+      // change the answer buttons back to the original colour when next question is generated.
+      a.style.backgroundColor = "#67aeff";
+      // enable button presses
+      a.disabled = false;
+    }
+    /**
+     * Get answer content
+     * Copy answer content to prevent removal of answer options from original array when splice method is used at the end of the loop.
+     */
+    let answers = chosenQuestion.getAnswers().slice();
+    // for loop to fill the answer buttons with the answer content
+    for (let i = 0; i < 3; i++) {
+      // random index from the length of the answer options from the question set
+      let answerIndex = Math.floor(Math.random() * answers.length);
+      // Replace the text on the button with an answer option
+      answerBoxes[i].innerHTML = answers[answerIndex];
+      // remove the answer option used to prevent duplication
+      answers.splice(answerIndex, 1);
+    };
   }
-  /**
-   * Get answer content
-   * Copy answer content to prevent removal of answer options from original array when splice method is used at the end of the loop.
-   */
-  let answers = chosenQuestion.getAnswers().slice();
-  // for loop to fill the answer buttons with the answer content
-  for (let i = 0; i < 3; i++) {
-    // random index from the length of the answer options from the question set
-    let answerIndex = Math.floor(Math.random() * answers.length);
-    // Replace the text on the button with an answer option
-    answerBoxes[i].innerHTML = answers[answerIndex];
-    // remove the answer option used to prevent duplication
-    answers.splice(answerIndex, 1);
-  };
-}
 }
 // run the choose question function
 chooseQuestion();
@@ -222,7 +225,7 @@ chooseQuestion();
  * Is linked via an onclick in the answer button elements within questions.html
  */
 function check(answerButton) {
-   let next = document.getElementById("next");
+  let next = document.getElementById("next");
   let retry = document.getElementById("retry");
   /**
    * if correct answer given:
@@ -238,9 +241,9 @@ function check(answerButton) {
     next.style.display = "block";
     correctCounter();
     // list of questions
-   let questions= chosenQuestionSet.getQuestions();
-  // splice the current question from the list.
-  questions.splice(questions.indexOf(chosenQuestion), 1);
+    let questions = chosenQuestionSet.getQuestions();
+    // splice the current question from the list.
+    questions.splice(questions.indexOf(chosenQuestion), 1);
   }
   /**
    * if incorrect answer given:
@@ -283,5 +286,21 @@ function correctCounter() {
 function questionCounter() {
   let startCount = parseInt(document.getElementById("question-count").innerText);
   document.getElementById("question-count").innerText = ++startCount;
+}
+/**
+ * Function to calculate the percentage of correct answers
+ * Called at the end of the game when the end pop up is displayed
+ * Displays the percentage in the end pop up
+ */
+function endPercent() {
+  // get the correct count and question count
+  let correctCount = parseInt(document.getElementById("correct-count").innerText);
+  let questionCount = parseInt(document.getElementById("question-count").innerText);
+  // calculate the percentage of correct answers
+  let percent = (correctCount / questionCount) * 100;
+  // round to nearest whole number
+  percent = Math.round(percent);
+  // display the percentage in the end pop up
+  document.getElementById("percent").innerText = percent + "%";
 }
 

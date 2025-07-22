@@ -143,6 +143,12 @@ Displays when the player has answered all the questions correctly.
 - Once all questions completed the pop up displayed.
 - return button in pop up takes the player back to the start screen
 
+### End of Game Percentage in Pop-Up
+
+Percentage of correct answers displayed to show player overall score.
+- tested using the preview and deploayed site logged in dev tools first and then translated to replace inner text.
+- played game numerous times varying amount of correct answers to ensure percentage calculated adapats to scores.
+
 
 ## Bugs and Fixes
 
