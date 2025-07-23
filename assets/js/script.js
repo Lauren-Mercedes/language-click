@@ -1,4 +1,12 @@
 /**
+ * Global declaration of the speech synthesis API.
+ * Converts text to speech.
+ * Used to read out the questions when clicked.
+ */
+const synth = window.speechSynthesis;
+
+
+/**
  * Class that provides the blueprint of the question structure for use in adding questions.
  * Includes the question, the correct answer, and answer options.
  * Includes functions that allow the question, correct answer, and answer options to be called for use in other functions.
@@ -228,6 +236,19 @@ function question() {
 }
 // run the choose question function
 chooseQuestion();
+/**
+ * Function to read out the question when the question button is clicked
+ * Uses the speech synthesis API to convert text to speech
+ * Is linked via an onclick in the question button element within questions.html
+ */
+function speak(){
+     let questionButton = document.getElementById("question-button"); 
+  let content =  questionButton.innerText;
+  let utterance = new SpeechSynthesisUtterance(content);
+speechSynthesis.speak(utterance);
+}
+
+
 /**
  * Function to check if the answer is correct or incorrect
  * Includes response if answer is correct

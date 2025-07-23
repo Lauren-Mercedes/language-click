@@ -31,6 +31,19 @@ To improve readbility and show the player they are outside of the interactive ga
 
 Segoe UI with a back up of sans-serif was used throughout the game. This font was selected due to its readbility for the player to easily determine the options for the game answers.
 
+## Application Programming Interface - API
+
+To extend the functionality of the game and the player's learning experience an API was integrated into the code to enable the question to be read aloud. This additonal functionality enhanced learning by providing the player with pronounciation knowledge as well as learning the definition of the word or phrase. 
+
+The API used was [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) which is a browser API. The Web Speech API has two components, the ability to recognise speech and the ability to generate speech, the speech generation component was the main focus of the use of the API in Language Click.
+
+Web Speech API speech synthesis principle of operation:
+- Define an utterance (the text to be spoken).
+- Adjust utterance properties to specify language and voice styles e.g. pitch, volume, or rate.
+- Call the speak method to specify when the browser should process the utterance and its properties. 
+
+Third party APIs such as [International Business Machines(IBM)](https://www.ibm.com/products/text-to-speech) Cloud Watson Text to Speech and [Amazon Web Services (AWS) Polly](https://aws.amazon.com/polly/) were also considered for use in the Language Click project. These APIs both provided in excess of the needs of the project, as more complex provisions of functionality, they would over complicate integration and cause unncessary additonal code within the Java Script file for the overall requirements of the project. The use of the browser API Web Speech API was sufficient for the project specification. 
+
 ## Features Testing
 
 How the features outlined in the scope work. Each feature developed was generated with html, tested in [ Chrome DevTools](https://developer.chrome.com/docs/devtools/), styled with css, tested again in dev tools and adjusted until visual and functional criteria was met across mobile, tablet and laptop. Functionality was added to features using JavaScript and tested in dev tools for functionality. These features were then tested again on push in the deployed environment.
@@ -157,6 +170,13 @@ Displays when the player has answered all the questions correctly.
 Percentage of correct answers displayed to show player overall score.
 - tested using the preview and deploayed site logged in dev tools first and then translated to replace inner text.
 - played game numerous times varying amount of correct answers to ensure percentage calculated adapats to scores.
+
+### Text to Speech API
+
+Converts question into speech when clicked on by the player.
+- tested using the preview and deployed site by clicking the question button to play the audio version of the question.
+- tested across all the languages and questions within them.
+- tested the language of the voice changed to match the language of the question set selected by the player.
 
 
 ## Bugs and Fixes
