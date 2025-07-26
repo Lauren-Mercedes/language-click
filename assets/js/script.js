@@ -72,9 +72,9 @@ class questionSet {
 function showInstructions() {
   let popUp = document.getElementById("popup");
   popUp.style.display = "block";
-    // overlay is displayed for pop up contrast
-    let overlay = document.getElementById("overlay");
-    overlay.style.display = "block";
+  // overlay is displayed for pop up contrast
+  let overlay = document.getElementById("overlay");
+  overlay.style.display = "block";
 }
 /**
  * Instructions close down function
@@ -84,8 +84,8 @@ function hideInstructions() {
   let popUp = document.getElementById("popup");
   popUp.style.display = "none";
   // overlay is hidden for main screen interaction
-     let overlay = document.getElementById("overlay");
-    overlay.style.display = "none";
+  let overlay = document.getElementById("overlay");
+  overlay.style.display = "none";
 }
 
 /**
@@ -239,15 +239,34 @@ chooseQuestion();
 /**
  * Function to read out the question when the question button is clicked
  * Uses the speech synthesis API to convert text to speech
+ * Matches the voice to the language 
  * Is linked via an onclick in the question button element within questions.html
  */
-function speak(){
-     let questionButton = document.getElementById("question-button"); 
-  let content =  questionButton.innerText;
+function speak() {
+  let questionButton = document.getElementById("question-button");
+  let content = questionButton.innerText;
   let utterance = new SpeechSynthesisUtterance(content);
-speechSynthesis.speak(utterance);
+  // set the voice to match the language of the question set selected
+        const voice = chosenQuestionSet.getLanguage()
+  switch (voice) {
+    // select spanish
+    case "spanish":
+      utteranceVoice="es-ES";
+      break;
+    // select italian
+    case "italian":
+      utteranceVoice="it-IT";
+      break;
+    // select franch
+    case "french":
+     utteranceVoice= "fr-FR";
+      break;
+  }
+  // set the language of the utterance
+  utterance.lang = utteranceVoice;
+  // speak the question
+  speechSynthesis.speak(utterance);
 }
-
 
 /**
  * Function to check if the answer is correct or incorrect
