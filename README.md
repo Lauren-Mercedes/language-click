@@ -247,6 +247,12 @@ To resolve the error and ensure good user experience an end of game screen was a
 ![image of the end error](assets/readme-media/end-error.png)
 Adding an if statement to the function that fills the question and answer buttons removes this error, the if statement is looking for the question list length to equal 0 so it can display the end of game pop up. This is because each question is removed from the list once played and when the length of the list = 0 it causes an error as this function cannot get the values to fill the buttons the new if statement gives the function something to do when the list equals 0 and so cancels the error.
 
+- Compatibility error with webkit background-clip property
+
+![terminal problem with webkit background clip](assets/readme-media/webkit-error.png)
+
+The -webkit-background-clip property is not compatible across all browsers which caused a problem to appear in the terminal. To fix this a backup is required for non-compatible browsers with the standard background-clip property. 
+
 ## Credits
 
 All content and code was written by the developer.

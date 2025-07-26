@@ -101,6 +101,7 @@ h1,
     /* gradient colouring of text */
     background: -webkit-linear-gradient(90deg, #fe3a9e 0%, #f9f871 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
