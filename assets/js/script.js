@@ -137,16 +137,24 @@ function chooseQuestionSet() {
   french.addQuestion("Je Suis Desole", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
   /**
    * Selection of question set from the language picked by the player
-   * Pulled from the url query parameter
-   * Selected language is added as a parameter to the questions url
-   * url is searched for the language text which defines which question set is used in the switch case
+   * Each langauge button has a data-language attribute that stores the language value
+   * Each button is targeted with an event listener 
+   * The language is retrieved from the clicked button via the data-language attribute
+   * The language is then stored in local storage
    */
- const languageForm = document.getElementById("language-form");
-  const languageButtons = document.getElementsByClassName("language");
-languageForm.addEventListener('click', function(){
-  const languageValue = languageButtons.Value;
-  localStorage.setItem('language', languageValue);
-});
+document.querySelectorAll('.language').forEach(button => {
+  button.addEventListener('click', function() {
+    const languageValue = this.getAttribute('data-language');
+    localStorage.setItem('language', languageValue);
+    });
+  });
+
+  /**
+   * Determination of question set based on the language stored in local storage
+   * The language is retrieved from local storage
+   * The chosen question set is assigned based on the language
+   */
+ const language = localStorage.getItem('language');
 
   switch (language) {
     // select spanish
