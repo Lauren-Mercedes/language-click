@@ -141,7 +141,13 @@ function chooseQuestionSet() {
    * Selected language is added as a parameter to the questions url
    * url is searched for the language text which defines which question set is used in the switch case
    */
-  const language = new URLSearchParams(window.location.search).get("language");
+ const languageForm = document.getElementById("language-form");
+  const languageButtons = document.getElementsByClassName("language");
+languageForm.addEventListener('click', function(){
+  const languageValue = languageButtons.Value;
+  localStorage.setItem('language', languageValue);
+});
+
   switch (language) {
     // select spanish
     case "spanish":

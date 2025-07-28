@@ -42,7 +42,13 @@ Web Speech API speech synthesis principle of operation:
 - Adjust utterance properties to specify language and voice styles e.g. pitch, volume, or rate.
 - Call the speak method to specify when the browser should process the utterance and its properties. 
 
-Third party APIs such as [International Business Machines(IBM)](https://www.ibm.com/products/text-to-speech) Cloud Watson Text to Speech and [Amazon Web Services (AWS) Polly](https://aws.amazon.com/polly/) were also considered for use in the Language Click project. These APIs both provided in excess of the needs of the project, as more complex provisions of functionality, they would over complicate integration and cause unncessary additonal code within the Java Script file for the overall requirements of the project. The use of the browser API Web Speech API was sufficient for the project specification. 
+Third party APIs such as [International Business Machines(IBM)](https://www.ibm.com/products/text-to-speech) Cloud Watson Text to Speech and [Amazon Web Services (AWS) Polly](https://aws.amazon.com/polly/) were also considered for use in the Language Click project. These APIs both provided in excess of the needs of the project, as more complex provisions of functionality, they would over complicate integration and cause unncessary additonal code within the Java Script file for the overall requirements of the project. In additon to this both of these third party APIs came at a cost beyond 10 minutes of use per month which would put a limit on the amount of testing that could be done and also scalability of the project. The use of the browser API Web Speech API was sufficient for the project specification and allowed for the project to be scaled up to include levels, more questions, and increased testing without costs. 
+
+Another browser API was integrated, [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API), which was used to store selected values across the pages to determine both a language and a level for the player to determine the difficulty of the questions. In order to do this the local storage mechanism within the Web Storage API was utilised to save the value of the language and level button selected
+
+Web Storage API local storage principle of operation:
+- Define a variable and store the value in the browser's local storage using setItem.
+- Recall the value to be used on another page using getItem.
 
 ## Features Testing
 
@@ -171,6 +177,8 @@ Percentage of correct answers displayed to show player overall score.
 - tested using the preview and deploayed site logged in dev tools first and then translated to replace inner text.
 - played game numerous times varying amount of correct answers to ensure percentage calculated adapats to scores.
 
+### API Testing
+
 ### Text to Speech API
 
 Converts question into speech when clicked on by the player.
@@ -178,12 +186,17 @@ Converts question into speech when clicked on by the player.
 - tested across all the languages and questions within them.
 - tested the language of the voice changed to match the language of the question set selected by the player.
 
+### Local Storage API
+
+Stores the values selected by the player to determine the language and difficulty of the question set they play.
+- tested using preview and deployed site by selecting different language and level options and checking the local storage using DevTools and ensuring the resulting outcome in question types match the defined question sets.
+
 
 ## Bugs and Fixes
 
 The main bugs experienced during the development of the website were:
 
-- The popup was visible without executing the instructions button:
+### The popup was visible without executing the instructions button:
 
 
 https://github.com/user-attachments/assets/b6653412-e9d8-4bee-9ea8-626cad167a3e
@@ -192,7 +205,7 @@ https://github.com/user-attachments/assets/b6653412-e9d8-4bee-9ea8-626cad167a3e
 
 This was caused by an additonal div close tag, there was 3 close tags and only 2 open tags within the html popup code section. I established this was the issue by confirming the fault was with the paragraph section only as seen in the clip, checking the devtools for javascript errors, confirming there was no syntax differences in the id reference and then commenting out code within the html to isolate the error.
 
-- When closing the instructions pop up on the language selection page the return button is executed:
+### When closing the instructions pop up on the language selection page the return button is executed:
 
 
 https://github.com/user-attachments/assets/c322f468-4a85-4171-b37f-fa695355cf4b
@@ -200,26 +213,26 @@ https://github.com/user-attachments/assets/c322f468-4a85-4171-b37f-fa695355cf4b
 
 This was caused by the popup div being inserted inside the return button link anchor tags. I determined this was the case by moving the position of the popup close button, increasing the z-index and moving the entire pop up box. Isolating the link between the close button and the return button to html .
 
-- The answers generated for the buttons duplicate:
+### The answers generated for the buttons duplicate:
 
 ![image of initial answer buttons testing](assets/readme-media/duplicate-answers.png)
 
 This could cause issues if the correct answer doesn't get displayed, the code needed to be adjusted to ensure that each answer was used once. In order to do this without affecting the original answers array a slice method was added to the part of the function that defines the answers. This allowed the question to be displayed more than once throughout the game. The answers were then spliced to remove each option that was used in the loop. The splice method ensures that each answer that is used is removed and therefore not used again in the same question. 
 
-- The next question button would not generate a new question when clicked:
+### The next question button would not generate a new question when clicked:
 
 
 https://github.com/user-attachments/assets/10f6a184-0892-446d-acfa-bf6d2f727565
 
 This was caused by missing an onclick attribute to the next button element and by having the question function outside of the choose question function which prevented a new question from being displayed as the question function controlled the content within the buttons. 
 
-- The button colours did not revert on the next question:
+### The button colours did not revert on the next question:
 
 ![image of button colours bug](assets/readme-media/button-colours.png)
 
 This was reset by adding a for loop to change the colour back to the original button colour defined in the css file as soon as the answer boxes have been fetched. Another potential solution tried was using a toggle instead of a style change in the check function but this complicated the code and made it longer in the css sheet.
 
-- The player could continue to select answers after the first guess
+### The player could continue to select answers after the first guess
 
 ![image of answer selection bug](assets/readme-media/answers-bug.png)
 
@@ -228,7 +241,7 @@ If the player selected the incorrect answer they could click through all the ans
 Each press increased the question counter even if the correct one was selected first.
 This was corrected by adding a disabled property to each answer button as part of the check answer function disabling all the answer buttons after the first guess was selected. The disabled property was removed in the question function that sets up the next question so they work again when retry or next is selected. 
 
-- On mobile devices the player's view cut out the next and retry buttons as they popped up so they would have to scroll down to see it.
+### On mobile devices the player's view cut out the next and retry buttons as they popped up so they would have to scroll down to see it.
 
 https://github.com/user-attachments/assets/b8818271-1d2f-4099-ab32-4a78c16baf69
 
@@ -236,7 +249,7 @@ This could cause bad user experience as it is not clear what to do once a questi
 This was resolved by adjusting the font, bubble, and button size for smaller screens so that readability was maintained while bringing the full game onto the screen. 
 An alternative solution considered was a pop up with the next or retry button on but this could disrupt the user experience by making the game slower with added code, and from a design perspective made the game screen too busy.
 
-- The questions repeat, the player may get the same question numerous times in a row.
+### The questions repeat, the player may get the same question numerous times in a row.
 
 ![image of console showing testing of fix](assets/readme-media/question-repeat-fix.png)
 This was fixed in a similiar way to the answer button duplication by removing the question from the array once answered correctly. The image shows the testing carried out to ensure the splice was removing the correct question. The first console log was the question being played and the second console log was the question the splice removed.
@@ -247,11 +260,17 @@ To resolve the error and ensure good user experience an end of game screen was a
 ![image of the end error](assets/readme-media/end-error.png)
 Adding an if statement to the function that fills the question and answer buttons removes this error, the if statement is looking for the question list length to equal 0 so it can display the end of game pop up. This is because each question is removed from the list once played and when the length of the list = 0 it causes an error as this function cannot get the values to fill the buttons the new if statement gives the function something to do when the list equals 0 and so cancels the error.
 
-- Compatibility error with webkit background-clip property
+### Compatibility error with webkit background-clip property
 
 ![terminal problem with webkit background clip](assets/readme-media/webkit-error.png)
 
 The -webkit-background-clip property is not compatible across all browsers which caused a problem to appear in the terminal. To fix this a backup is required for non-compatible browsers with the standard background-clip property. 
+
+### Undefined Local Storage
+
+![console log of undefined local storage](assets/readme-media/undefined-ls.png)
+
+Initially the local storage showed the language value as undefined. The local storage setItem was working as it stored a value whenever a language was selected. The undefined value was caused by the event listener being attached to all the buttons via the div container. The issue was resolved by implementing a for each loop to the buttons so that they each had an individual event listener to deploy the setItem function.
 
 ## Credits
 
