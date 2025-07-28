@@ -134,6 +134,13 @@ Allows the player to select a language to learn.
 - Selected return between each game and confirmed the language changed when moving from one to another.
 - Confirmed the correct language displayed for the button pressed.
 
+### Level Selection Buttons
+
+Allows the player to select a difficulty level.
+- tested using preview and deployed site by playing the game in each language and level.
+- Selected return between each game and confirmed the level changed when moving from one to another.
+- Confirmed the correct set of questions played for each level.
+
 ### Answer Selection Buttons
 
 Allows the player to select an answer to the question.

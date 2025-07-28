@@ -148,6 +148,19 @@ document.querySelectorAll('.language').forEach(button => {
     localStorage.setItem('language', languageValue);
     });
   });
+/**
+   * Selection of question set from the level picked by the player
+   * Each level button has a data-level attribute that stores the level value
+   * Each button is targeted with an event listener 
+   * The levele is retrieved from the clicked button via the data-level attribute
+   * The level is then stored in local storage
+   */
+  document.querySelectorAll('.level').forEach(button => {
+  button.addEventListener('click', function() {
+    const levelValue = this.getAttribute('data-level');
+    localStorage.setItem('level', levelValue);
+  });
+});
 
   /**
    * Determination of question set based on the language stored in local storage
