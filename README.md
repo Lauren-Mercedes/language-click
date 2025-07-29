@@ -272,6 +272,10 @@ The -webkit-background-clip property is not compatible across all browsers which
 
 Initially the local storage showed the language value as undefined. The local storage setItem was working as it stored a value whenever a language was selected. The undefined value was caused by the event listener being attached to all the buttons via the div container. The issue was resolved by implementing a for each loop to the buttons so that they each had an individual event listener to deploy the setItem function.
 
+### Language Defaulting to Spanish
+
+Every language returned a spanish question set, the levels came back correctly but the question set was defaulting to Spanish. This was caused by a syntax error on the switch case, with the switch checking language, level it was only checking level as it was not defined for both to be checked together. Resolved by changing to switch language + level.
+
 ## Credits
 
 All content and code was written by the developer.

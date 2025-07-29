@@ -100,41 +100,117 @@ let chosenQuestionSet = new questionSet("");
  */
 function chooseQuestionSet() {
   // spanish questions
-  let spanish = new questionSet("spanish");
-  spanish.addQuestion("Adios", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
-  spanish.addQuestion("Gracias", "Thank You", ["You're Welcome", "Good", "Thank You"]);
-  spanish.addQuestion("Hola", "Hello", ["Hello", "Cheers", "Health"]);
-  spanish.addQuestion("Como Estas?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"]);
-  spanish.addQuestion("Discuple", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
-  spanish.addQuestion("Por Favor", "Please", ["Please", "Thank You", "You're Welcome"]);
-  spanish.addQuestion("De Nada", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
-  spanish.addQuestion("No Entiendo", "I Don't Understand", ["I Don't Understand", "No Thank You", "Not A Problem"]);
-  spanish.addQuestion("Donde esta...?", "Where is...", ["Where is...", "What is...", "How is..."]);
-  spanish.addQuestion("Lo Siento", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
+  // beginner questions
+  let spanishB = new questionSet("spanishB");
+  spanishB.addQuestion("Adios", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
+  spanishB.addQuestion("Gracias", "Thank You", ["You're Welcome", "Good", "Thank You"]);
+  spanishB.addQuestion("Hola", "Hello", ["Hello", "Cheers", "Health"]);
+  spanishB.addQuestion("Como Estas?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"]);
+  spanishB.addQuestion("Discuple", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
+  spanishB.addQuestion("Por Favor", "Please", ["Please", "Thank You", "You're Welcome"]);
+  spanishB.addQuestion("De Nada", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
+  spanishB.addQuestion("No Entiendo", "I Don't Understand", ["I Don't Understand", "No Thank You", "Not A Problem"]);
+  spanishB.addQuestion("Donde esta...?", "Where is...", ["Where is...", "What is...", "How is..."]);
+  spanishB.addQuestion("Lo Siento", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
+  // intermediate questions
+  let spanishI = new questionSet("spanishI");
+  spanishI.addQuestion("Solo Estoy Navegando", "I'm Just Browsing", ["I'm Just Browsing", "I'm Looking For", "I'm Not Interested"]);
+  spanishI.addQuestion("No Me Gusta", "I Don't Like It", ["I Don't Like It", "It's Not For Me", "I Don't Want It"]);
+  spanishI.addQuestion("Cuanto Cuesta?", "How Much Is It?", ["How Much Is It?", "Where Is It?", "What Is It?"]);
+  spanishI.addQuestion("Lo Tengo Todo", "I Have Everything", ["I Have Everything", "I Don't Have It", "It's Not Here"]);
+  spanishI.addQuestion("¿Podrías hablar más despacio?", "Could You Speak Slower?", ["Could You Speak Slower?", "Could You Repeat That?", "Could You Explain?"]);
+  spanishI.addQuestion("¿Podrías ayudarme?", "Could You Help Me?", ["Could You Help Me?", "Could You Show Me?", "Could You Tell Me?"]);
+  spanishI.addQuestion("¿Dónde está el baño?", "Where Is The Bathroom?", ["Where Is The Bathroom?", "Where Is The Restaurant?", "Where Is The Hotel?"]);
+  spanishI.addQuestion("¿Cómo se dice...?", "How Do You Say...?", ["How Do You Say...?", "How Far is ...?", "What Is ...?"]);
+  spanishI.addQuestion("¿Qué hora es?", "What Time Is It?", ["What Time Is It?", "What Day Is It?", "What Month Is It?"]);
+  spanishI.addQuestion("¿Necesitas ayuda?", "Do You Need Help?", ["Do You Need Help?", "Can You Help Them?", "Are You Okay?"]);
+  //advanced questions
+  let spanishA = new questionSet("spanishA");
+  spanishA.addQuestion("¿Puedes recomendarme un buen restaurante?", "Can You Recommend A Good Restaurant?", ["Can You Recommend A Good Restaurant?", "Can You Suggest Something?", "Can You Help Me?"]);
+  spanishA.addQuestion("¿Cómo puedo llegar a la estación de tren?", "How Can I Get To The Train Station?", ["How Can I Get To The Train Station?", "Where Is The Train Coming From?", "What Time Is The Train?"]);
+  spanishA.addQuestion("¿Tienes alguna recomendación para visitar?", "Do You Have Any Recommendations For Visiting?", ["Do You Have Any Recommendations For Visiting?", "What Do You Suggest?", "Where Should I Go?"]);
+  spanishA.addQuestion("¿Cómo puedo mejorar mi pronunciación en español?", "How Can I Improve My Spanish Pronunciation?", ["How Can I Improve My Spanish Pronunciation?", "What Is The Pronounciation of That in Spanish?", "Have I Pronounced That Correctly?"]);
+  spanishA.addQuestion("¿Puedes recomendarme un libro en español?", "Can You Recommend A Book In Spanish?", ["Can You Recommend A Book In Spanish?", "What Is Your Favourite Book?", "What Do You Read?"]);
+  spanishA.addQuestion("¿Es este un buen lugar para vivir?", "Is This A Good Place To Live?", ["Is This A Good Place To Live?", "What Is The Cost Of Living?", "Is It Safe To Live Here?"]);
+  spanishA.addQuestion("¿Cómo puedo aprender más sobre la cultura española?", "How Can I Learn More About Spanish Culture?", ["How Can I Learn More About Spanish Culture?", "What Are The Best Cultural Experiences To Have Here?", "Where Can I Find Tourist Information?"]);
+ spanishA.addQuestion("¿Tienes un cargador de teléfono?", "Do You Have A Phone Charger?", ["Do You Have A Phone Charger?", "Have You Seen My Charger?", "Where Can I Buy A Charger?"]);
+spanishA.addQuestion("¿Cuándo cierra la tienda?", "When Does The Store Close?", ["When Does The Store Close?", "What Are The Store Hours?", "Is It Open Late?"]);
+   spanishA.addQuestion("¿Dónde está el hospital más cercano?", "Where Is The Nearest Hospital?", ["Where Is The Nearest Hospital?", "Is That A Hospital?", "What Is The Hospital Address?"]);
   // italian questions
-  let italian = new questionSet("italian");
-  italian.addQuestion("Ciao", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
-  italian.addQuestion("Grazie", "Thank You", ["You're Welcome", "Good", "Thank You"]);
-  italian.addQuestion("Salve", "Hello", ["Hello", "Cheers", "Health"]);
-  italian.addQuestion("Come va?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"])
-  italian.addQuestion("Mi Scusi", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
-  italian.addQuestion("Per Favore", "Please", ["Please", "Thank You", "You're Welcome"]);
-  italian.addQuestion("Prego", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
-  italian.addQuestion("No Capisco", "I Don't Understand", ["I Don't Understand", "No Thank You", "Not A Problem"]);
-  italian.addQuestion("Dov'e...?", "Where is...", ["Where is...", "What is...", "How is..."]);
-  italian.addQuestion("Mi Dispiace", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
+  //beginner questions
+  let italianB = new questionSet("italianB");
+  italianB.addQuestion("Ciao", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
+  italianB.addQuestion("Grazie", "Thank You", ["You're Welcome", "Good", "Thank You"]);
+  italianB.addQuestion("Salve", "Hello", ["Hello", "Cheers", "Health"]);
+  italianB.addQuestion("Come va?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"])
+  italianB.addQuestion("Mi Scusi", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
+  italianB.addQuestion("Per Favore", "Please", ["Please", "Thank You", "You're Welcome"]);
+  italianB.addQuestion("Prego", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
+  italianB.addQuestion("No Capisco", "I Don't Understand", ["I Don't Understand", "No Thank You", "Not A Problem"]);
+  italianB.addQuestion("Dov'e...?", "Where is...", ["Where is...", "What is...", "How is..."]);
+  italianB.addQuestion("Mi Dispiace", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
+  // intermediate questions
+  let italianI = new questionSet("italianI");
+  italianI.addQuestion("Sto Solo Guardando", "I'm Just Browsing", ["I'm Just Browsing", "I'm Looking For", "I'm Not Interested"]);
+  italianI.addQuestion("Non Mi Piace", "I Don't Like It", ["I Don't Like It", "It's Not For Me", "I Don't Want It"]);
+  italianI.addQuestion("Quanto Costa?", "How Much Is It?", ["How Much Is It?", "Where Is It?", "What Is It?"]);
+  italianI.addQuestion("Ho Tutto", "I Have Everything", ["I Have Everything", "I Don't Have It", "It's Not Here"]);
+  italianI.addQuestion("Puoi Parlare Più Piano?", "Could You Speak Slower?", ["Could You Speak Slower?", "Could You Repeat That?", "Could You Explain?"]);
+  italianI.addQuestion("Puoi Aiutarmi?", "Could You Help Me?", ["Could You Help Me?", "Could You Show Me?", "Could You Tell Me?"]);
+  italianI.addQuestion("Dove Si Trova Il Bagno?", "Where Is The Bathroom?", ["Where Is The Bathroom?", "Where Is The Restaurant?", "Where Is The Hotel?"]);
+  italianI.addQuestion("Come Si Dice...?", "How Do You Say...?", ["How Do You Say...?", "What Far is ...", "What Is ...?"]);
+  italianI.addQuestion("Che Ore Sono?", "What Time Is It?", ["What Time Is It?", "What Day Is It?", "What Month Is It?"]);
+  italianI.addQuestion("Hai Bisogno Di Aiuto?", "Do You Need Help?", ["Do You Need Help?", "Can You Help Them?", "Are You Okay?"]);
+  // advanced questions
+  let italianA = new questionSet("italianA");
+  italianA.addQuestion("Puoi Consigliarmi Un Buon Ristorante?", "Can You Recommend A Good Restaurant?", ["Can You Recommend A Good Restaurant?", "Can You Suggest Something?", "Can You Help Me?"]);
+  italianA.addQuestion("Come Posso Arrivare Alla Stazione Dei Treni?", "How Can I Get To The Train Station?", ["How Can I Get To The Train Station?", "Where Is The Train Coming From?", "What Time Is The Train?"]);
+  italianA.addQuestion("Hai Qualche Consiglio Da Visitare?", "Do You Have Any Recommendations For Visiting?", ["Do You Have Any Recommendations For Visiting?", "What Do You Suggest?", "Where Should I Go?"]);
+  italianA.addQuestion("Come Posso Migliorare La Mia Pronuncia In Italiano?", "How Can I Improve My Italian Pronunciation?", ["How Can I Improve My Italian Pronunciation?", "What Is The Pronounciation of That in Italian?", "Have I Pronounced That Correctly?"]);
+  italianA.addQuestion("Puoi Consigliarmi Un Libro In Italiano?", "Can You Recommend A Book In Italian?", ["Can You Recommend A Book In Italian?", "What Is Your Favourite Book?", "What Do You Read?"]);
+  italianA.addQuestion("È Un Buon Posto Dove Vivere?", "Is This A Good Place To Live?", ["Is This A Good Place To Live?", "What Is The Cost Of Living?", "Is It Safe To Live Here?"]);
+  italianA.addQuestion("Come Posso Imparare Di Più Sulla Cultura Italiana?", "How Can I Learn More About Italian Culture?", ["How Can I Learn More About Italian Culture?", "What Are The Best Cultural Experiences To Have Here?", "Where Can I Find Tourist Information?"]);
+  italianA.addQuestion("Hai Un Caricabatterie Per Il Telefono?", "Do You Have A Phone Charger?", ["Do You Have A Phone Charger?", "Have You Seen My Charger?", "Where Can I Buy A Charger?"]);
+  italianA.addQuestion("Quando Chiude Il Negozio?", "When Does The Store Close?", ["When Does The Store Close?", "What Are The Store Hours?", "Is It Open Late?"]);
+  italianA.addQuestion("Dove Si Trova L'ospedale Più Vicino?", "Where Is The Nearest Hospital?", ["Where Is The Nearest Hospital?", "Is That A Hospital?", "What Is The Hospital Address?"]);
   // french questions
-  let french = new questionSet("french");
-  french.addQuestion("Au Revoir", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
-  french.addQuestion("Merci", "Thank You", ["You're Welcome", "Good", "Thank You"]);
-  french.addQuestion("Bonjour", "Hello", ["Hello", "Cheers", "Health"]);
-  french.addQuestion("Comment vas-tu?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"])
-  french.addQuestion("Excusez-Moi", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
-  french.addQuestion("S'il Vous Plait", "Please", ["Please", "Thank You", "You're Welcome"]);
-  french.addQuestion("De Rien", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
-  french.addQuestion("Je Ne Comprends Pas", "I Don't Understand", ["I Don't Understand", "No Thank You", "Not A Problem"]);
-  french.addQuestion("Ou Est...?", "Where is...", ["Where is...", "What is...", "How is..."]);
-  french.addQuestion("Je Suis Desole", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
+  // beginner questions
+  let frenchB = new questionSet("frenchB");
+  frenchB.addQuestion("Au Revoir", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
+  frenchB.addQuestion("Merci", "Thank You", ["You're Welcome", "Good", "Thank You"]);
+  frenchB.addQuestion("Bonjour", "Hello", ["Hello", "Cheers", "Health"]);
+  frenchB.addQuestion("Comment vas-tu?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"])
+  frenchB.addQuestion("Excusez-Moi", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
+  frenchB.addQuestion("S'il Vous Plait", "Please", ["Please", "Thank You", "You're Welcome"]);
+  frenchB.addQuestion("De Rien", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
+  frenchB.addQuestion("Je Ne Comprends Pas", "I Don't Understand", ["I Don't Understand", "No Thank You", "Not A Problem"]);
+  frenchB.addQuestion("Ou Est...?", "Where is...", ["Where is...", "What is...", "How is..."]);
+  frenchB.addQuestion("Je Suis Desole", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
+  // intermediate questions
+  let frenchI = new questionSet("frenchI");
+  frenchI.addQuestion("Je Regarde Seulement", "I'm Just Browsing", ["I'm Just Browsing", "I'm Looking For", "I'm Not Interested"]);
+  frenchI.addQuestion("Je N'aime Pas", "I Don't Like It", ["I Don't Like It", "It's Not For Me", "I Don't Want It"]);
+  frenchI.addQuestion("Combien Ca Coute?", "How Much Is It?", ["How Much Is It?", "Where Is It?", "What Is It?"]);
+  frenchI.addQuestion("J'ai Tout", "I Have Everything", ["I Have Everything", "I Don't Have It", "It's Not Here"]);
+  frenchI.addQuestion("Pouvez-Vous Parler Plus Lentement?", "Could You Speak Slower?", ["Could You Speak Slower?", "Could You Repeat That?", "Could You Explain?"]);
+  frenchI.addQuestion("Pouvez-Vous M'aider?", "Could You Help Me?", ["Could You Help Me?", "Could You Show Me?", "Could You Tell Me?"]);
+  frenchI.addQuestion("Ou Sont Les Toilettes?", "Where Is The Bathroom?", ["Where Is The Bathroom?", "Where Is The Restaurant?", "Where Is The Hotel?"]);
+  frenchI.addQuestion("Comment Dit-On...?", "How Do You Say...?", ["How Do You Say...?", "How far is...?", "What Is ...?"]);
+  frenchI.addQuestion("Quelle Heure Est-Il?", "What Time Is It?", ["What Time Is It?", "What Day Is It?", "What Month Is It?"]);
+  frenchI.addQuestion("Avez-Vous Besoin D'aide?", "Do You Need Help?", ["Do You Need Help?", "Can You Them?", "Are You Okay?"]);
+  // advanced questions
+  let frenchA = new questionSet("frenchA");
+  frenchA.addQuestion("Pouvez-Vous Me Recommander Un Bon Restaurant?", "Can You Recommend A Good Restaurant?", ["Can You Recommend A Good Restaurant?", "Can You Suggest Something?", "Can You Help Me?"]);
+  frenchA.addQuestion("Comment Puis-Je Me Rendre A La Gare?", "How Can I Get To The Train Station?", ["How Can I Get To The Train Station?", "Where Is The Train Coming From?", "What Time Is The Train?"]);
+  frenchA.addQuestion("Avez-Vous Des Recommandations Pour Visiter?", "Do You Have Any Recommendations For Visiting?", ["Do You Have Any Recommendations For Visiting?", "What Do You Suggest?", "Where Should I Go?"]);
+  frenchA.addQuestion("Comment Puis-Je Améliorer Ma Prononciation En Français?", "How Can I Improve My French Pronunciation?", ["How Can I Improve My French Pronunciation?", "What Is The Pronounciation of That in French?", "Have I Pronounced That Correctly?"]);
+  frenchA.addQuestion("Pouvez-Vous Me Recommander Un Livre En Français?", "Can You Recommend A Book In French?", ["Can You Recommend A Book In French?", "What Is Your Favourite Book?", "What Do You Read?"]);
+  frenchA.addQuestion("Est-Ce Un Bon Endroit Pour Vivre?", "Is This A Good Place To Live?", ["Is This A Good Place To Live?", "What Is The Cost Of Living?", "Is It Safe To Live Here?"]);
+  frenchA.addQuestion("Comment Puis-Je En Savoir Plus Sur La Culture Française?", "How Can I Learn More About French Culture?", ["How Can I Learn More About French Culture?", "What Are The Best Cultural Experiences To Have Here?", "Where Can I Find Tourist Information?"]);
+  frenchA.addQuestion("Avez-Vous Un Chargeur De Téléphone?", "Do You Have A Phone Charger?", ["Do You Have A Phone Charger?", "Have You Seen My Charger?", "Where Can I Buy A Charger?"]); 
+  frenchA.addQuestion("Quand Ferme Le Magasin?", "When Does The Store Close?", ["When Does The Store Close?", "What Are The Store Hours?", "Is It Open Late?"]);  
+  frenchA.addQuestion("Ou Se Trouve L'hôpital Le Plus Proche?", "Where Is The Nearest Hospital?", ["Where Is The Nearest Hospital?", "Is That A Hospital?", "What Is The Hospital Address?"]); 
+
   /**
    * Selection of question set from the language picked by the player
    * Each langauge button has a data-language attribute that stores the language value
@@ -163,24 +239,48 @@ document.querySelectorAll('.language').forEach(button => {
 });
 
   /**
-   * Determination of question set based on the language stored in local storage
-   * The language is retrieved from local storage
-   * The chosen question set is assigned based on the language
+   * Determination of question set based on the language and level stored in local storage
+   * The language and level are retrieved from local storage
+   * The chosen question set is assigned based on the language and level selected
    */
- const language = localStorage.getItem('language');
-
-  switch (language) {
-    // select spanish
-    case "spanish":
-      chosenQuestionSet = spanish;
+const language = localStorage.getItem('language');
+const level = localStorage.getItem('level');
+  switch (language, level) {
+    // select spanish beginner
+    case "spanish", "beginner":
+      chosenQuestionSet = spanishB;
       break;
-    // select italian
-    case "italian":
-      chosenQuestionSet = italian;
+      // select spanish intermediate
+    case "spanish", "intermediate":
+      chosenQuestionSet = spanishI;
       break;
-    // select franch
-    case "french":
-      chosenQuestionSet = french;
+      // select spanish advanced
+    case "spanish", "advanced":
+      chosenQuestionSet = spanishA;
+      break;
+    // select italian beginner
+    case "italian", "beginner":
+      chosenQuestionSet = italianB;
+      break;
+      // select italian intermediate
+    case "italian", "intermediate":
+      chosenQuestionSet = italianI;
+      break;  
+      // select italian advanced
+    case "italian", "advanced":
+      chosenQuestionSet = italianA;
+      break;
+    // select french beginner
+    case "french", "beginner":
+      chosenQuestionSet = frenchB;
+      break;
+      // select french intermediate
+    case "french", "intermediate":  
+      chosenQuestionSet = frenchI;
+      break;
+      // select french advanced
+    case "french", "advanced":
+      chosenQuestionSet = frenchA;
       break;
   }
 }
@@ -274,23 +374,23 @@ function speak() {
   let content = questionButton.innerText;
   let utterance = new SpeechSynthesisUtterance(content);
   // set the voice to match the language of the question set selected
-        const voice = chosenQuestionSet.getLanguage()
+        let voice = localStorage.getItem('language')
   switch (voice) {
     // select spanish
     case "spanish":
-      utteranceVoice="es-ES";
+      voice="es-ES";
       break;
     // select italian
     case "italian":
-      utteranceVoice="it-IT";
+      voice="it-IT";
       break;
     // select franch
     case "french":
-     utteranceVoice= "fr-FR";
+     voice= "fr-FR";
       break;
   }
   // set the language of the utterance
-  utterance.lang = utteranceVoice;
+  utterance.lang = voice;
   // speak the question
   speechSynthesis.speak(utterance);
 }
