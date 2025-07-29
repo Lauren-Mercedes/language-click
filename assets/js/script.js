@@ -141,11 +141,11 @@ spanishA.addQuestion("¿Cuándo cierra la tienda?", "When Does The Store Close?"
   let italianB = new questionSet("italianB");
   italianB.addQuestion("Ciao", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
   italianB.addQuestion("Grazie", "Thank You", ["You're Welcome", "Good", "Thank You"]);
-  italianB.addQuestion("Salve", "Hello", ["Hello", "Cheers", "Health"]);
+  italianB.addQuestion("Buongiorno", "Hello", ["Hello", "Cheers", "Health"]);
   italianB.addQuestion("Come va?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"])
   italianB.addQuestion("Mi Scusi", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
   italianB.addQuestion("Per Favore", "Please", ["Please", "Thank You", "You're Welcome"]);
-  italianB.addQuestion("Prego", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
+  italianB.addQuestion("Di Niente", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
   italianB.addQuestion("No Capisco", "I Don't Understand", ["I Don't Understand", "No Thank You", "Not A Problem"]);
   italianB.addQuestion("Dov'e...?", "Where is...", ["Where is...", "What is...", "How is..."]);
   italianB.addQuestion("Mi Dispiace", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
@@ -156,7 +156,7 @@ spanishA.addQuestion("¿Cuándo cierra la tienda?", "When Does The Store Close?"
   italianI.addQuestion("Quanto Costa?", "How Much Is It?", ["How Much Is It?", "Where Is It?", "What Is It?"]);
   italianI.addQuestion("Ho Tutto", "I Have Everything", ["I Have Everything", "I Don't Have It", "It's Not Here"]);
   italianI.addQuestion("Puoi Parlare Più Piano?", "Could You Speak Slower?", ["Could You Speak Slower?", "Could You Repeat That?", "Could You Explain?"]);
-  italianI.addQuestion("Puoi Aiutarmi?", "Could You Help Me?", ["Could You Help Me?", "Could You Show Me?", "Could You Tell Me?"]);
+  italianI.addQuestion("Mi Puo Aiutare?", "Could You Help Me?", ["Could You Help Me?", "Could You Show Me?", "Could You Tell Me?"]);
   italianI.addQuestion("Dove Si Trova Il Bagno?", "Where Is The Bathroom?", ["Where Is The Bathroom?", "Where Is The Restaurant?", "Where Is The Hotel?"]);
   italianI.addQuestion("Come Si Dice...?", "How Do You Say...?", ["How Do You Say...?", "What Far is ...", "What Is ...?"]);
   italianI.addQuestion("Che Ore Sono?", "What Time Is It?", ["What Time Is It?", "What Day Is It?", "What Month Is It?"]);
@@ -245,41 +245,41 @@ document.querySelectorAll('.language').forEach(button => {
    */
 const language = localStorage.getItem('language');
 const level = localStorage.getItem('level');
-  switch (language, level) {
+  switch (language + level) {
     // select spanish beginner
-    case "spanish", "beginner":
+    case "spanish" + "beginner":
       chosenQuestionSet = spanishB;
       break;
       // select spanish intermediate
-    case "spanish", "intermediate":
+    case "spanish" + "intermediate":
       chosenQuestionSet = spanishI;
       break;
       // select spanish advanced
-    case "spanish", "advanced":
+    case "spanish" + "advanced":
       chosenQuestionSet = spanishA;
       break;
     // select italian beginner
-    case "italian", "beginner":
+    case "italian" + "beginner":
       chosenQuestionSet = italianB;
       break;
       // select italian intermediate
-    case "italian", "intermediate":
+    case "italian" + "intermediate":
       chosenQuestionSet = italianI;
       break;  
       // select italian advanced
-    case "italian", "advanced":
+    case "italian" + "advanced":
       chosenQuestionSet = italianA;
       break;
     // select french beginner
-    case "french", "beginner":
+    case "french" + "beginner":
       chosenQuestionSet = frenchB;
       break;
       // select french intermediate
-    case "french", "intermediate":  
+    case "french" + "intermediate":  
       chosenQuestionSet = frenchI;
       break;
       // select french advanced
-    case "french", "advanced":
+    case "french" + "advanced":
       chosenQuestionSet = frenchA;
       break;
   }
@@ -374,26 +374,27 @@ function speak() {
   let content = questionButton.innerText;
   let utterance = new SpeechSynthesisUtterance(content);
   // set the voice to match the language of the question set selected
-        let voice = localStorage.getItem('language')
+  let voice = localStorage.getItem('language');
+  // set the voice to match the language of the question set selected
   switch (voice) {
     // select spanish
     case "spanish":
-      voice="es-ES";
+      utterance.lang="es-ES";
       break;
     // select italian
     case "italian":
-      voice="it-IT";
+      utterance.lang="it-IT";
       break;
     // select franch
     case "french":
-     voice= "fr-FR";
+     utterance.lang= "fr-FR";
       break;
   }
-  // set the language of the utterance
-  utterance.lang = voice;
   // speak the question
   speechSynthesis.speak(utterance);
+  console.log(utterance.lang);
 }
+
 
 /**
  * Function to check if the answer is correct or incorrect
