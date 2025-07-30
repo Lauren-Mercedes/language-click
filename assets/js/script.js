@@ -368,8 +368,10 @@ chooseQuestion();
  * Uses the speech synthesis API to convert text to speech
  * Matches the voice to the language 
  * Is linked via an onclick in the question button element within questions.html
+ * If tried and failed to generate audio an error will display
  */
 function speak() {
+    try {
   let questionButton = document.getElementById("question-button");
   let content = questionButton.innerText;
   let utterance = new SpeechSynthesisUtterance(content);
@@ -385,14 +387,23 @@ function speak() {
     case "italian":
       utterance.lang="it-IT";
       break;
-    // select franch
+    // select french
     case "french":
      utterance.lang= "fr-FR";
+      break;
+    // default to english
+    default:
+      let languageError = "Language not supported, defaulting to English";
+      console.log(languageError);
       break;
   }
   // speak the question
   speechSynthesis.speak(utterance);
-  console.log(utterance.lang);
+}
+ // error handling 
+  catch (error) {
+  console.log("Error with speech generation audio: " + error);
+  }
 }
 
 
