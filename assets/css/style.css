@@ -111,7 +111,10 @@ h1 {
 #question-button {
     font-size: 30px;
 }
-
+/* error message default display hidden */
+#error{
+    display:none;
+}
 /* Speech bubble container */
 .bubble {
     background: #ffffff;

@@ -190,10 +190,12 @@ Converts question into speech when clicked on by the player.
 
 Speech synthesis may not be compatible with all browsers, in order to inform the player if this is the case an error handler was set up if the speech synthesis was tried and failed.
 ![audio error console log](assets/readme-media/audio-error.png)
+![audio error message](assets/readme-media/audio-error-message.png)
 
 If a language is not available or compatible the error message won't display as the API defaults to english, speech is still synthesised so the try is successful. To inform the player the language is unavailable a default was set up to display the message informing them it has defaulted to English.
 
 ![language error console log](assets/readme-media/language-error.png)
+![language error message](assets/readme-media/language-error-message.png)
 
 ### Local Storage API
 

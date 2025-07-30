@@ -371,6 +371,7 @@ chooseQuestion();
  * If tried and failed to generate audio an error will display
  */
 function speak() {
+  let errorMessage = document.getElementById("error");
     try {
   let questionButton = document.getElementById("question-button");
   let content = questionButton.innerText;
@@ -393,8 +394,10 @@ function speak() {
       break;
     // default to english
     default:
+      // display error message if language not supported
       let languageError = "Language not supported, defaulting to English";
-      console.log(languageError);
+      errorMessage.innerText = languageError;
+      errorMessage.style.display = "block";
       break;
   }
   // speak the question
@@ -402,7 +405,10 @@ function speak() {
 }
  // error handling 
   catch (error) {
-  console.log("Error with speech generation audio: " + error);
+    // display error message if speech synthesis fails
+  let audioError = ("Error with speech generation audio: " + error);
+  errorMessage.innerText = audioError;
+  errorMessage.style.display = "block";
   }
 }
 
