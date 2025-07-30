@@ -354,6 +354,10 @@ The remaining warnings from JSHint were missing semicolons or unnecessary semico
 
 The linter recognised the speech synthesis shorthand as undefined, to prevent potential compatibility errors, placing window. before the speech synthesis resolves this.
 
+![unused functions](assets/readme-media/unused.png)
+
+The linter identified the functions as unused but this was ignored as these functions are called using the onclick attribute and are identified as such in the notes within the JS file.
+
 After each fix the code was manually tested again to ensure game function.
 
 

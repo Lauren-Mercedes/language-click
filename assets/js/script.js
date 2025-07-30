@@ -1,10 +1,3 @@
-/**
- * Global declaration of the speech synthesis API.
- * Converts text to speech.
- * Used to read out the questions when clicked.
- */
-const synth = window.speechSynthesis;
-
 
 /**
  * Class that provides the blueprint of the question structure for use in adding questions.
