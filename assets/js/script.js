@@ -19,15 +19,15 @@ class questionStructure {
     this.answerSet = answers;
   }
   // functions 
-  getQuestion = () => {
+  getQuestion(){
     return this.question;
   }
 
-  getCorrect = () => {
+  getCorrect(){
     return this.correct;
   }
 
-  getAnswers = () => {
+  getAnswers(){
     return this.answerSet;
   }
 }
@@ -40,25 +40,16 @@ class questionStructure {
  */
 class questionSet {
   // question set structure
-  constructor(language, level) {
-    this.language = language;
-    this.level = level;
+  constructor(){
+
     this.questions = [];
   }
-  // functions
-  getLanguage = () => {
-    return this.language;
-  }
-
-  getLevel = () => {
-    return this.level;
-  }
-
-  getQuestions = () => {
+ 
+  getQuestions(){
     return this.questions;
   }
 
-  addQuestion = (question, correct, answers) => {
+  addQuestion(question, correct, answers){
     this.questions.push(new questionStructure(question, correct, answers));
   }
 
