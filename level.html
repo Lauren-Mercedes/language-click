@@ -28,11 +28,9 @@
             <img src="assets/images/icons/instrutctions-icon.png" alt="image of instruction manual" class="top-button">
         </button>
         <!-- Return to start button-->
-        <a href="index.html">
-            <button id="return" class="top-button" aria-label="return to the start">
-                <img src="assets/images/icons/return.png" alt="image of return arrow" id="return" class="top-button">
+            <button id="return" class="top-button" aria-label="return to the start" onclick="location.href='index.html'">
+                <img src="assets/images/icons/return.png" alt="image of return arrow" class="top-button">
             </button>
-        </a>
         <!-- Popup box for instructions -->
         <div id="popup">
             <!-- close button for popup -->
@@ -66,16 +64,16 @@
         <!-- Level buttons -->
         <div class="trio-buttons">
             <!-- Beginner -->
-                <button type="submit" aria-label="click here to learn for beginner level" class="level" value="beginner" data-level="beginner" onclick="location.href='questions.html'">
+                <button  aria-label="click here to learn for beginner level" class="level" value="beginner" data-level="beginner" onclick="location.href='questions.html'">
                     Beginner
                 </button>
             <!-- Intermediate -->
-                <button type="submit" aria-label="click here for intermediate level"class="level" value="intermediate" data-level="intermediate" onclick="location.href='questions.html'">
+                <button aria-label="click here for intermediate level" class="level" value="intermediate" data-level="intermediate" onclick="location.href='questions.html'">
                     Intermediate
                 </button>
             
             <!-- Advanced -->
-                <button type="submit" aria-label="click here for advanced level"class="level" value="advanced" data-level="advanced" onclick="location.href='questions.html'">
+                <button  aria-label="click here for advanced level" class="level" value="advanced" data-level="advanced" onclick="location.href='questions.html'">
                     Advanced
                 </button>
         </div>

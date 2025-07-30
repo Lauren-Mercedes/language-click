@@ -39,6 +39,8 @@ header {
 /* return button position (to the left */
 #return {
     float: left;
+       max-width: 3.5rem;
+   margin-left: 1%;
 }
 
 /* popup box styling */
