@@ -325,6 +325,11 @@ These impacted all HTML pages with buttons.
 
 Missing hyphen between aria and label caused syntax error on two of the answer buttons, implemented these to correct the error.
 
+Each page was tested using the same validator, most errors occured numerous times across all pages, the code was fixed for each page and ran through the validator until no errors were reported. 
+
+CSS Validation Service
+I used this [CSS validator](https://jigsaw.w3.org/css-validator/validator). No errors were found.
+
 ## Credits
 
 All content and code was written by the developer.
