@@ -300,6 +300,12 @@ https://github.com/user-attachments/assets/0f782b2f-af65-4b2d-bcaf-e71a554ec71a
 
 Every language returned a spanish question set, the levels came back correctly but the question set was defaulting to Spanish. This was caused by a syntax error on the switch case, with the switch checking language, level it was only checking level as it was not defined for both to be checked together. Resolved by changing to switch language + level.
 
+### Null element error
+
+![devtools error](assets/readme-media/null-error.png)
+
+This error displayed in the dev tools console on every page except the questions page as the choose question function was trying to run before the related elements had loaded. Resolved by implementing an if function to check the pathname included questions.html before running the function.
+
 ## Validators
 
 ### Markup Validation Service

@@ -367,8 +367,10 @@ function question() {
     }
   }
 }
-// run the choose question function
+// run the choose question function only if the questions.html page is loaded
+if (window.location.pathname.includes("questions.html")) {
 chooseQuestion();
+ }
 /**
  * Function to read out the question when the question button is clicked
  * Uses the speech synthesis API to convert text to speech
