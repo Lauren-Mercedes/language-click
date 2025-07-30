@@ -63,7 +63,7 @@
              <!-- When clicked triggers speak function for speech API -->
             <div class="bubble" title="Click Me for Audio">
                 <button id="question-button" aria-label="click here to listen to the question" onclick="speak(this)">
-                    <h1>Question placeholder</h1>
+                    Question placeholder
                 </button>
             </div>
             <!-- error message to be displayed if there is a fault with an API, content to be adjusted by error handling -->
@@ -75,15 +75,15 @@
             <div class="trio-buttons">
 
                 <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
-                    <h2>Answer Option 1 Placeholder</h2>
+                    Answer Option 1 Placeholder
                 </button>
 
                 <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
-                    <h2>Answer Option 2 Placeholder</h2>
+                    Answer Option 2 Placeholder
                 </button>
 
                 <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
-                    <h2>Answer Option 3 Placeholder</h2>
+                    Answer Option 3 Placeholder
                 </button>
             </div>
             <!-- When clicked triggers the choose question function to generate the next question -->
@@ -104,11 +104,9 @@
             <p> You have completed language level</p>
             <p>Your Overall Score was: <br> <span id="percent">0%</span> </p>
              <!-- Return to start button-->
-        <a href="index.html">
-            <button id="return" class="top-button" aria-label="return to the start">
+            <button id="return" class="top-button" aria-label="return to the start" onclick="location.href='index.html'">
                 <img src="assets/images/icons/return.png" alt="image of return arrow" id="return" class="top-button">
             </button>
-        </a>
          </div>
     </main>
     <!-- Footer Component-->

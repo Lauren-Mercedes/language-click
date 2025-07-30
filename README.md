@@ -315,6 +315,11 @@ I had placed the ID instructions on both the button and the icon image for the i
 
 Missing opening p tag on the instructions pop up, impacted all HTML pages, added to resolve the issue.
 
+![button errors](assets/readme-media/button-error.png)
+
+All buttons with links were attached using anchor elements, updated to best practice using javascript onclick document location redirect.
+Text within the buttons were inside H2 tags for styling, these were removed for better practice and the style adjusted on the button element in css. 
+These impacted all HTML pages with buttons.
 
 ## Credits
 
