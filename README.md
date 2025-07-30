@@ -346,6 +346,10 @@ This refers to a try block encompassing the choose question set function. Moving
 The reason the error handling stopped working was because it only catches errors with the local storage not with the language or level selection itself so implementing a default to throw an error resolved this.
 The end pop up did not remain hidden with the code used after these fixes so the logic in the if statement that triggers the end of game message to pop up was adjusted to check for errors resolving this issue. 
 
+![semicolon errors](assets/readme-media/semicolon-errors.png)
+
+The remaining warnings from JSHint were missing semicolons or unnecessary semicolons which were instated or removed to resolve the issue.
+
 After each fix the code was manually tested again to ensure game function.
 
 

@@ -96,15 +96,15 @@ function chooseQuestionSet() {
   // beginner questions
   let spanishB = new questionSet("spanishB");
   spanishB.addQuestion("Adios", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
-  spanishB.addQuestion("Gracias", "Thank You", ["You're Welcome", "Good", "Thank You"]);
-  spanishB.addQuestion("Hola", "Hello", ["Hello", "Cheers", "Health"]);
-  spanishB.addQuestion("Como Estas?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"]);
-  spanishB.addQuestion("Discuple", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
-  spanishB.addQuestion("Por Favor", "Please", ["Please", "Thank You", "You're Welcome"]);
-  spanishB.addQuestion("De Nada", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
-  spanishB.addQuestion("No Entiendo", "I Don't Understand", ["I Don't Understand", "No Thank You", "Not A Problem"]);
-  spanishB.addQuestion("Donde esta...?", "Where is...", ["Where is...", "What is...", "How is..."]);
-  spanishB.addQuestion("Lo Siento", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
+  // spanishB.addQuestion("Gracias", "Thank You", ["You're Welcome", "Good", "Thank You"]);
+  // spanishB.addQuestion("Hola", "Hello", ["Hello", "Cheers", "Health"]);
+  // spanishB.addQuestion("Como Estas?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"]);
+  // spanishB.addQuestion("Discuple", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
+  // spanishB.addQuestion("Por Favor", "Please", ["Please", "Thank You", "You're Welcome"]);
+  // spanishB.addQuestion("De Nada", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
+  // spanishB.addQuestion("No Entiendo", "I Don't Understand", ["I Don't Understand", "No Thank You", "Not A Problem"]);
+  // spanishB.addQuestion("Donde esta...?", "Where is...", ["Where is...", "What is...", "How is..."]);
+  // spanishB.addQuestion("Lo Siento", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
   // intermediate questions
   let spanishI = new questionSet("spanishI");
   spanishI.addQuestion("Solo Estoy Navegando", "I'm Just Browsing", ["I'm Just Browsing", "I'm Looking For", "I'm Not Interested"]);
@@ -135,7 +135,7 @@ spanishA.addQuestion("¿Cuándo cierra la tienda?", "When Does The Store Close?"
   italianB.addQuestion("Ciao", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
   italianB.addQuestion("Grazie", "Thank You", ["You're Welcome", "Good", "Thank You"]);
   italianB.addQuestion("Buongiorno", "Hello", ["Hello", "Cheers", "Health"]);
-  italianB.addQuestion("Come va?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"])
+  italianB.addQuestion("Come va?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"]);
   italianB.addQuestion("Mi Scusi", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
   italianB.addQuestion("Per Favore", "Please", ["Please", "Thank You", "You're Welcome"]);
   italianB.addQuestion("Di Niente", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
@@ -172,7 +172,7 @@ spanishA.addQuestion("¿Cuándo cierra la tienda?", "When Does The Store Close?"
   frenchB.addQuestion("Au Revoir", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
   frenchB.addQuestion("Merci", "Thank You", ["You're Welcome", "Good", "Thank You"]);
   frenchB.addQuestion("Bonjour", "Hello", ["Hello", "Cheers", "Health"]);
-  frenchB.addQuestion("Comment vas-tu?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"])
+  frenchB.addQuestion("Comment vas-tu?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"]);
   frenchB.addQuestion("Excusez-Moi", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
   frenchB.addQuestion("S'il Vous Plait", "Please", ["Please", "Thank You", "You're Welcome"]);
   frenchB.addQuestion("De Rien", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
@@ -203,6 +203,7 @@ spanishA.addQuestion("¿Cuándo cierra la tienda?", "When Does The Store Close?"
   frenchA.addQuestion("Avez-Vous Un Chargeur De Téléphone?", "Do You Have A Phone Charger?", ["Do You Have A Phone Charger?", "Have You Seen My Charger?", "Where Can I Buy A Charger?"]); 
   frenchA.addQuestion("Quand Ferme Le Magasin?", "When Does The Store Close?", ["When Does The Store Close?", "What Are The Store Hours?", "Is It Open Late?"]);  
   frenchA.addQuestion("Ou Se Trouve L'hôpital Le Plus Proche?", "Where Is The Nearest Hospital?", ["Where Is The Nearest Hospital?", "Is That A Hospital?", "What Is The Hospital Address?"]); 
+
 
   /**
    * Selection of question set from the language picked by the player
@@ -237,7 +238,7 @@ document.querySelectorAll('.language').forEach(button => {
    * The chosen question set is assigned based on the language and level selected
    */
 const language = localStorage.getItem('language');
-const level = localStorage.getItem('leel');
+const level = localStorage.getItem('level');
   switch (language + level) {
     // select spanish beginner
     case "spanish" + "beginner":
@@ -286,7 +287,7 @@ const level = localStorage.getItem('leel');
  */
 try{
 // Choose question set function called.
-chooseQuestionSet()
+chooseQuestionSet();
 }
 catch (error) {
   // Display error message if question set selection fails
@@ -295,12 +296,13 @@ catch (error) {
   errorMessage.innerText = questionSetError;
   errorMessage.style.display = "block";
 }
+
 /**
  * Declaration of the identifier assigned to the randomly selected question.
  * chosenQuestion will take on the identity of the randomly generated question.
  * Declared globally for use in multiple functions.
  */
-let chosenQuestion = " "
+let chosenQuestion = " ";
 /**
  * Function for generation of a random question from the selected question set.
  * Activated at the start of a game and when user clicks next button between questions
@@ -317,6 +319,9 @@ function chooseQuestion() {
   retry.style.display = "none";
   // Run the question function
   question();
+      // // default set error message to display none
+  let errorMessage = document.getElementById("error");
+  errorMessage.style.display = "none"
 }
 /**
  * If there are no questions left in the list the end of game pop up displays
@@ -329,6 +334,7 @@ function chooseQuestion() {
  */
 function question() {
   let questions = chosenQuestionSet.getQuestions();
+  let errorMessage = document.getElementById("error");
   if (questions.length == parseInt(0) && errorMessage.style.display == "none") {
     // overlay is displayed for pop up contrast
     let overlay = document.getElementById("overlay");
@@ -336,7 +342,7 @@ function question() {
     // end pop up is displayed
     let endPopUp = document.getElementById("end");
     endPopUp.style.display = "block";
-    endPercent();
+    endPop();
   }
   else {
     // Get question button
@@ -365,7 +371,7 @@ function question() {
       answerBoxes[i].innerHTML = answers[answerIndex];
       // remove the answer option used to prevent duplication
       answers.splice(answerIndex, 1);
-    };
+    }
   }
 }
 // run the choose question function
@@ -467,7 +473,7 @@ function check(answerButton) {
   for (const a of answerBoxes) {
     // disable the buttons
     a.disabled = true;
-  };
+  }
   // increase when answer is selected either correct or incorrect
   questionCounter();
 
@@ -490,11 +496,12 @@ function questionCounter() {
   document.getElementById("question-count").innerText = ++startCount;
 }
 /**
- * Function to calculate the percentage of correct answers
+ * Function to customise the end pop up
+ * Calculates and inserts the percentage of correct answers
+ * Replaces Language and Level text with selected Language and Level
  * Called at the end of the game when the end pop up is displayed
- * Displays the percentage in the end pop up
  */
-function endPercent() {
+function endPop() {
   // get the correct count and question count
   let correctCount = parseInt(document.getElementById("correct-count").innerText);
   let questionCount = parseInt(document.getElementById("question-count").innerText);
@@ -504,5 +511,13 @@ function endPercent() {
   percent = Math.round(percent);
   // display the percentage in the end pop up
   document.getElementById("percent").innerText = percent + "%";
+  // replace the end pop up text with the language and level selected
+    let langEnd= document.getElementById("lang");
+    let language = localStorage.getItem('language');
+    // capitalize the first letter of the language
+  langEnd.innerText = language.charAt(0).toUpperCase() + language.slice(1);
+  let levEnd = document.getElementById("lev");
+  let level = localStorage.getItem('level');
+  // capitalize the first letter of the level
+  levEnd.innerText = level.charAt(0).toUpperCase() + level.slice(1);
 }
-
