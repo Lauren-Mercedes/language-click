@@ -325,7 +325,7 @@ These impacted all HTML pages with buttons.
 
 Missing hyphen between aria and label caused syntax error on two of the answer buttons, implemented these to correct the error.
 
-Each page was tested using the same validator, most errors occured numerous times across all pages, the code was fixed for each page and ran through the validator until no errors were reported. 
+Each page was tested using the same validator, most errors occured numerous times across all pages, the code was fixed for each page and ran through the validator until no errors were reported. After each fix the code was manually tested again to ensure game function.
 
 ### CSS Validation Service
 
@@ -339,6 +339,15 @@ The errors found were as follows:
 ![class error](assets/readme-media/class-error.png)
 
 This refers to the functions defined within the classes set up at the start of the JS file, these should have been declared as methods so removing the arrow function resolved the issue.
+
+![try error](assets/readme-media/try-function-error.png)
+
+This refers to a try block encompassing the choose question set function. Moving the try to encompass when the function is called solved the error but the error handling did not work after this.
+The reason the error handling stopped working was because it only catches errors with the local storage not with the language or level selection itself so implementing a default to throw an error resolved this.
+The end pop up did not remain hidden with the code used after these fixes so the logic in the if statement that triggers the end of game message to pop up was adjusted to check for errors resolving this issue. 
+
+After each fix the code was manually tested again to ensure game function.
+
 
 ## Credits
 

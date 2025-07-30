@@ -86,11 +86,7 @@ function hideInstructions() {
  * Declared globally for use in multiple functions.
  */
 let chosenQuestionSet = new questionSet("");
-/**
- * tries to run the chooseQuestionSet function
- * If it fails, it will catch the error and display an error message.
- */
-try{
+
 /**
  * Function for choosing the question set.
  * Selects which questions to display based on the buttons the user clicks
@@ -241,7 +237,7 @@ document.querySelectorAll('.language').forEach(button => {
    * The chosen question set is assigned based on the language and level selected
    */
 const language = localStorage.getItem('language');
-const level = localStorage.getItem('level');
+const level = localStorage.getItem('leel');
   switch (language + level) {
     // select spanish beginner
     case "spanish" + "beginner":
@@ -279,16 +275,20 @@ const level = localStorage.getItem('level');
     case "french" + "advanced":
       chosenQuestionSet = frenchA;
       break;
+      // throw error if no matching question set found
+        default:
+    throw new Error("No matching question set for language: " + language + " and level: " + level);
   }
 }
-
+/**
+ * tries to run the chooseQuestionSet function
+ * If the local storage API fails, it will catch the error and display an error message.
+ */
+try{
 // Choose question set function called.
 chooseQuestionSet()
 }
 catch (error) {
-  // hide end of game pop up - displayed if no questions left
-  let endPopUp = document.getElementById("end");
-  endPopUp.style.display = "none";
   // Display error message if question set selection fails
   let errorMessage = document.getElementById("error");
   let questionSetError = ("Error with question set selection: " + error + " Please try again");
@@ -329,7 +329,7 @@ function chooseQuestion() {
  */
 function question() {
   let questions = chosenQuestionSet.getQuestions();
-  if (questions.length == parseInt(0)) {
+  if (questions.length == parseInt(0) && errorMessage.style.display == "none") {
     // overlay is displayed for pop up contrast
     let overlay = document.getElementById("overlay");
     overlay.style.display = "block";
