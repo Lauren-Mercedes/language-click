@@ -321,6 +321,10 @@ All buttons with links were attached using anchor elements, updated to best prac
 Text within the buttons were inside H2 tags for styling, these were removed for better practice and the style adjusted on the button element in css. 
 These impacted all HTML pages with buttons.
 
+![aria label errors](assets/readme-media/aria-error.png)
+
+Missing hyphen between aria and label caused syntax error on two of the answer buttons, implemented these to correct the error.
+
 ## Credits
 
 All content and code was written by the developer.
