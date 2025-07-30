@@ -197,10 +197,21 @@ If a language is not available or compatible the error message won't display as 
 ![language error console log](assets/readme-media/language-error.png)
 ![language error message](assets/readme-media/language-error-message.png)
 
+These were implemented as console messages while testing the function and then displayed as on screen.
+Testing was carried out by causing syntax errors in the code.
+
 ### Local Storage API
 
 Stores the values selected by the player to determine the language and difficulty of the question set they play.
 - tested using preview and deployed site by selecting different language and level options and checking the local storage using DevTools and ensuring the resulting outcome in question types match the defined question sets.
+
+#### Error Handling for Local Storage
+
+While local storage has a wide range of compatibility, anyone operating on very old browsers won't have access to it. If this is the case then the question's won't display. In order to relay this to the player an error message displays.
+
+![storage error message](assets/readme-media/storage-error.png)
+
+Testing was carried out by causing syntax errors in the code.
 
 
 ## Bugs and Fixes

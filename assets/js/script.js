@@ -76,6 +76,7 @@ function showInstructions() {
   let overlay = document.getElementById("overlay");
   overlay.style.display = "block";
 }
+
 /**
  * Instructions close down function
  * Is linked via an onclick in the close button
@@ -94,6 +95,11 @@ function hideInstructions() {
  * Declared globally for use in multiple functions.
  */
 let chosenQuestionSet = new questionSet("");
+/**
+ * tries to run the chooseQuestionSet function
+ * If it fails, it will catch the error and display an error message.
+ */
+try{
 /**
  * Function for choosing the question set.
  * Selects which questions to display based on the buttons the user clicks
@@ -287,7 +293,17 @@ const level = localStorage.getItem('level');
 
 // Choose question set function called.
 chooseQuestionSet()
-
+}
+catch (error) {
+  // hide end of game pop up - displayed if no questions left
+  let endPopUp = document.getElementById("end");
+  endPopUp.style.display = "none";
+  // Display error message if question set selection fails
+  let errorMessage = document.getElementById("error");
+  let questionSetError = ("Error with question set selection: " + error + " Please try again");
+  errorMessage.innerText = questionSetError;
+  errorMessage.style.display = "block";
+}
 /**
  * Declaration of the identifier assigned to the randomly selected question.
  * chosenQuestion will take on the identity of the randomly generated question.
