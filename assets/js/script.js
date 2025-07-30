@@ -96,15 +96,15 @@ function chooseQuestionSet() {
   // beginner questions
   let spanishB = new questionSet("spanishB");
   spanishB.addQuestion("Adios", "Good-Bye", ["Sorry", "Good-Bye", "Tomorrow"]);
-  // spanishB.addQuestion("Gracias", "Thank You", ["You're Welcome", "Good", "Thank You"]);
-  // spanishB.addQuestion("Hola", "Hello", ["Hello", "Cheers", "Health"]);
-  // spanishB.addQuestion("Como Estas?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"]);
-  // spanishB.addQuestion("Discuple", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
-  // spanishB.addQuestion("Por Favor", "Please", ["Please", "Thank You", "You're Welcome"]);
-  // spanishB.addQuestion("De Nada", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
-  // spanishB.addQuestion("No Entiendo", "I Don't Understand", ["I Don't Understand", "No Thank You", "Not A Problem"]);
-  // spanishB.addQuestion("Donde esta...?", "Where is...", ["Where is...", "What is...", "How is..."]);
-  // spanishB.addQuestion("Lo Siento", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
+  spanishB.addQuestion("Gracias", "Thank You", ["You're Welcome", "Good", "Thank You"]);
+  spanishB.addQuestion("Hola", "Hello", ["Hello", "Cheers", "Health"]);
+  spanishB.addQuestion("Como Estas?", "How Are You?", ["How Are You?", "Where Is It?", "Are You Coming?"]);
+  spanishB.addQuestion("Discuple", "Excuse Me", ["Excuse Me", "Sorry", "Bless You"]);
+  spanishB.addQuestion("Por Favor", "Please", ["Please", "Thank You", "You're Welcome"]);
+  spanishB.addQuestion("De Nada", "You're Welcome", ["You're Welcome", "It's Not Here", "I Don't Know"]);
+  spanishB.addQuestion("No Entiendo", "I Don't Understand", ["I Don't Understand", "No Thank You", "Not A Problem"]);
+  spanishB.addQuestion("Donde esta...?", "Where is...", ["Where is...", "What is...", "How is..."]);
+  spanishB.addQuestion("Lo Siento", "I'm Sorry", ["I'm Sorry", "Excuse Me", "I'm Lost"]);
   // intermediate questions
   let spanishI = new questionSet("spanishI");
   spanishI.addQuestion("Solo Estoy Navegando", "I'm Just Browsing", ["I'm Just Browsing", "I'm Looking For", "I'm Not Interested"]);
@@ -321,7 +321,7 @@ function chooseQuestion() {
   question();
       // // default set error message to display none
   let errorMessage = document.getElementById("error");
-  errorMessage.style.display = "none"
+  errorMessage.style.display = "none";
 }
 /**
  * If there are no questions left in the list the end of game pop up displays
@@ -388,7 +388,7 @@ function speak() {
     try {
   let questionButton = document.getElementById("question-button");
   let content = questionButton.innerText;
-  let utterance = new SpeechSynthesisUtterance(content);
+  let utterance = new window.SpeechSynthesisUtterance(content);
   // set the voice to match the language of the question set selected
   let voice = localStorage.getItem('language');
   // set the voice to match the language of the question set selected
@@ -414,7 +414,7 @@ function speak() {
       break;
   }
   // speak the question
-  speechSynthesis.speak(utterance);
+  window.speechSynthesis.speak(utterance);
 }
  // error handling 
   catch (error) {

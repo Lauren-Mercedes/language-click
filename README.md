@@ -350,6 +350,10 @@ The end pop up did not remain hidden with the code used after these fixes so the
 
 The remaining warnings from JSHint were missing semicolons or unnecessary semicolons which were instated or removed to resolve the issue.
 
+![undefined variables](assets/readme-media/undefined.png)
+
+The linter recognised the speech synthesis shorthand as undefined, to prevent potential compatibility errors, placing window. before the speech synthesis resolves this.
+
 After each fix the code was manually tested again to ensure game function.
 
 
