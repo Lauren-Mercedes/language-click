@@ -296,13 +296,21 @@ Initially the local storage showed the language value as undefined. The local st
 
 ### Language Defaulting to Spanish
 
-
-
 https://github.com/user-attachments/assets/0f782b2f-af65-4b2d-bcaf-e71a554ec71a
 
-
-
 Every language returned a spanish question set, the levels came back correctly but the question set was defaulting to Spanish. This was caused by a syntax error on the switch case, with the switch checking language, level it was only checking level as it was not defined for both to be checked together. Resolved by changing to switch language + level.
+
+## Validators
+
+### Markup Validation Service
+
+I used this [HTML validator](https://validator.w3.org/#validate_by_input)
+The errors found were as follows:
+
+[!Duplicate ID Error](assets/readme-media/duplicate-id-error.png)
+
+I had placed the ID instructions on both the button and the icon image for the instructions button. Removing the ID from the icon caused the icon position to become displaced but this was resolved by targeting the size of the button itself. This impacted all HTML pages.
+
 
 ## Credits
 

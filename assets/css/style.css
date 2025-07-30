@@ -22,7 +22,7 @@ header {
 .top-button {
     /* size */
     height: 3rem;
-    width: 3rem;
+    min-width: 3rem;
     /* remove border & background */
     border-style: none;
     background: none;
@@ -32,6 +32,8 @@ header {
 /* instruction button position (to the right) */
 #instructions {
     float: right;
+   max-width: 3.5rem;
+   margin-right: 1%;
 }
 
 /* return button position (to the left */
