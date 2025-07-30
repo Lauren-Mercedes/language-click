@@ -307,9 +307,13 @@ Every language returned a spanish question set, the levels came back correctly b
 I used this [HTML validator](https://validator.w3.org/#validate_by_input)
 The errors found were as follows:
 
-[!Duplicate ID Error](assets/readme-media/duplicate-id-error.png)
+![Duplicate ID Error](assets/readme-media/duplicate-id-error.png)
 
 I had placed the ID instructions on both the button and the icon image for the instructions button. Removing the ID from the icon caused the icon position to become displaced but this was resolved by targeting the size of the button itself. This impacted all HTML pages.
+
+![p tag error](assets/readme-media/p-error.png)
+
+Missing opening p tag on the instructions pop up, impacted all HTML pages, added to resolve the issue.
 
 
 ## Credits
