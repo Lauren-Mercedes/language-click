@@ -1,0 +1,23 @@
+{
+  "name": "language-click",
+  "version": "1.0.0",
+  "description": "Being able to speak the language of a country you are visiting or the native language of those closest to you brings a new colouring to these experiences. The colours used in the game are full and virbant to reflect this.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lauren-Mercedes/language-click.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Lauren-Mercedes/language-click/issues"
+  },
+  "homepage": "https://github.com/Lauren-Mercedes/language-click#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.54.1",
+    "@types/node": "^24.1.0"
+  }
+}

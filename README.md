@@ -213,6 +213,19 @@ While local storage has a wide range of compatibility, anyone operating on very 
 
 Testing was carried out by causing syntax errors in the code.
 
+## Automated Testing 
+
+I used [Playwright](https://playwright.dev/) to set up and carry out automated tests across the game. Each test was carried out in Chrome, Firefox, and Webkit.
+
+### Tests:
+
+#### Home Overview
+ Test for overview of features on the home page which compares the main content of the home page to a snapshot looking for:
+ - the main heading "Language Click"
+ -  a paragraph describing the game
+ -  a button to start the game
+
+ ![home overview test](assets/readme-media/autotest-home.png)
 
 ## Bugs and Fixes
 
