@@ -366,6 +366,28 @@ The linter identified the functions as unused but this was ignored as these func
 
 After each fix the code was manually tested again to ensure game function.
 
+## Deployment
+
+This project was developed in VS Code, committed and pushed using the source control feature in VS Code connected to GitHub.
+
+The website was deployed using GitHub Pages via the below steps:
+
+1. Select repository.
+2. Access settings.
+3. Access the pages tab.
+   - Ensure source is set to deploy from branch.
+   - Select main branch and root.
+4. Select Save.
+
+Once save is selected a link will be generated for the website which will be available under deployments
+
+## Deployed Project
+
+### Mobile
+
+### Tablet
+
+### Laptop
 
 ## Credits
 
@@ -407,4 +429,18 @@ Used to draw up wireframesa and summary image used in readme file.
 
 - manual and responsiveness testing,
 
+[JSHint](https://jshint.com/).
+
+- Java Script Linter for JS validation testing.
+
 ---
+
+### Acknowledgements
+
+Developed with the support of
+
+- Marcel, my tutor.
+- James, my partner.
+- Raghav, my lecturer.
+- The Code Institute, learning content provider.
+- Slack community and fellow students.
