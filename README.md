@@ -385,9 +385,16 @@ Once save is selected a link will be generated for the website which will be ava
 
 ### Mobile
 
+https://github.com/user-attachments/assets/516c6595-d90a-42d1-91ef-8c8fcf7d91a2
+
+
 ### Tablet
 
+https://github.com/user-attachments/assets/4cc91dc9-de2e-4059-850a-d7c752669074
+
 ### Laptop
+
+https://github.com/user-attachments/assets/5c2561b8-de1e-4b51-a497-23b78d9fdb7e
 
 ## Credits
 
