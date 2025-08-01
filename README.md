@@ -269,6 +269,9 @@ Refined section of test script for checking the function of the instructions but
 
 ![refined test script instructions](assets/readme-media/test-instructions.png)
 
+Refined section of test script for checking the function of the return button
+
+![refined test script return](assets/readme-media/return-test.png)
 
 ## Bugs and Fixes
 

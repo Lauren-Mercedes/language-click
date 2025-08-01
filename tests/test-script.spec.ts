@@ -29,13 +29,39 @@ To change your level exit and return to the start, please note this resets your 
 // Function to check the instructions pop-up
 async function instructionsCheck(){
   // Open Instructions pop-up
-  await page.getByRole('button', { name: 'open instruction pop up' }).click();
+  await page.getByRole('button', { name:'open instruction pop up'}).click();
   // Check the pop-up is visible and matches the expected text
   await expect(page.locator('#popup')).toContainText(instructions);
     // Close the pop-up
   await page.getByRole('button', { name: 'close instruction pop up' }).click();
   // Check the pop-up is hidden after closing
   await expect(page.locator('#popup')).toBeHidden();}
+
+  // Function to check the return to start button works
+async function returnCheck(){
+  // Click return to start button
+     await page.getByRole('button', { name: 'return to the start' }).click();
+    //  check the page has returned to the home page
+    await page.goto('https://lauren-mercedes.github.io/language-click/index.html');
+}
+
   // Call the function to check the instructions pop-up for the Home page
   await instructionsCheck();
+
+    // enter the game
+  await page.getByRole('button', { name: 'click here to start the game' }).click();
+// Check language selection page loads
+  await page.goto('https://lauren-mercedes.github.io/language-click/language.html');
+  // Check the instructions pop-up for the language selection page
+  await instructionsCheck();
+
+  // Enter the level selection page via each language
+  // Spanish
+  await page.getByRole('button', { name: 'click here to learn Spanish' }).click();
+  // Check the level selection page loads
+   await page.goto('https://lauren-mercedes.github.io/language-click/language.html');
+    // Check the instructions pop-up for the level selection page
+    await instructionsCheck();
+  // Return to start
+  await returnCheck();
   });
