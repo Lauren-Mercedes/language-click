@@ -71,21 +71,21 @@ async function selectItalian(){
 
    // Function to select beginner level
 async function selectBeginner(){
-  await page.getByRole('button', { name: 'click here to learn beginner level' }).click();
+  await page.getByRole('button', { name: 'click here for beginner level' }).click();
   // Check the questions page loads
   await page.goto('https://lauren-mercedes.github.io/language-click/questions.html');
 }
 
 //function to select intermediate level
 async function selectIntermediate(){
-  await page.getByRole('button', { name: 'click here to learn intermediate level' }).click();
+  await page.getByRole('button', { name: 'click here for intermediate level' }).click();
   // Check the questions page loads
   await page.goto('https://lauren-mercedes.github.io/language-click/questions.html');
 }
 
 //function to select advanced level
 async function selectAdvanced(){
-  await page.getByRole('button', { name: 'click here to learn advanced level' }).click();
+  await page.getByRole('button', { name: 'click here for advanced level' }).click();
   // Check the questions page loads
   await page.goto('https://lauren-mercedes.github.io/language-click/questions.html');
 }
@@ -115,6 +115,26 @@ async function selectAdvanced(){
   await instructionsCheck();
   // Return to start
   await returnCheck();
+// intermediate
+await enterGame();
+  // Spanish
+  await selectSpanish();
+  // Select intermediate level
+  await selectIntermediate();
+  // Check the instructions pop-up for the questions page
+  await instructionsCheck();
+  // Return to start
+  await returnCheck();
+// advanced
+await enterGame();
+  // Spanish
+  await selectSpanish();
+  // Select advanced level
+  await selectAdvanced();
+  // Check the instructions pop-up for the questions page
+  await instructionsCheck();
+  // Return to start
+  await returnCheck();
 
 // Enter the game again
 await enterGame();
@@ -127,14 +147,34 @@ await enterGame();
   //beginner
   // Enter the game again
   await enterGame();
-  // Spanish
-  await selectSpanish();
+  // French
+  await selectFrench();
   // Select beginner level
   await selectBeginner();
   // Check the instructions pop-up for the questions page
   await instructionsCheck();
   // Return to start
   await returnCheck();
+// intermediate
+await enterGame();
+  // French
+  await selectFrench();
+  // Select intermediate level
+  await selectIntermediate();
+  // Check the instructions pop-up for the questions page
+  await instructionsCheck();
+  // Return to start
+  await returnCheck();
+// advanced
+await enterGame();
+  // French
+  await selectFrench();
+  // Select advanced level
+  await selectAdvanced();
+  // Check the instructions pop-up for the questions page
+  await instructionsCheck();
+  // Return to start
+  await returnCheck();      
 
 // Enter the game again
 await enterGame();
@@ -147,13 +187,32 @@ await enterGame();
   //beginner
   // Enter the game again
   await enterGame();
-  // Spanish
-  await selectSpanish();
+  // Italian
+  await selectItalian();
   // Select beginner level
   await selectBeginner();
   // Check the instructions pop-up for the questions page
   await instructionsCheck();
   // Return to start
   await returnCheck();
-
+// intermediate
+await enterGame();
+  // Italian
+  await selectItalian();
+  // Select intermediate level
+  await selectIntermediate();
+  // Check the instructions pop-up for the questions page
+  await instructionsCheck();
+  // Return to start
+  await returnCheck();
+// advanced
+await enterGame();
+  // Italian
+  await selectItalian();
+  // Select advanced level
+  await selectAdvanced(); 
+  // Check the instructions pop-up for the questions page
+  await instructionsCheck();
+  // Return to start
+  await returnCheck();
   });
