@@ -265,7 +265,9 @@ I started by writing the test for the home page and then refined the code to mak
 #### Instructions Pop Up
 For user experience this pop up is available on every page and contains the same content. The test runs to check the pop up icon can be clicked and when it is clicked displays the instructions. It also checks the close pop up can be clicked and it is then hidden.
 
+Refined section of test script for checking the function of the instructions button
 
+![refined test script instructions](assets/readme-media/test-instructions.png)
 
 
 ## Bugs and Fixes
