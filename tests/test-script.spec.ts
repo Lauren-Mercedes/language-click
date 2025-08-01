@@ -13,8 +13,6 @@ import { test, expect } from '@playwright/test';
  * test checks the close button works to close the pop-up
  */
 test('test', async ({ page }) => {
-  // Navigate to Language Click home page
-  await page.goto('https://lauren-mercedes.github.io/language-click/');
   // instructions text to be checked
   let instructions = 
 `Instructions
@@ -53,31 +51,87 @@ async function enterGame(){
   await page.goto('https://lauren-mercedes.github.io/language-click/language.html');
 }
 
-await enterGame();
+// Function to select Spanish
+async function selectSpanish(){  
+  await page.getByRole('button', { name: 'click here to learn Spanish' }).click();
+  // Check the level selection page loads
+   await page.goto('https://lauren-mercedes.github.io/language-click/level.html');}
+
+   // Function to select French
+async function selectFrench(){  
+  await page.getByRole('button', { name: 'click here to learn French' }).click();
+  // Check the level selection page loads
+   await page.goto('https://lauren-mercedes.github.io/language-click/level.html');}
+
+   // Function to select Italian
+async function selectItalian(){  
+  await page.getByRole('button', { name: 'click here to learn Italian' }).click();
+  // Check the level selection page loads
+   await page.goto('https://lauren-mercedes.github.io/language-click/level.html');}
+
+   // Function to select beginner level
+async function selectBeginner(){
+  await page.getByRole('button', { name: 'click here to learn beginner level' }).click();
+  // Check the questions page loads
+  await page.goto('https://lauren-mercedes.github.io/language-click/questions.html');
+}
+
+//function to select intermediate level
+async function selectIntermediate(){
+  await page.getByRole('button', { name: 'click here to learn intermediate level' }).click();
+  // Check the questions page loads
+  await page.goto('https://lauren-mercedes.github.io/language-click/questions.html');
+}
+
+//function to select advanced level
+async function selectAdvanced(){
+  await page.getByRole('button', { name: 'click here to learn advanced level' }).click();
+  // Check the questions page loads
+  await page.goto('https://lauren-mercedes.github.io/language-click/questions.html');
+}
+   
+  // Navigate to Language Click home page
+  await page.goto('https://lauren-mercedes.github.io/language-click/');
   // Call the function to check the instructions pop-up for the Home page
   await instructionsCheck();
 
-
-  // Check the instructions pop-up for the language selection page
-  await instructionsCheck();
-
   // Enter the level selection page via each language
+  // Enter the game
+  await enterGame();
   // Spanish
-  await page.getByRole('button', { name: 'click here to learn Spanish' }).click();
-  // Check the level selection page loads
-   await page.goto('https://lauren-mercedes.github.io/language-click/language.html');
+  await selectSpanish();
     // Check the instructions pop-up for the level selection page
     await instructionsCheck();
+  // Return to start
+  await returnCheck();
+//beginner
+  // Enter the game again
+  await enterGame();
+  // Spanish
+  await selectSpanish();
+  // Select beginner level
+  await selectBeginner();
+  // Check the instructions pop-up for the questions page
+  await instructionsCheck();
   // Return to start
   await returnCheck();
 
 // Enter the game again
 await enterGame();
   // French
-  await page.getByRole('button', { name: 'click here to learn French' }).click();
-  // Check the level selection page loads
-  await page.goto('https://lauren-mercedes.github.io/language-click/language.html');
+  await selectFrench();
   // Check the instructions pop-up for the level selection page
+  await instructionsCheck();
+  // Return to start
+  await returnCheck();
+  //beginner
+  // Enter the game again
+  await enterGame();
+  // Spanish
+  await selectSpanish();
+  // Select beginner level
+  await selectBeginner();
+  // Check the instructions pop-up for the questions page
   await instructionsCheck();
   // Return to start
   await returnCheck();
@@ -85,10 +139,19 @@ await enterGame();
 // Enter the game again
 await enterGame();
   // Italian
-  await page.getByRole('button', { name: 'click here to learn Italian' }).click();
-  // Check the level selection page loads
-  await page.goto('https://lauren-mercedes.github.io/language-click/language.html');
+  await selectItalian();
   // Check the instructions pop-up for the level selection page
+  await instructionsCheck();
+  // Return to start
+  await returnCheck();
+  //beginner
+  // Enter the game again
+  await enterGame();
+  // Spanish
+  await selectSpanish();
+  // Select beginner level
+  await selectBeginner();
+  // Check the instructions pop-up for the questions page
   await instructionsCheck();
   // Return to start
   await returnCheck();
