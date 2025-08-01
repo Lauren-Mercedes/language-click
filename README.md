@@ -50,6 +50,43 @@ Web Storage API local storage principle of operation:
 - Define a variable and store the value in the browser's local storage using setItem.
 - Recall the value to be used on another page using getItem.
 
+## Principles of Automated and Manual Testing
+
+### Manual Testing
+Carried out by interacting with the development to ensure functionality, readability, and uncover any issues.
+
+#### When Manual Testing is Beneficial
+- Identifying bugs during development. 
+- Identifying issues with surface elements such as, device responsiveness, readability and contrast.
+- Identifying shortfalls in the strategy: ensuring the development meets the user stories.
+
+### Automated Testing
+Test scripts are developed and executed using programs such as Jest or Playwright, automatically returning the results.
+
+#### When Automated Testing is Beneficial
+- Repetitive testing to identify intermittent issues.
+- Regression testing, testing for issues to existing code when updates are introduced to the development, e.g. code refinement, architectural code base version update, and new functions introduced.
+- Assessing the stablity and security of the development.
+
+#### Comparing Automated and Manual Testing
+|Consideration   | Manual         | Automated      |
+|----------------|----------------|----------------|
+| Cost           | Increased human resource requirement for large amounts of testing. Cost effective for user experience testing, complex tests, and testing during development| Requires higher skill level human resource with development proficiency. Cost effective for repetitive testing, preparing minimum viable products, security/ stablity testing to the level of industry standards.
+| Time           | Time per test longer, test reporting time consuming, less efficient for repititive testing and large scale testing | Setting up test script time consuming but scalable with automatic report generation and execution time faster.
+| Accuracy       | Accuracy excels in human interactivity, e.g. user experience and surface design, but lacks in fault replication and intermittent issues requiring repeat testing. | High levels of accuracy in large scale repetitive testing but unable to detect errors in design or user experience accessibility.
+| Coverage       | Covers user stories, user experience, accessibility, development surface and exploratory testing during development. | Covers performance testing, load testing, reptitive routine tests for functionality, and security. 
+| Output         | Captures actual user experience, reactive responses to bugs, design, cross device responsiveness and accessibility. | Test report with pass/ fail table and error descriptions where applicable. Overview of development performance. 
+
+#### Application To This Project
+
+Manual Testing:
+
+Language click is a game designed for learning languages and so it is constructed with large amounts of user experience and accessibility to consider. Manual testing is key and irreplacable for ensuring the game works, is fun, is readable, and interacts the way a human would expect it to.
+
+Automated Testing:
+
+While the majority of testing applied to Language Click is manual and that is the most appropriate testing type for the focus of the game automated testing is not obsolete for this project. Automated testing plays it's part in the perfomance of the instructions button and return button which feature consistently throughout the game and are time consuming to test. Particularly the return button as this takes you back to the start of the game. 
+
 ## Features Testing
 
 How the features outlined in the scope work. Each feature developed was generated with html, tested in [ Chrome DevTools](https://developer.chrome.com/docs/devtools/), styled with css, tested again in dev tools and adjusted until visual and functional criteria was met across mobile, tablet and laptop. Functionality was added to features using JavaScript and tested in dev tools for functionality. These features were then tested again on push in the deployed environment.
@@ -215,17 +252,21 @@ Testing was carried out by causing syntax errors in the code.
 
 ## Automated Testing 
 
-I used [Playwright](https://playwright.dev/) to set up and carry out automated tests across the game. Each test was carried out in Chrome, Firefox, and Webkit.
+I used [Playwright](https://playwright.dev/) to set up and carry out automated tests across the game. 
+#### Writing The Automated Tests
+To begin with I set up a simple test for the homepage overview to gain an understanding of how Playwright interacted with the development. This was removed as it replicated a simple manual test of checking the home page content.
+
+I used automated testing to check the function of the instructions pop up and the return arrow across all the pages. The best way to write the test script for this purpose was on one page in an end to end test rather than individual tests. This is because the structure of the game is sequential therefore to move through the pages to check the instructions pop up works the test script had to move through the pages in the same sequential way the player would which includes using the return arrow to access the language and level menu. 
+
+I started by writing the test for the home page and then refined the code to make it repeatable for further pages.
 
 ### Tests:
 
-#### Home Overview
- Test for overview of features on the home page which compares the main content of the home page to a snapshot looking for:
- - the main heading "Language Click"
- -  a paragraph describing the game
- -  a button to start the game
+#### Instructions Pop Up
+For user experience this pop up is available on every page and contains the same content. The test runs to check the pop up icon can be clicked and when it is clicked displays the instructions. It also checks the close pop up can be clicked and it is then hidden.
 
- ![home overview test](assets/readme-media/autotest-home.png)
+
+
 
 ## Bugs and Fixes
 
