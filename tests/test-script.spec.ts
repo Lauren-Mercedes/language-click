@@ -45,13 +45,19 @@ async function returnCheck(){
     await page.goto('https://lauren-mercedes.github.io/language-click/index.html');
 }
 
-  // Call the function to check the instructions pop-up for the Home page
-  await instructionsCheck();
-
-    // enter the game
+// Function to enter the game
+async function enterGame(){
+ // enter the game
   await page.getByRole('button', { name: 'click here to start the game' }).click();
 // Check language selection page loads
   await page.goto('https://lauren-mercedes.github.io/language-click/language.html');
+}
+
+await enterGame();
+  // Call the function to check the instructions pop-up for the Home page
+  await instructionsCheck();
+
+
   // Check the instructions pop-up for the language selection page
   await instructionsCheck();
 
@@ -64,4 +70,27 @@ async function returnCheck(){
     await instructionsCheck();
   // Return to start
   await returnCheck();
+
+// Enter the game again
+await enterGame();
+  // French
+  await page.getByRole('button', { name: 'click here to learn French' }).click();
+  // Check the level selection page loads
+  await page.goto('https://lauren-mercedes.github.io/language-click/language.html');
+  // Check the instructions pop-up for the level selection page
+  await instructionsCheck();
+  // Return to start
+  await returnCheck();
+
+// Enter the game again
+await enterGame();
+  // Italian
+  await page.getByRole('button', { name: 'click here to learn Italian' }).click();
+  // Check the level selection page loads
+  await page.goto('https://lauren-mercedes.github.io/language-click/language.html');
+  // Check the instructions pop-up for the level selection page
+  await instructionsCheck();
+  // Return to start
+  await returnCheck();
+
   });
