@@ -97,27 +97,27 @@ Website appearance and function was tested on the following devices using a mixt
 
 Phones
 
-- iPhone SE**
-- iPhone XR*
-- iPhone 12 Pro*
-- iPhone 14 Pro Max*
-- Pixel 7*
-- Samsung Galaxy S8+*
-- Samsung Galaxy S20 ultra*
-- Galaxy Z Fold 5*
-- Samsung A51/71*
+- iPhone SE
+- iPhone XR
+- iPhone 12 Pro
+- iPhone 14 Pro Max
+- Pixel 7
+- Samsung Galaxy S8+
+- Samsung Galaxy S20 ultra
+- Galaxy Z Fold 5
+- Samsung A51/71
 
 Tablets
 
-- iPad Mini*
-- iPad Pro*
-- iPad*
+- iPad Mini
+- iPad Pro
+- iPad
 
 Laptops and Desktops
 
-- Nest Hub*
-- Nest Hub Max*
-- HP Laptop*
+- Nest Hub
+- Nest Hub Max
+- HP Laptop
 
 
 ### Instructions Pop-up
@@ -254,24 +254,41 @@ Testing was carried out by causing syntax errors in the code.
 
 I used [Playwright](https://playwright.dev/) to set up and carry out automated tests across the game. 
 #### Writing The Automated Tests
-To begin with I set up a simple test for the homepage overview to gain an understanding of how Playwright interacted with the development. This was removed as it replicated a simple manual test of checking the home page content.
+To begin with I set up a simple test for the homepage overview to gain an understanding of how Playwright interacted with the development. This was removed as it replicated a simple manual test of checking the home page content. Playwright assists test generation by recording your actions as you interact with your project. I used this feature to learn how to write tests and understand the checks carried out by each action. However, I found this function was not sufficient to write the tests I needed and it also generates the same code over again if an action is repeated and isn't always accurate for text content.
 
-I used automated testing to check the function of the instructions pop up and the return arrow across all the pages. The best way to write the test script for this purpose was on one page in an end to end test rather than individual tests. This is because the structure of the game is sequential therefore to move through the pages to check the instructions pop up works the test script had to move through the pages in the same sequential way the player would which includes using the return arrow to access the language and level menu. 
+I used automated testing to check the function of the instructions pop up and the return arrow across all the pages. The best way to write the test script for this purpose was on one page in an end to end test rather than individual tests. This is because the structure of the game is sequential therefore to move through the pages to check the instructions pop up works the test script had to move through the pages in the same sequential way the player would which includes using the return arrow to start the game again and access the different selections in the language and level menu. A benefit of this was that it also tested the game flow and performance of navigating back and forth through the game to change languages and levels.
 
-I started by writing the test for the home page and then refined the code to make it repeatable for further pages.
-
+#### The Process:
+- I used a combination of the record function and Playwright documentation to establish how to check a button click, page navigation, text content and state of a container e.g. hidden or visible.
+- I wrote a test to check the instructions pop up:
+   - opened on click
+   - contained the expected text (to check visibility of correct container)
+   - hidden on click of close button
+- I refined this test into a function with the text stored as a variable to be called in the function.
+- I worked my way through the game adding the checks to get to each page and calling the check instructions function.
+- Each time code was repeated numerous times I refined it into a function.
+- I wrote a test to check the return button:
+   - navigated back to the start of the game
+ 
 ### Tests:
 
 #### Instructions Pop Up
-For user experience this pop up is available on every page and contains the same content. The test runs to check the pop up icon can be clicked and when it is clicked displays the instructions. It also checks the close pop up can be clicked and it is then hidden.
 
 Refined section of test script for checking the function of the instructions button
 
 ![refined test script instructions](assets/readme-media/test-instructions.png)
 
+#### Return Button
+
 Refined section of test script for checking the function of the return button
 
 ![refined test script return](assets/readme-media/return-test.png)
+
+#### Game Flow
+
+Test script calling functions to check game flow for accessing all levels under Spanish
+
+![game flow test script](assets/readme-media/game-flow.png)
 
 ## Bugs and Fixes
 
@@ -399,7 +416,8 @@ I used this [CSS validator](https://jigsaw.w3.org/css-validator/validator). No e
 ### Java Script Linter
 
 I used this [JS linter](https://jshint.com/).
-The errors found were as follows:
+No errors found when running the test script and config for the Playwright automated tests through the linter.
+The errors found with the java script file were as follows:
 
 ![class error](assets/readme-media/class-error.png)
 
@@ -424,6 +442,7 @@ The linter recognised the speech synthesis shorthand as undefined, to prevent po
 The linter identified the functions as unused but this was ignored as these functions are called using the onclick attribute and are identified as such in the notes within the JS file.
 
 After each fix the code was manually tested again to ensure game function.
+
 
 ## Deployment
 

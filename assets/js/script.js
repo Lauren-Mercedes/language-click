@@ -12,15 +12,15 @@ class questionStructure {
     this.answerSet = answers;
   }
   // functions 
-  getQuestion(){
+  getQuestion() {
     return this.question;
   }
 
-  getCorrect(){
+  getCorrect() {
     return this.correct;
   }
 
-  getAnswers(){
+  getAnswers() {
     return this.answerSet;
   }
 }
@@ -33,26 +33,24 @@ class questionStructure {
  */
 class questionSet {
   // question set structure
-  constructor(){
+  constructor() {
 
     this.questions = [];
   }
- 
-  getQuestions(){
+
+  getQuestions() {
     return this.questions;
   }
 
-  addQuestion(question, correct, answers){
+  addQuestion(question, correct, answers) {
     this.questions.push(new questionStructure(question, correct, answers));
   }
-
 }
 
 /**
  *  Instructions Pop Up function
  * Is linked via an onclick in the instructions button 
  */
-
 function showInstructions() {
   let popUp = document.getElementById("popup");
   popUp.style.display = "block";
@@ -119,9 +117,9 @@ function chooseQuestionSet() {
   spanishA.addQuestion("¿Puedes recomendarme un libro en español?", "Can You Recommend A Book In Spanish?", ["Can You Recommend A Book In Spanish?", "What Is Your Favourite Book?", "What Do You Read?"]);
   spanishA.addQuestion("¿Es este un buen lugar para vivir?", "Is This A Good Place To Live?", ["Is This A Good Place To Live?", "What Is The Cost Of Living?", "Is It Safe To Live Here?"]);
   spanishA.addQuestion("¿Cómo puedo aprender más sobre la cultura española?", "How Can I Learn More About Spanish Culture?", ["How Can I Learn More About Spanish Culture?", "What Are The Best Cultural Experiences To Have Here?", "Where Can I Find Tourist Information?"]);
- spanishA.addQuestion("¿Tienes un cargador de teléfono?", "Do You Have A Phone Charger?", ["Do You Have A Phone Charger?", "Have You Seen My Charger?", "Where Can I Buy A Charger?"]);
-spanishA.addQuestion("¿Cuándo cierra la tienda?", "When Does The Store Close?", ["When Does The Store Close?", "What Are The Store Hours?", "Is It Open Late?"]);
-   spanishA.addQuestion("¿Dónde está el hospital más cercano?", "Where Is The Nearest Hospital?", ["Where Is The Nearest Hospital?", "Is That A Hospital?", "What Is The Hospital Address?"]);
+  spanishA.addQuestion("¿Tienes un cargador de teléfono?", "Do You Have A Phone Charger?", ["Do You Have A Phone Charger?", "Have You Seen My Charger?", "Where Can I Buy A Charger?"]);
+  spanishA.addQuestion("¿Cuándo cierra la tienda?", "When Does The Store Close?", ["When Does The Store Close?", "What Are The Store Hours?", "Is It Open Late?"]);
+  spanishA.addQuestion("¿Dónde está el hospital más cercano?", "Where Is The Nearest Hospital?", ["Where Is The Nearest Hospital?", "Is That A Hospital?", "What Is The Hospital Address?"]);
   // italian questions
   //beginner questions
   let italianB = new questionSet("italianB");
@@ -193,10 +191,9 @@ spanishA.addQuestion("¿Cuándo cierra la tienda?", "When Does The Store Close?"
   frenchA.addQuestion("Pouvez-Vous Me Recommander Un Livre En Français?", "Can You Recommend A Book In French?", ["Can You Recommend A Book In French?", "What Is Your Favourite Book?", "What Do You Read?"]);
   frenchA.addQuestion("Est-Ce Un Bon Endroit Pour Vivre?", "Is This A Good Place To Live?", ["Is This A Good Place To Live?", "What Is The Cost Of Living?", "Is It Safe To Live Here?"]);
   frenchA.addQuestion("Comment Puis-Je En Savoir Plus Sur La Culture Française?", "How Can I Learn More About French Culture?", ["How Can I Learn More About French Culture?", "What Are The Best Cultural Experiences To Have Here?", "Where Can I Find Tourist Information?"]);
-  frenchA.addQuestion("Avez-Vous Un Chargeur De Téléphone?", "Do You Have A Phone Charger?", ["Do You Have A Phone Charger?", "Have You Seen My Charger?", "Where Can I Buy A Charger?"]); 
-  frenchA.addQuestion("Quand Ferme Le Magasin?", "When Does The Store Close?", ["When Does The Store Close?", "What Are The Store Hours?", "Is It Open Late?"]);  
-  frenchA.addQuestion("Ou Se Trouve L'hôpital Le Plus Proche?", "Where Is The Nearest Hospital?", ["Where Is The Nearest Hospital?", "Is That A Hospital?", "What Is The Hospital Address?"]); 
-
+  frenchA.addQuestion("Avez-Vous Un Chargeur De Téléphone?", "Do You Have A Phone Charger?", ["Do You Have A Phone Charger?", "Have You Seen My Charger?", "Where Can I Buy A Charger?"]);
+  frenchA.addQuestion("Quand Ferme Le Magasin?", "When Does The Store Close?", ["When Does The Store Close?", "What Are The Store Hours?", "Is It Open Late?"]);
+  frenchA.addQuestion("Ou Se Trouve L'hôpital Le Plus Proche?", "Where Is The Nearest Hospital?", ["Where Is The Nearest Hospital?", "Is That A Hospital?", "What Is The Hospital Address?"]);
 
   /**
    * Selection of question set from the language picked by the player
@@ -205,43 +202,43 @@ spanishA.addQuestion("¿Cuándo cierra la tienda?", "When Does The Store Close?"
    * The language is retrieved from the clicked button via the data-language attribute
    * The language is then stored in local storage
    */
-document.querySelectorAll('.language').forEach(button => {
-  button.addEventListener('click', function() {
-    const languageValue = this.getAttribute('data-language');
-    localStorage.setItem('language', languageValue);
+  document.querySelectorAll('.language').forEach(button => {
+    button.addEventListener('click', function () {
+      const languageValue = this.getAttribute('data-language');
+      localStorage.setItem('language', languageValue);
     });
   });
-/**
-   * Selection of question set from the level picked by the player
-   * Each level button has a data-level attribute that stores the level value
-   * Each button is targeted with an event listener 
-   * The levele is retrieved from the clicked button via the data-level attribute
-   * The level is then stored in local storage
-   */
+  /**
+     * Selection of question set from the level picked by the player
+     * Each level button has a data-level attribute that stores the level value
+     * Each button is targeted with an event listener 
+     * The levele is retrieved from the clicked button via the data-level attribute
+     * The level is then stored in local storage
+     */
   document.querySelectorAll('.level').forEach(button => {
-  button.addEventListener('click', function() {
-    const levelValue = this.getAttribute('data-level');
-    localStorage.setItem('level', levelValue);
+    button.addEventListener('click', function () {
+      const levelValue = this.getAttribute('data-level');
+      localStorage.setItem('level', levelValue);
+    });
   });
-});
 
   /**
    * Determination of question set based on the language and level stored in local storage
    * The language and level are retrieved from local storage
    * The chosen question set is assigned based on the language and level selected
    */
-const language = localStorage.getItem('language');
-const level = localStorage.getItem('level');
+  const language = localStorage.getItem('language');
+  const level = localStorage.getItem('level');
   switch (language + level) {
     // select spanish beginner
     case "spanish" + "beginner":
       chosenQuestionSet = spanishB;
       break;
-      // select spanish intermediate
+    // select spanish intermediate
     case "spanish" + "intermediate":
       chosenQuestionSet = spanishI;
       break;
-      // select spanish advanced
+    // select spanish advanced
     case "spanish" + "advanced":
       chosenQuestionSet = spanishA;
       break;
@@ -249,11 +246,11 @@ const level = localStorage.getItem('level');
     case "italian" + "beginner":
       chosenQuestionSet = italianB;
       break;
-      // select italian intermediate
+    // select italian intermediate
     case "italian" + "intermediate":
       chosenQuestionSet = italianI;
-      break;  
-      // select italian advanced
+      break;
+    // select italian advanced
     case "italian" + "advanced":
       chosenQuestionSet = italianA;
       break;
@@ -261,26 +258,26 @@ const level = localStorage.getItem('level');
     case "french" + "beginner":
       chosenQuestionSet = frenchB;
       break;
-      // select french intermediate
-    case "french" + "intermediate":  
+    // select french intermediate
+    case "french" + "intermediate":
       chosenQuestionSet = frenchI;
       break;
-      // select french advanced
+    // select french advanced
     case "french" + "advanced":
       chosenQuestionSet = frenchA;
       break;
-      // throw error if no matching question set found
-        default:
-    throw new Error("No matching question set for language: " + language + " and level: " + level);
+    // throw error if no matching question set found
+    default:
+      throw new Error("No matching question set for language: " + language + " and level: " + level);
   }
 }
 /**
  * tries to run the chooseQuestionSet function
  * If the local storage API fails, it will catch the error and display an error message.
  */
-try{
-// Choose question set function called.
-chooseQuestionSet();
+try {
+  // Choose question set function called.
+  chooseQuestionSet();
 }
 catch (error) {
   // Display error message if question set selection fails
@@ -312,7 +309,7 @@ function chooseQuestion() {
   retry.style.display = "none";
   // Run the question function
   question();
-      // // default set error message to display none
+  // // default set error message to display none
   let errorMessage = document.getElementById("error");
   errorMessage.style.display = "none";
 }
@@ -369,8 +366,8 @@ function question() {
 }
 // run the choose question function only if the questions.html page is loaded
 if (window.location.pathname.includes("questions.html")) {
-chooseQuestion();
- }
+  chooseQuestion();
+}
 /**
  * Function to read out the question when the question button is clicked
  * Uses the speech synthesis API to convert text to speech
@@ -380,46 +377,45 @@ chooseQuestion();
  */
 function speak() {
   let errorMessage = document.getElementById("error");
-    try {
-  let questionButton = document.getElementById("question-button");
-  let content = questionButton.innerText;
-  let utterance = new window.SpeechSynthesisUtterance(content);
-  // set the voice to match the language of the question set selected
-  let voice = localStorage.getItem('language');
-  // set the voice to match the language of the question set selected
-  switch (voice) {
-    // select spanish
-    case "spanish":
-      utterance.lang="es-ES";
-      break;
-    // select italian
-    case "italian":
-      utterance.lang="it-IT";
-      break;
-    // select french
-    case "french":
-     utterance.lang= "fr-FR";
-      break;
-    // default to english
-    default:
-      // display error message if language not supported
-      let languageError = "Language not supported, defaulting to English";
-      errorMessage.innerText = languageError;
-      errorMessage.style.display = "block";
-      break;
+  try {
+    let questionButton = document.getElementById("question-button");
+    let content = questionButton.innerText;
+    let utterance = new window.SpeechSynthesisUtterance(content);
+    // set the voice to match the language of the question set selected
+    let voice = localStorage.getItem('language');
+    // set the voice to match the language of the question set selected
+    switch (voice) {
+      // select spanish
+      case "spanish":
+        utterance.lang = "es-ES";
+        break;
+      // select italian
+      case "italian":
+        utterance.lang = "it-IT";
+        break;
+      // select french
+      case "french":
+        utterance.lang = "fr-FR";
+        break;
+      // default to english
+      default:
+        // display error message if language not supported
+        let languageError = "Language not supported, defaulting to English";
+        errorMessage.innerText = languageError;
+        errorMessage.style.display = "block";
+        break;
+    }
+    // speak the question
+    window.speechSynthesis.speak(utterance);
   }
-  // speak the question
-  window.speechSynthesis.speak(utterance);
-}
- // error handling 
+  // error handling 
   catch (error) {
     // display error message if speech synthesis fails
-  let audioError = ("Error with speech generation audio: " + error);
-  errorMessage.innerText = audioError;
-  errorMessage.style.display = "block";
+    let audioError = ("Error with speech generation audio: " + error);
+    errorMessage.innerText = audioError;
+    errorMessage.style.display = "block";
   }
 }
-
 
 /**
  * Function to check if the answer is correct or incorrect
@@ -471,7 +467,6 @@ function check(answerButton) {
   }
   // increase when answer is selected either correct or incorrect
   questionCounter();
-
 }
 
 /**
@@ -507,9 +502,9 @@ function endPop() {
   // display the percentage in the end pop up
   document.getElementById("percent").innerText = percent + "%";
   // replace the end pop up text with the language and level selected
-    let langEnd= document.getElementById("lang");
-    let language = localStorage.getItem('language');
-    // capitalize the first letter of the language
+  let langEnd = document.getElementById("lang");
+  let language = localStorage.getItem('language');
+  // capitalize the first letter of the language
   langEnd.innerText = language.charAt(0).toUpperCase() + language.slice(1);
   let levEnd = document.getElementById("lev");
   let level = localStorage.getItem('level');

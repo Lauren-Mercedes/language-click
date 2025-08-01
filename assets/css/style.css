@@ -32,15 +32,15 @@ header {
 /* instruction button position (to the right) */
 #instructions {
     float: right;
-   max-width: 3.5rem;
-   margin-right: 1%;
+    max-width: 3.5rem;
+    margin-right: 1%;
 }
 
 /* return button position (to the left */
 #return {
     float: left;
-       max-width: 3.5rem;
-   margin-left: 1%;
+    max-width: 3.5rem;
+    margin-left: 1%;
 }
 
 /* popup box styling */
@@ -82,6 +82,7 @@ main {
     /*Push footer to the bottom of the page  */
     flex: 1;
 }
+
 /* Tinted semi-translucent overlay for end of game pop up contrast */
 #overlay {
     position: fixed;
@@ -107,18 +108,22 @@ h1,
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 /* font size for headers */
 h1 {
     font-size: 50px;
 }
+
 /* question button font size */
 #question-button {
     font-size: 30px;
 }
+
 /* error message default display hidden */
-#error{
-    display:none;
+#error {
+    display: none;
 }
+
 /* Speech bubble container */
 .bubble {
     background: #ffffff;
@@ -178,6 +183,7 @@ button:hover {
     display: flex;
     flex-direction: column;
 }
+
 /* styling of question and correct counter area */
 .counters {
     background-color: #157ACC;
@@ -189,6 +195,7 @@ button:hover {
     /* center align */
     margin: auto;
 }
+
 /* styling for end of game pop-up */
 #end.bubble {
     max-width: 80%;
@@ -196,19 +203,21 @@ button:hover {
     color: #fe3a9e;
     font-size: 18px;
     position: absolute;
-    bottom:40%;
-    margin:auto;
+    bottom: 40%;
+    margin: auto;
     text-align: center;
     z-index: 2;
     display: none;
 }
+
 /* Styling for end of game pop-up heading */
-#end h1{
+#end h1 {
     font-size: 30px;
 }
+
 /* Position for return button in end of game pop-up */
-#end #return{
-float: none;
+#end #return {
+    float: none;
     margin: auto;
 }
 
@@ -217,7 +226,6 @@ footer {
     width: 100%;
     font-size: 12px;
     margin-top: 1%;
-
 }
 
 /*social media icons */
@@ -246,19 +254,20 @@ footer {
     /* Button position and style larger screens */
     button {
         margin: 0;
-       width: 300px;
+        width: 300px;
         height: fit-content;
     }
-/* font size for headers on larger screens */
-    h1 {
-    font-size: 75px;
-}
 
-/* question button size and font size for larger screens*/
-#question-button {
-    font-size: 50px;
-    width: fit-content;
-}
+    /* font size for headers on larger screens */
+    h1 {
+        font-size: 75px;
+    }
+
+    /* question button size and font size for larger screens*/
+    #question-button {
+        font-size: 50px;
+        width: fit-content;
+    }
 
     /* Select Language Page and select level page: position of trio of option buttons larger screens */
     .trio-buttons {

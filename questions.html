@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +16,7 @@
     <!-- Link to stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
     <!-- Header Component -->
     <!-- Is consistent throughout the game and contains game instructions -->
@@ -27,9 +27,9 @@
             <img src="assets/images/icons/instrutctions-icon.png" alt="image of instruction manual" class="top-button">
         </button>
         <!-- Return to start button-->
-            <button id="return" class="top-button" aria-label="return to the start" onclick="location.href='index.html'">
-                <img src="assets/images/icons/return.png" alt="image of return arrow" class="top-button">
-            </button>
+        <button id="return" class="top-button" aria-label="return to the start" onclick="location.href='index.html'">
+            <img src="assets/images/icons/return.png" alt="image of return arrow" class="top-button">
+        </button>
         <!-- Popup box for instructions -->
         <div id="popup">
             <!-- close button for popup -->
@@ -49,64 +49,65 @@
                 <li>Click on the audio to hear it play</li>
                 <li>Click on the translation you think is correct</li>
             </ol>
-           <p> To change your level exit and return to the start, please note this resets your counters.</p>
+            <p> To change your level exit and return to the start, please note this resets your counters.</p>
         </div>
     </header>
+
     <!-- Main Body of page -->
     <!-- Question screen -->
-    
     <main>
         <div id="overlay"></div>
-            <!-- Question button -->
-             <!-- When clicked triggers speak function for speech API -->
-            <div class="bubble" title="Click Me for Audio">
-                <button id="question-button" aria-label="click here to listen to the question" onclick="speak(this)">
-                    Question placeholder
-                </button>
-            </div>
-            <!-- error message to be displayed if there is a fault with an API, content to be adjusted by error handling -->
-            <div id="error">
-                <p>There is an error</p>
-            </div>
-            <!-- Answer buttons -->
-            <!-- when clicked trigger the check function to confirm if answer selected is correct or incorrect -->
-            <div class="trio-buttons">
+        <!-- Question button -->
+        <!-- When clicked triggers speak function for speech API -->
+        <div class="bubble" title="Click Me for Audio">
+            <button id="question-button" aria-label="click here to listen to the question" onclick="speak(this)">
+                Question placeholder
+            </button>
+        </div>
+        <!-- error message to be displayed if there is a fault with an API, content to be adjusted by error handling -->
+        <div id="error">
+            <p>There is an error</p>
+        </div>
+        <!-- Answer buttons -->
+        <!-- when clicked trigger the check function to confirm if answer selected is correct or incorrect -->
+        <div class="trio-buttons">
 
-                <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
-                    Answer Option 1 Placeholder
-                </button>
+            <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
+                Answer Option 1 Placeholder
+            </button>
 
-                <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
-                    Answer Option 2 Placeholder
-                </button>
+            <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
+                Answer Option 2 Placeholder
+            </button>
 
-                <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
-                    Answer Option 3 Placeholder
-                </button>
-            </div>
-            <!-- When clicked triggers the choose question function to generate the next question -->
-            <button id="next" aria-label="click here for next question" onclick="chooseQuestion()">Next</button>
-            <!-- When clicked resets the question for the user to try again -->
-            <button id="retry" aria-label="click here to try again" onclick="question()">Retry</button>
+            <button class="answer-button" aria-label="click here to select this answer" onclick="check(this)">
+                Answer Option 3 Placeholder
+            </button>
+        </div>
+        <!-- When clicked triggers the choose question function to generate the next question -->
+        <button id="next" aria-label="click here for next question" onclick="chooseQuestion()">Next</button>
+        <!-- When clicked resets the question for the user to try again -->
+        <button id="retry" aria-label="click here to try again" onclick="question()">Retry</button>
 
-            <!-- Area for counters -->
-            <div class="counters">
-                <!-- Counter for amount of questions answered correctly -->
-                <p class="correct-counter"> Correct Answers: <br> <span id="correct-count">0</span></p>
-                <!-- Counter for amount of questions attempted -->
-                <p class="question-counter"> Questions Attempted: <br> <span id="question-count">0</span></p>
-            </div>
-  <!-- End of game popup -->
-         <div id="end" class="bubble">
+        <!-- Area for counters -->
+        <div class="counters">
+            <!-- Counter for amount of questions answered correctly -->
+            <p class="correct-counter"> Correct Answers: <br> <span id="correct-count">0</span></p>
+            <!-- Counter for amount of questions attempted -->
+            <p class="question-counter"> Questions Attempted: <br> <span id="question-count">0</span></p>
+        </div>
+        <!-- End of game popup -->
+        <div id="end" class="bubble">
             <h1> Congratulations </h1>
             <p> You have completed <span id="lang">language</span> <span id="lev">level</span></p>
             <p>Your Overall Score was: <br> <span id="percent">0%</span> </p>
-             <!-- Return to start button-->
+            <!-- Return to start button-->
             <button class="top-button" aria-label="return to the start" onclick="location.href='index.html'">
                 <img src="assets/images/icons/return.png" alt="image of return arrow" class="top-button">
             </button>
-         </div>
+        </div>
     </main>
+
     <!-- Footer Component-->
     <!-- Is consistent throughout the game -->
     <footer>
@@ -127,7 +128,7 @@
 
     <!-- Link to JavaScript file -->
     <script src="assets/js/script.js"></script>
-
+    
 </body>
 
 </html>
