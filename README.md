@@ -1,3 +1,11 @@
+# Language Click
+
+![project overview](assets/readme-media/overview.png)
+
+Language Click is a game designed to help people learn key phrases in Spanish, Italian and French including pronounciation in a fun way.
+
+[Click Here](https://lauren-mercedes.github.io/language-click/) to play Language Click
+
 # User Experience - Surface
 
 ## Design Elements
