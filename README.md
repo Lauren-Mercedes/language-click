@@ -290,6 +290,13 @@ Test script calling functions to check game flow for accessing all levels under 
 
 ![game flow test script](assets/readme-media/game-flow.png)
 
+
+#### Test Run Through
+
+The video shows Playwright running through the tests described above to which all passed.
+
+https://github.com/user-attachments/assets/3506b50e-f34c-4f14-9973-12405da6bdfe
+
 ## Bugs and Fixes
 
 The main bugs experienced during the development of the website were:
@@ -298,7 +305,6 @@ The main bugs experienced during the development of the website were:
 
 
 https://github.com/user-attachments/assets/b6653412-e9d8-4bee-9ea8-626cad167a3e
-
 
 
 This was caused by an additonal div close tag, there was 3 close tags and only 2 open tags within the html popup code section. I established this was the issue by confirming the fault was with the paragraph section only as seen in the clip, checking the devtools for javascript errors, confirming there was no syntax differences in the id reference and then commenting out code within the html to isolate the error.
