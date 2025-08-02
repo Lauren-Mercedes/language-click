@@ -416,7 +416,7 @@ I used this [CSS validator](https://jigsaw.w3.org/css-validator/validator). No e
 ### Java Script Linter
 
 I used this [JS linter](https://jshint.com/).
-No errors found when running the test script and config for the Playwright automated tests through the linter.
+No errors found when running the test config for Playwright automated tests through the linter.
 The errors found with the java script file were as follows:
 
 ![class error](assets/readme-media/class-error.png)
@@ -443,6 +443,9 @@ The linter identified the functions as unused but this was ignored as these func
 
 After each fix the code was manually tested again to ensure game function.
 
+### Type Script Linter
+I used this [TS Linter](https://typescript-eslint.io/).
+No errors found when running the test script for Playwright automated testing through the linter.
 
 ## Deployment
 
@@ -484,7 +487,7 @@ All content and code was written by the developer.
 
 [Favicon](https://favicon.io/)
 
-- Favicon
+- Favicon.
 
 [Freepik](https://www.freepik.com/)
 
@@ -492,7 +495,7 @@ All content and code was written by the developer.
 
 [Speech Bubble Generator](https://www.html-code-generator.com/css/speech-bubble-generator)
 
-- Basis for speech bubble containers 
+- Basis for speech bubble containers.
 
 [Colour Swatches and Gradient](https://mycolor.space/?hex=%23D53369&sub=1)
 
@@ -504,19 +507,23 @@ Used to draw up wireframesa and summary image used in readme file.
 
 [W3C CSS validator](https://jigsaw.w3.org/css-validator/)
 
-- css validation testing
+- css validation testing.
 
 [W3C HTML validator](https://validator.w3.org/#validate_by_input)
 
-- html validation testing
+- html validation testing.
 
 [ Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 
-- manual and responsiveness testing,
+- manual and responsiveness testing.
 
-[JSHint](https://jshint.com/).
+[JSHint](https://jshint.com/)
 
 - Java Script Linter for JS validation testing.
+
+[typescript-eslint](https://typescript-eslint.io/)
+
+- Type Script Linter for TS validation testing (used to write automated test scripts).
 
 ---
 
