@@ -28,6 +28,29 @@ As a player of Language Click I want:
 - for the game to be easy to learn how to play
 - to learn useful words and phrases in my chosen language
 
+# User Experience - Scope
+
+#### Features based on the user goals:
+
+- responsive design
+- instructions accessible on every game page
+   - consistent location for intuitive design
+- a range of languages to pick from on game entry
+- a range of levels to pick from once the language is selected
+   - descriptions of these levels in the instructions
+- questions to be in written format with the option for audio
+- response on answer submission
+   - if answer is correct
+   - if answer is incorrect
+- an end of game screen with overall score
+   - counters for progress tracking throughout the game
+- game guides the player through via interactivity 
+   - next button if answer is correct
+   - retry option if incorrect
+   - return to start option on every page in consistent location and end of game screen
+   - instructions
+   - each page leads to the next when an option is selected (sequential format)
+
 
 # User Experience - Surface
 
