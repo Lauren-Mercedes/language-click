@@ -6,6 +6,29 @@ Language Click is a game designed to help people learn key phrases in Spanish, I
 
 [Click Here](https://lauren-mercedes.github.io/language-click/) to play Language Click
 
+# User Experience - Strategy
+
+### Owner Goals
+- Provide a fun language learning experience to players.
+- Develop a tool to help the owner learn languages.
+- Develop an attractive game to draw in and engage players in learning languages.
+
+### User Goals
+
+As a player of Language Click I want:
+- interactive feedback at each game stage
+- ability to choose a language to learn
+- the ability to specify a level of difficulty
+- appealing design
+- to be able to play the game on any device
+- to learn written language
+- to learn spoken language
+- to see my score at the end of the game
+- to have instructions to follow
+- for the game to be easy to learn how to play
+- to learn useful words and phrases in my chosen language
+
+
 # User Experience - Surface
 
 ## Design Elements
