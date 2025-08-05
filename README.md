@@ -2,9 +2,50 @@
 
 ![image of project overview](assets/readme-media/overview.png)
 
-Language Click is a game designed to help people learn key phrases in Spanish, Italian and French including pronounciation in a fun way.
+Language Click is a game designed to help people learn key phrases in Spanish, Italian and French including pronunciation in a fun way.
 
 [Click Here](https://lauren-mercedes.github.io/language-click/) to play Language Click
+
+---
+# Table of Contents
+
+[1. User Experience](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#user-experience---strategy)
+
+[- Strategy](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#user-experience---strategy)
+
+[- Scope](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#user-experience---scope)
+
+[- Structure](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#user-experience---structure)
+
+[- Skeleton (Wireframes)](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#user-experience---skeleton)
+
+[- Surface](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#user-experience---surface)
+
+[2. Features Overview](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#features-overview)
+
+[3. Application Programming Interface (API)](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#application-programming-interface---api)
+
+[4. Testing](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#testing)
+
+[- Strategy Test](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#strategy-test)
+
+[- Principles of Automated and Manual Testing ](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#principles-of-automated-and-manual-testing)
+
+[- Features Testing (Manual Tests)](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#features-testing)
+
+[- Automated Testing](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#automated-testing-1)
+
+[5. Bugs and Fixes](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#bugs-and-fixes)
+
+[- Validators](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#validators)
+
+[6. Deployment](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#deployment)
+
+[- Overview of Deployed Project](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#deployed-project)
+
+[7. Credits](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#credits)
+
+[- Acknowledgements](https://github.com/Lauren-Mercedes/language-click?tab=readme-ov-file#acknowledgements)
 
 ---
 
@@ -121,7 +162,7 @@ Wireframes generated in Balsamiq
 
 ## Design Elements
 
-Being able to speak the language of a country you are visiting or the native language of those closest to you brings a new colouring to these experiences. The colours used in the game are full and virbant to reflect this. 
+Being able to speak the language of a country you are visiting or the native language of those closest to you brings a new colouring to these experiences. The colours used in the game are full and vibrant to reflect this. 
 
 ## Colour Scheme
 
@@ -135,12 +176,12 @@ The buttons for interactivity are made up of #67AEFF and for the hover  #A5E5FF,
 
 The text within the buttons is white and bold for readability. 
 
-For the instructions pop up the text is #FE3A9E from the main colour scheme on a white background. This maintained the consistency and readbility but signified the separation from the main theme so that the pop up didn't blend in.
+For the instructions pop up the text is #FE3A9E from the main colour scheme on a white background. This maintained the consistency and readability but signified the separation from the main theme so that the pop up didn't blend in.
 
 ## Contrast
 
 When pop-ups are displayed this takes the player outside of the interactive screens to view the instructions or signify the end of the game.
-To improve readbility and show the player they are outside of the interactive game and will need to close the pop up or return to the start if they are at the end of the game a contrasting overlay in a black tint is layered over the interactive screens.
+To improve readability and show the player they are outside of the interactive game and will need to close the pop up or return to the start if they are at the end of the game a contrasting overlay in a black tint is layered over the interactive screens.
 
 ![image of instructions contrast before](assets/readme-media/instructions-contrast.png)  ![image of instructions contrast after](assets/readme-media/instructions-contrast-after.png) 
 
@@ -148,9 +189,9 @@ To improve readbility and show the player they are outside of the interactive ga
 
 ## Font
 
-Segoe UI with a back up of sans-serif was used throughout the game. This font was selected due to its readbility for the player to easily determine the options for the game answers.
+Segoe UI with a back up of sans-serif was used throughout the game. This font was selected due to its readability for the player to easily determine the options for the game answers.
 
-## Features Overview
+# Features Overview
 
 The game is responsive across a variety of devices, with consistent features in the header and footer. The button layout across the pages is the same and the overall colours and styling is consistent.
 
@@ -162,7 +203,7 @@ The header is consistent across the game with two buttons in the same place on e
 
 #### Instructions
 
-The instructions popup offers the player the abilty to review the instructions on any screen. With an overlay appearing between the popup and the game screen to enhance the contrast. It has a close button to hide it from view. This is consistent across screen sizes following the same layout and design.
+The instructions popup offers the player the ability to review the instructions on any screen. With an overlay appearing between the popup and the game screen to enhance the contrast. It has a close button to hide it from view. This is consistent across screen sizes following the same layout and design.
 
 ![image of instructions popup](assets/readme-media/instructions-contrast-after.png) 
 
@@ -200,7 +241,7 @@ On selection of the correct answer the answer turns green and the next question 
 
 #### Incorrect Answer Feedback
 
-On selection of the incorrect answer the answer turns red and the rety button appears.
+On selection of the incorrect answer the answer turns red and the retry button appears.
 
 ![image of incorrect answer feedback](assets/readme-media/incorrect-answer.png)
 
@@ -226,7 +267,7 @@ There is a footer across all pages, consistent across devices, including links t
 
 ## Application Programming Interface - API
 
-To extend the functionality of the game and the player's learning experience an API was integrated into the code to enable the question to be read aloud. This additonal functionality enhanced learning by providing the player with pronounciation knowledge as well as learning the definition of the word or phrase. 
+To extend the functionality of the game and the player's learning experience an API was integrated into the code to enable the question to be read aloud. This additional functionality enhanced learning by providing the player with pronunciation knowledge as well as learning the definition of the word or phrase. 
 
 The API used was [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) which is a browser API. The Web Speech API has two components, the ability to recognise speech and the ability to generate speech, the speech generation component was the main focus of the use of the API in Language Click.
 
@@ -235,7 +276,7 @@ Web Speech API speech synthesis principle of operation:
 - Adjust utterance properties to specify language and voice styles e.g. pitch, volume, or rate.
 - Call the speak method to specify when the browser should process the utterance and its properties. 
 
-Third party APIs such as [International Business Machines(IBM)](https://www.ibm.com/products/text-to-speech) Cloud Watson Text to Speech and [Amazon Web Services (AWS) Polly](https://aws.amazon.com/polly/) were also considered for use in the Language Click project. These APIs both provided in excess of the needs of the project, as more complex provisions of functionality, they would over complicate integration and cause unncessary additonal code within the Java Script file for the overall requirements of the project. In additon to this both of these third party APIs came at a cost beyond 10 minutes of use per month which would put a limit on the amount of testing that could be done and also scalability of the project. The use of the browser API Web Speech API was sufficient for the project specification and allowed for the project to be scaled up to include levels, more questions, and increased testing without costs. 
+Third party APIs such as [International Business Machines(IBM)](https://www.ibm.com/products/text-to-speech) Cloud Watson Text to Speech and [Amazon Web Services (AWS) Polly](https://aws.amazon.com/polly/) were also considered for use in the Language Click project. These APIs both provided in excess of the needs of the project, as more complex provisions of functionality, they would over complicate integration and cause unnecessary additional code within the Java Script file for the overall requirements of the project. In addition to this both of these third party APIs came at a cost beyond 10 minutes of use per month which would put a limit on the amount of testing that could be done and also scalability of the project. The use of the browser API Web Speech API was sufficient for the project specification and allowed for the project to be scaled up to include levels, more questions, and increased testing without costs. 
 
 Another browser API was integrated, [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API), which was used to store selected values across the pages to determine both a language and a level for the player to determine the difficulty of the questions. In order to do this the local storage mechanism within the Web Storage API was utilised to save the value of the language and level button selected
 
@@ -246,6 +287,60 @@ Web Storage API local storage principle of operation:
 ---
 
 # Testing 
+
+## Strategy Test
+
+As a player of Language Click I want:
+
+- interactive feedback at each game stage.
+
+Language click provides players with instant feedback on their chosen answers, highlighting them in expected colours e.g. green for correct, red for incorrect and guiding them through the next step of the game e.g. next, retry, or return to start.
+
+- ability to choose a language to learn.
+
+At the start of the game the player can select from three languages: Spanish, Italian and French. Selected to reflect popular holiday destinations.
+
+- the ability to specify a level of difficulty.
+
+Once a language is selected the player can then pick their level of learning from beginner, intermediate, or advanced. The difficulty of these levels are explained in the instructions as: 
+
+"Beginner; you're new to this language
+
+Intermediate; you know the basics
+
+Advanced; you want to be able to have a conversation with a local"
+
+- appealing design.
+
+I used bright colours and contrast to give the game a fun appeal while maintaining readability.
+
+- to be able to play the game on any device.
+
+The game is fully responsive across different screen sizes.
+
+- to learn written language.
+
+The questions are displayed for reading allowing the player to write down and learn the language via reading and writing.
+
+- to learn spoken language.
+
+Each question has an audio option in the corresponding accent for the player to learn pronunciation.
+
+- to see my score at the end of the game.
+
+The end of game screen clearly displays the player's score.
+
+- to have instructions to follow.
+
+Instructions are available on every page.
+
+- for the game to be easy to learn how to play.
+
+The game guides the player through in a sequential format.
+
+- to learn useful words and phrases in my chosen language.
+
+Each language and level has a question set that includes words and phrases that would be useful to know if visiting the country on a holiday.
 
 ## Principles of Automated and Manual Testing
 
@@ -268,21 +363,21 @@ Test scripts are developed and executed using programs such as Jest or Playwrigh
 #### Comparing Automated and Manual Testing
 |Consideration   | Manual         | Automated      |
 |----------------|----------------|----------------|
-| Cost           | Increased human resource requirement for large amounts of testing. Cost effective for user experience testing, complex tests, and testing during development| Requires higher skill level human resource with development proficiency. Cost effective for repetitive testing, preparing minimum viable products, security/ stablity testing to the level of industry standards.
-| Time           | Time per test longer, test reporting time consuming, less efficient for repititive testing and large scale testing | Setting up test script time consuming but scalable with automatic report generation and execution time faster.
+| Cost           | Increased human resource requirement for large amounts of testing. Cost effective for user experience testing, complex tests, and testing during development| Requires higher skill level human resource with development proficiency. Cost effective for repetitive testing, preparing minimum viable products, security/ stability testing to the level of industry standards.
+| Time           | Time per test longer, test reporting time consuming, less efficient for repetitive testing and large scale testing | Setting up test script time consuming but scalable with automatic report generation and execution time faster.
 | Accuracy       | Accuracy excels in human interactivity, e.g. user experience and surface design, but lacks in fault replication and intermittent issues requiring repeat testing. | High levels of accuracy in large scale repetitive testing but unable to detect errors in design or user experience accessibility.
-| Coverage       | Covers user stories, user experience, accessibility, development surface and exploratory testing during development. | Covers performance testing, load testing, reptitive routine tests for functionality, and security. 
+| Coverage       | Covers user stories, user experience, accessibility, development surface and exploratory testing during development. | Covers performance testing, load testing, repetitive routine tests for functionality, and security. 
 | Output         | Captures actual user experience, reactive responses to bugs, design, cross device responsiveness and accessibility. | Test report with pass/ fail table and error descriptions where applicable. Overview of development performance. 
 
 #### Application To This Project
 
 Manual Testing:
 
-Language click is a game designed for learning languages and so it is constructed with large amounts of user experience and accessibility to consider. Manual testing is key and irreplacable for ensuring the game works, is fun, is readable, and interacts the way a human would expect it to.
+Language click is a game designed for learning languages and so it is constructed with large amounts of user experience and accessibility to consider. Manual testing is key and irreplaceable for ensuring the game works, is fun, is readable, and interacts the way a human would expect it to.
 
 Automated Testing:
 
-While the majority of testing applied to Language Click is manual and that is the most appropriate testing type for the focus of the game automated testing is not obsolete for this project. Automated testing plays it's part in the perfomance of the instructions button and return button which feature consistently throughout the game and are time consuming to test. Particularly the return button as this takes you back to the start of the game. 
+While the majority of testing applied to Language Click is manual and that is the most appropriate testing type for the focus of the game automated testing is not obsolete for this project. Automated testing plays it's part in the performance of the instructions button and return button which feature consistently throughout the game and are time consuming to test. Particularly the return button as this takes you back to the start of the game. 
 
 ---
 
@@ -292,7 +387,7 @@ How the features outlined in the scope work. Each feature developed was generate
 
 ### Responsive Design
 
-Website appearance and function was tested on the following devices using a mixture of dev tools and actual devices. On each device, all screens were brought up and all buttons were pressed to confirm functionality and readbility throughout the game.
+Website appearance and function was tested on the following devices using a mixture of dev tools and actual devices. On each device, all screens were brought up and all buttons were pressed to confirm functionality and readability throughout the game.
 
 Phones
 
@@ -317,6 +412,13 @@ Laptops and Desktops
 - Nest Hub
 - Nest Hub Max
 - HP Laptop
+
+### Browser Compatibility Test
+Game appearance and function was tested on the following browsers:
+
+- Google Chrome
+- Microsoft Edge
+
 
 ### Instructions Pop-up
 
@@ -409,8 +511,8 @@ Displays when the player has answered all the questions correctly.
 ### End of Game Percentage in Pop-Up
 
 Percentage of correct answers displayed to show player overall score.
-- tested using the preview and deploayed site logged in dev tools first and then translated to replace inner text.
-- played game numerous times varying amount of correct answers to ensure percentage calculated adapats to scores.
+- tested using the preview and deployed site logged in dev tools first and then translated to replace inner text.
+- played game numerous times varying amount of correct answers to ensure percentage calculated adapts to scores.
 
 ### API Testing
 
@@ -509,7 +611,7 @@ The main bugs experienced during the development of the website were:
 https://github.com/user-attachments/assets/b6653412-e9d8-4bee-9ea8-626cad167a3e
 
 
-This was caused by an additonal div close tag, there was 3 close tags and only 2 open tags within the html popup code section. I established this was the issue by confirming the fault was with the paragraph section only as seen in the clip, checking the devtools for javascript errors, confirming there was no syntax differences in the id reference and then commenting out code within the html to isolate the error.
+This was caused by an additional div close tag, there was 3 close tags and only 2 open tags within the html popup code section. I established this was the issue by confirming the fault was with the paragraph section only as seen in the clip, checking the devtools for javascript errors, confirming there was no syntax differences in the id reference and then commenting out code within the html to isolate the error.
 
 ### When closing the instructions pop up on the language selection page the return button is executed:
 
@@ -517,7 +619,7 @@ This was caused by an additonal div close tag, there was 3 close tags and only 2
 https://github.com/user-attachments/assets/c322f468-4a85-4171-b37f-fa695355cf4b
 
 
-This was caused by the popup div being inserted inside the return button link anchor tags. I determined this was the case by moving the position of the popup close button, increasing the z-index and moving the entire pop up box. Isolating the link between the close button and the return button to html .
+This was caused by the popup div being inserted inside the return button link anchor tags. I determined this was the case by moving the position of the popup close button, increasing the z-index and moving the entire pop up box. Isolating the link between the close button and the return button to html.
 
 ### The answers generated for the buttons duplicate:
 
@@ -558,7 +660,7 @@ An alternative solution considered was a pop up with the next or retry button on
 ### The questions repeat, the player may get the same question numerous times in a row.
 
 ![image of console showing testing of fix](assets/readme-media/question-repeat-fix.png)
-This was fixed in a similiar way to the answer button duplication by removing the question from the array once answered correctly. The image shows the testing carried out to ensure the splice was removing the correct question. The first console log was the question being played and the second console log was the question the splice removed.
+This was fixed in a similar way to the answer button duplication by removing the question from the array once answered correctly. The image shows the testing carried out to ensure the splice was removing the correct question. The first console log was the question being played and the second console log was the question the splice removed.
 
 This caused the game to stop abruptly once every question had been answered without notifying the user.The next and retry buttons don't show anymore, and there was an error in the console as all the questions had been removed from the question set by the above splice method.
 ![image of the game ending](assets/readme-media/game-end.png)
@@ -591,13 +693,6 @@ Every language returned a spanish question set, the levels came back correctly b
 This error displayed in the dev tools console on every page except the questions page as the choose question function was trying to run before the related elements had loaded. Resolved by implementing an if function to check the pathname included questions.html before running the function.
 
 ---
-### Browser Compatibility Test
-Game appearance and function was tested on the following browsers:
-
-- Google Chrome
-- Microsoft Edge
-
----
 
 ## Validators
 
@@ -624,7 +719,7 @@ These impacted all HTML pages with buttons.
 
 Missing hyphen between aria and label caused syntax error on two of the answer buttons, implemented these to correct the error.
 
-Each page was tested using the same validator, most errors occured numerous times across all pages, the code was fixed for each page and ran through the validator until no errors were reported. After each fix the code was manually tested again to ensure game function.
+Each page was tested using the same validator, most errors occurred numerous times across all pages, the code was fixed for each page and ran through the validator until no errors were reported. After each fix the code was manually tested again to ensure game function.
 
 ### CSS Validation Service
 
@@ -724,7 +819,7 @@ All content and code was written by the developer.
 
 [Balsamiq](https://balsamiq.com/)
 
-Used to draw up wireframesa and summary image used in readme file.
+Used to draw up wireframes and summary image used in readme file.
 
 [W3C CSS validator](https://jigsaw.w3.org/css-validator/)
 
