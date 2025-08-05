@@ -6,6 +6,8 @@ Language Click is a game designed to help people learn key phrases in Spanish, I
 
 [Click Here](https://lauren-mercedes.github.io/language-click/) to play Language Click
 
+---
+
 # User Experience - Strategy
 
 ### Owner Goals
@@ -27,6 +29,8 @@ As a player of Language Click I want:
 - to have instructions to follow
 - for the game to be easy to learn how to play
 - to learn useful words and phrases in my chosen language
+
+---
 
 # User Experience - Scope
 
@@ -51,6 +55,37 @@ As a player of Language Click I want:
    - instructions
    - each page leads to the next when an option is selected (sequential format)
 
+---
+
+# User Experience - Skeleton
+
+Wireframes generated in Balsamiq
+
+### Start of Game Wireframe
+
+![start screen wireframe](assets/readme-media/wireframes/start-wireframe.png)
+
+### Instructions Popup Wireframe
+
+![instructions wireframe](assets/readme-media/wireframes/start-wireframe.png)
+
+### Language Selection Page Wireframe
+
+![language selections wireframe](assets/readme-media/wireframes/language-wireframe.png)
+
+### Level Selection Page Wireframe
+
+![level selection wireframe](assets/readme-media/wireframes/level-wireframe.png)
+
+### Question Page Wireframe
+
+![question page wireframe](assets/readme-media/wireframes/questions-wireframe.png)
+
+### End of Game Popup Wireframe
+
+![end of game popup wireframe](assets/readme-media/wireframes/end-wireframe.png)
+
+---
 
 # User Experience - Surface
 
@@ -85,6 +120,8 @@ To improve readbility and show the player they are outside of the interactive ga
 
 Segoe UI with a back up of sans-serif was used throughout the game. This font was selected due to its readbility for the player to easily determine the options for the game answers.
 
+---
+
 ## Application Programming Interface - API
 
 To extend the functionality of the game and the player's learning experience an API was integrated into the code to enable the question to be read aloud. This additonal functionality enhanced learning by providing the player with pronounciation knowledge as well as learning the definition of the word or phrase. 
@@ -103,6 +140,10 @@ Another browser API was integrated, [Web Storage API](https://developer.mozilla.
 Web Storage API local storage principle of operation:
 - Define a variable and store the value in the browser's local storage using setItem.
 - Recall the value to be used on another page using getItem.
+
+---
+
+# Testing 
 
 ## Principles of Automated and Manual Testing
 
@@ -141,6 +182,8 @@ Automated Testing:
 
 While the majority of testing applied to Language Click is manual and that is the most appropriate testing type for the focus of the game automated testing is not obsolete for this project. Automated testing plays it's part in the perfomance of the instructions button and return button which feature consistently throughout the game and are time consuming to test. Particularly the return button as this takes you back to the start of the game. 
 
+---
+
 ## Features Testing
 
 How the features outlined in the scope work. Each feature developed was generated with html, tested in [ Chrome DevTools](https://developer.chrome.com/docs/devtools/), styled with css, tested again in dev tools and adjusted until visual and functional criteria was met across mobile, tablet and laptop. Functionality was added to features using JavaScript and tested in dev tools for functionality. These features were then tested again on push in the deployed environment.
@@ -172,7 +215,6 @@ Laptops and Desktops
 - Nest Hub
 - Nest Hub Max
 - HP Laptop
-
 
 ### Instructions Pop-up
 
@@ -304,6 +346,8 @@ While local storage has a wide range of compatibility, anyone operating on very 
 
 Testing was carried out by causing syntax errors in the code.
 
+---
+
 ## Automated Testing 
 
 I used [Playwright](https://playwright.dev/) to set up and carry out automated tests across the game. 
@@ -351,7 +395,9 @@ The video shows Playwright running through the tests described above to which al
 
 https://github.com/user-attachments/assets/3506b50e-f34c-4f14-9973-12405da6bdfe
 
-## Bugs and Fixes
+---
+
+# Bugs and Fixes
 
 The main bugs experienced during the development of the website were:
 
@@ -442,6 +488,15 @@ Every language returned a spanish question set, the levels came back correctly b
 
 This error displayed in the dev tools console on every page except the questions page as the choose question function was trying to run before the related elements had loaded. Resolved by implementing an if function to check the pathname included questions.html before running the function.
 
+---
+### Browser Compatibility Test
+Game appearance and function was tested on the following browsers:
+
+- Google Chrome
+- Microsoft Edge
+
+---
+
 ## Validators
 
 ### Markup Validation Service
@@ -507,6 +562,8 @@ After each fix the code was manually tested again to ensure game function.
 I used this [TS Linter](https://typescript-eslint.io/).
 No errors found when running the test script for Playwright automated testing through the linter.
 
+---
+
 ## Deployment
 
 This project was developed in VS Code, committed and pushed using the source control feature in VS Code connected to GitHub.
@@ -522,20 +579,22 @@ The website was deployed using GitHub Pages via the below steps:
 
 Once save is selected a link will be generated for the website which will be available under deployments
 
-## Deployed Project
+### Deployed Project
 
-### Mobile
+#### Mobile
 
 https://github.com/user-attachments/assets/516c6595-d90a-42d1-91ef-8c8fcf7d91a2
 
 
-### Tablet
+#### Tablet
 
 https://github.com/user-attachments/assets/4cc91dc9-de2e-4059-850a-d7c752669074
 
-### Laptop
+#### Laptop
 
 https://github.com/user-attachments/assets/5c2561b8-de1e-4b51-a497-23b78d9fdb7e
+
+---
 
 ## Credits
 
