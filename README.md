@@ -57,6 +57,36 @@ As a player of Language Click I want:
 
 ---
 
+# User Experience - Structure
+
+The game is mapped sequentially.
+
+Opening the game starts the player on the start screen.
+- The player is introduced to the game with a small description.
+- Instructions are available in the top right.
+- There is a start button to enter the game.
+
+The start button enters the game onto the language selector page.
+- Instructions are available in the top right.
+- Return to start is available in the top left.
+- The player can pick from three languages : Spanish, Italian, and French.
+
+Selecting a language enters the level selector page.
+- Instructions are available in the top right.
+- Return to start is available in the top left.
+- The player can pick from three levels: beginner, intermediate, advanced.
+   - Descriptions of the levels are available in the instructions pop up.
+
+Selecting a level enters the questions page.
+- Instructions are available in the top right.
+- Return to start is available in the top left.
+- The question page displays the clickable question and a range of potential answers including the correct one.
+   - Clicking an answer returns either a correct sequence highlighting the answer green and allowing the player to move on to the next question.
+   - Or an incorrect sequence highlighting the answer red and prompting the player to retry.
+   - Questions run until they have all been answered correctly for the specified language and level and then an end of game popup displays with a return button to prompt the player to return to the start and play again.
+
+---
+
 # User Experience - Skeleton
 
 Wireframes generated in Balsamiq
@@ -147,9 +177,11 @@ All the main headings are displayed in speech bubbles to make them standout.
 All of the buttons are styled the same way including the highlight that appears on hover. On all of the pages except the start there are three buttons; language options, level options, and answer options, these are organised in the same layout. The layout differs for screen sizes.
 
 Buttons on a smaller screen:
+
 ![image of smaller screen buttons](assets/readme-media/buttons-smaller-screens.png)
 
 Buttons on a larger screen:
+
 ![image of larger screen buttons](assets/readme-media/buttons-larger-screen.png)
 
 #### Audio for Questions
@@ -159,11 +191,13 @@ Each question can be clicked on for the question to be spoken aloud in the accen
 #### Correct Answer Feedback
 
 On selection of the correct answer the answer turns green and the next question button appears.
+
 ![image of correct answer feedback](assets/readme-media/correct-answer.png)
 
 #### Incorrect Answer Feedback
 
 On selection of the incorrect answer the answer turns red and the rety button appears.
+
 ![image of incorrect answer feedback](assets/readme-media/incorrect-answer.png)
 
 #### Counters
@@ -180,7 +214,7 @@ The question set will cycle through questions at random but will only display ea
 
 #### Footer
 
-There is a footer across all pages, consistent across devices, including links to social media platforms for players to share their scores.
+There is a footer across all pages, consistent across devices, including links to social media platforms for players to share their scores. The social media links open in a new tab.
 
 ![image of footer](assets/readme-media/footer.png)
 
