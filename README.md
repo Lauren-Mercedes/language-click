@@ -1,6 +1,6 @@
 # Language Click
 
-![project overview](assets/readme-media/overview.png)
+![image of project overview](assets/readme-media/overview.png)
 
 Language Click is a game designed to help people learn key phrases in Spanish, Italian and French including pronounciation in a fun way.
 
@@ -63,27 +63,27 @@ Wireframes generated in Balsamiq
 
 ### Start of Game Wireframe
 
-![start screen wireframe](assets/readme-media/wireframes/start-wireframe.png)
+![image of start screen wireframe](assets/readme-media/wireframes/start-wireframe.png)
 
 ### Instructions Popup Wireframe
 
-![instructions wireframe](assets/readme-media/wireframes/start-wireframe.png)
+![image of instructions wireframe](assets/readme-media/wireframes/start-wireframe.png)
 
 ### Language Selection Page Wireframe
 
-![language selections wireframe](assets/readme-media/wireframes/language-wireframe.png)
+![image of language selections wireframe](assets/readme-media/wireframes/language-wireframe.png)
 
 ### Level Selection Page Wireframe
 
-![level selection wireframe](assets/readme-media/wireframes/level-wireframe.png)
+![image of level selection wireframe](assets/readme-media/wireframes/level-wireframe.png)
 
 ### Question Page Wireframe
 
-![question page wireframe](assets/readme-media/wireframes/questions-wireframe.png)
+![image of question page wireframe](assets/readme-media/wireframes/questions-wireframe.png)
 
 ### End of Game Popup Wireframe
 
-![end of game popup wireframe](assets/readme-media/wireframes/end-wireframe.png)
+![image of end of game popup wireframe](assets/readme-media/wireframes/end-wireframe.png)
 
 ---
 
@@ -119,6 +119,70 @@ To improve readbility and show the player they are outside of the interactive ga
 ## Font
 
 Segoe UI with a back up of sans-serif was used throughout the game. This font was selected due to its readbility for the player to easily determine the options for the game answers.
+
+## Features Overview
+
+The game is responsive across a variety of devices, with consistent features in the header and footer. The button layout across the pages is the same and the overall colours and styling is consistent.
+
+#### Header
+
+The header is consistent across the game with two buttons in the same place on each page, the return arrow takes the player back to the start screen and the instructions button opens the pop up to display the instructions. This is the same across all device types.
+
+![image of header](assets/readme-media/header.png)
+
+#### Instructions
+
+The instructions popup offers the player the abilty to review the instructions on any screen. With an overlay appearing between the popup and the game screen to enhance the contrast. It has a close button to hide it from view. This is consistent across screen sizes following the same layout and design.
+
+![image of instructions popup](assets/readme-media/instructions-contrast-after.png) 
+
+#### Speech Bubble Headings
+
+All the main headings are displayed in speech bubbles to make them standout.
+
+![image of heading](assets/readme-media/heading.png)
+
+#### Buttons
+
+All of the buttons are styled the same way including the highlight that appears on hover. On all of the pages except the start there are three buttons; language options, level options, and answer options, these are organised in the same layout. The layout differs for screen sizes.
+
+Buttons on a smaller screen:
+![image of smaller screen buttons](assets/readme-media/buttons-smaller-screens.png)
+
+Buttons on a larger screen:
+![image of larger screen buttons](assets/readme-media/buttons-larger-screen.png)
+
+#### Audio for Questions
+
+Each question can be clicked on for the question to be spoken aloud in the accent of the language selected. The question button when hovered over displays click me for audio.
+
+#### Correct Answer Feedback
+
+On selection of the correct answer the answer turns green and the next question button appears.
+![image of correct answer feedback](assets/readme-media/correct-answer.png)
+
+#### Incorrect Answer Feedback
+
+On selection of the incorrect answer the answer turns red and the rety button appears.
+![image of incorrect answer feedback](assets/readme-media/incorrect-answer.png)
+
+#### Counters
+
+As questions are answered there is a counter for the player to track how many questions they have attempted and how many they have gotten correct. This displays the same across all devices and is visible at the bottom of the questions page.
+
+![image of counters](assets/readme-media/counters.png)
+
+#### End of Game
+
+The question set will cycle through questions at random but will only display each question once. Once these questions are cycled through an end of game popup displays showing the overall score and directing the player back to the start. This is consistent across devices.
+
+![image of end popup](assets/readme-media/popup-contrast-after.png)
+
+#### Footer
+
+There is a footer across all pages, consistent across devices, including links to social media platforms for players to share their scores.
+
+![image of footer](assets/readme-media/footer.png)
 
 ---
 
@@ -322,13 +386,13 @@ Converts question into speech when clicked on by the player.
 #### Error Handling for Speech Synthesis
 
 Speech synthesis may not be compatible with all browsers, in order to inform the player if this is the case an error handler was set up if the speech synthesis was tried and failed.
-![audio error console log](assets/readme-media/audio-error.png)
-![audio error message](assets/readme-media/audio-error-message.png)
+![image of audio error console log](assets/readme-media/audio-error.png)
+![image of audio error message](assets/readme-media/audio-error-message.png)
 
 If a language is not available or compatible the error message won't display as the API defaults to english, speech is still synthesised so the try is successful. To inform the player the language is unavailable a default was set up to display the message informing them it has defaulted to English.
 
-![language error console log](assets/readme-media/language-error.png)
-![language error message](assets/readme-media/language-error-message.png)
+![image of language error console log](assets/readme-media/language-error.png)
+![image of language error message](assets/readme-media/language-error-message.png)
 
 These were implemented as console messages while testing the function and then displayed as on screen.
 Testing was carried out by causing syntax errors in the code.
@@ -342,7 +406,7 @@ Stores the values selected by the player to determine the language and difficult
 
 While local storage has a wide range of compatibility, anyone operating on very old browsers won't have access to it. If this is the case then the question's won't display. In order to relay this to the player an error message displays.
 
-![storage error message](assets/readme-media/storage-error.png)
+![image of storage error message](assets/readme-media/storage-error.png)
 
 Testing was carried out by causing syntax errors in the code.
 
@@ -374,19 +438,19 @@ I used automated testing to check the function of the instructions pop up and th
 
 Refined section of test script for checking the function of the instructions button
 
-![refined test script instructions](assets/readme-media/test-instructions.png)
+![image of refined test script instructions](assets/readme-media/test-instructions.png)
 
 #### Return Button
 
 Refined section of test script for checking the function of the return button
 
-![refined test script return](assets/readme-media/return-test.png)
+![image of refined test script return](assets/readme-media/return-test.png)
 
 #### Game Flow
 
 Test script calling functions to check game flow for accessing all levels under Spanish
 
-![game flow test script](assets/readme-media/game-flow.png)
+![image of game flow test script](assets/readme-media/game-flow.png)
 
 
 #### Test Run Through
@@ -466,13 +530,13 @@ Adding an if statement to the function that fills the question and answer button
 
 ### Compatibility error with webkit background-clip property
 
-![terminal problem with webkit background clip](assets/readme-media/webkit-error.png)
+![image of terminal problem with webkit background clip](assets/readme-media/webkit-error.png)
 
 The -webkit-background-clip property is not compatible across all browsers which caused a problem to appear in the terminal. To fix this a backup is required for non-compatible browsers with the standard background-clip property. 
 
 ### Undefined Local Storage
 
-![console log of undefined local storage](assets/readme-media/undefined-ls.png)
+![image of console log of undefined local storage](assets/readme-media/undefined-ls.png)
 
 Initially the local storage showed the language value as undefined. The local storage setItem was working as it stored a value whenever a language was selected. The undefined value was caused by the event listener being attached to all the buttons via the div container. The issue was resolved by implementing a for each loop to the buttons so that they each had an individual event listener to deploy the setItem function.
 
@@ -484,7 +548,7 @@ Every language returned a spanish question set, the levels came back correctly b
 
 ### Null element error
 
-![devtools error](assets/readme-media/null-error.png)
+![image of devtools error](assets/readme-media/null-error.png)
 
 This error displayed in the dev tools console on every page except the questions page as the choose question function was trying to run before the related elements had loaded. Resolved by implementing an if function to check the pathname included questions.html before running the function.
 
@@ -504,21 +568,21 @@ Game appearance and function was tested on the following browsers:
 I used this [HTML validator](https://validator.w3.org/#validate_by_input)
 The errors found were as follows:
 
-![Duplicate ID Error](assets/readme-media/duplicate-id-error.png)
+![image of Duplicate ID Error](assets/readme-media/duplicate-id-error.png)
 
 I had placed the ID instructions on both the button and the icon image for the instructions button and the return button. Removing the ID from the icon caused the icon position to become displaced but this was resolved by targeting the size of the button itself. This impacted all HTML pages.
 
-![p tag error](assets/readme-media/p-error.png)
+![image of p tag error](assets/readme-media/p-error.png)
 
 Missing opening p tag on the instructions pop up, impacted all HTML pages, added to resolve the issue.
 
-![button errors](assets/readme-media/button-error.png)
+![image of button errors](assets/readme-media/button-error.png)
 
 All buttons with links were attached using anchor elements, updated to best practice using javascript onclick document location redirect.
 Text within the buttons were inside H2 tags for styling, these were removed for better practice and the style adjusted on the button element in css. 
 These impacted all HTML pages with buttons.
 
-![aria label errors](assets/readme-media/aria-error.png)
+![image of aria label errors](assets/readme-media/aria-error.png)
 
 Missing hyphen between aria and label caused syntax error on two of the answer buttons, implemented these to correct the error.
 
@@ -534,25 +598,25 @@ I used this [JS linter](https://jshint.com/).
 No errors found when running the test config for Playwright automated tests through the linter.
 The errors found with the java script file were as follows:
 
-![class error](assets/readme-media/class-error.png)
+![image of class error](assets/readme-media/class-error.png)
 
 This refers to the functions defined within the classes set up at the start of the JS file, these should have been declared as methods so removing the arrow function resolved the issue.
 
-![try error](assets/readme-media/try-function-error.png)
+![image of try error](assets/readme-media/try-function-error.png)
 
 This refers to a try block encompassing the choose question set function. Moving the try to encompass when the function is called solved the error but the error handling did not work after this.
 The reason the error handling stopped working was because it only catches errors with the local storage not with the language or level selection itself so implementing a default to throw an error resolved this.
 The end pop up did not remain hidden with the code used after these fixes so the logic in the if statement that triggers the end of game message to pop up was adjusted to check for errors resolving this issue. 
 
-![semicolon errors](assets/readme-media/semicolon-errors.png)
+![image of semicolon errors](assets/readme-media/semicolon-errors.png)
 
 The remaining warnings from JSHint were missing semicolons or unnecessary semicolons which were instated or removed to resolve the issue.
 
-![undefined variables](assets/readme-media/undefined.png)
+![image of undefined variables](assets/readme-media/undefined.png)
 
 The linter recognised the speech synthesis shorthand as undefined, to prevent potential compatibility errors, placing window. before the speech synthesis resolves this.
 
-![unused functions](assets/readme-media/unused.png)
+![image of unused functions](assets/readme-media/unused.png)
 
 The linter identified the functions as unused but this was ignored as these functions are called using the onclick attribute and are identified as such in the notes within the JS file.
 
